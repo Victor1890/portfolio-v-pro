@@ -1,0 +1,25 @@
+# Ignore Next.js specific files
+.next/
+.vscode/
+out/
+next.config.js
+tailwind.config.js
+vercel.json
+postcss.config.js
+package.json
+.prettierrc.json
+.eslintrc.json
+.lintstagedrc
+
+# Ignore node_modules
+node_modules/
+__test__
+
+# Ignore test files
+**/*.test.js
+**/*.test.jsx
+**/*.test.ts
+**/*.test.tsx
+
+# Ignore auto-generated files
+*.d.ts
