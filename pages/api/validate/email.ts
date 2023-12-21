@@ -1,4 +1,4 @@
-import { IEmailValidation } from '@lib/interface';
+import { IEmailValidation } from '@interfaces/common/common.interface';
 import { NextApiRequest, NextApiResponse } from 'next';
 
 // Function to check if the host is valid

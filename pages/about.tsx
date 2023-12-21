@@ -2,7 +2,6 @@ import { FadeContainer, opacityVariant } from '@content/FramerMotionVariants';
 // import { ITMDBData } from "@lib/interface";
 
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv';
-import MovieCard from '@components/MovieCard';
 import StaticPage from '@components/StaticPage';
 import { linkedinData } from '@content/linkedinData';
 import pageMeta from '@content/meta';
@@ -14,13 +13,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { IStaticInfo } from 'interfaces/about/about.interface';
 
-export default function About({
-  about,
-  movies = [],
-}: {
-  about: IStaticInfo;
-  movies: any[];
-}) {
+export default function About({ about }: { about: IStaticInfo }) {
   return (
     <>
       <StaticPage metadata={pageMeta.about} page={about} />
@@ -128,29 +121,6 @@ export default function About({
           })}
         </AnimatedDiv>
       </div>
-
-      {movies && (
-        <div className='pageTop -mt-5 print:hidden'>
-          <motion.h3
-            initial='hidden'
-            whileInView='visible'
-            viewport={{ once: true }}
-            variants={opacityVariant}
-            className='my-2 text-left text-xl font-bold md:text-3xl'
-          >
-            Recent watched Movies & TV Series
-          </motion.h3>
-
-          <AnimatedDiv
-            variants={FadeContainer}
-            className='horizontal-scrollbar flex items-center gap-2 overflow-x-scroll pt-10 pb-5 md:gap-4'
-          >
-            {movies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))}
-          </AnimatedDiv>
-        </div>
-      )}
     </>
   );
 }
@@ -177,7 +147,6 @@ export async function getStaticProps() {
   return {
     props: {
       about,
-      movies: null,
     },
     revalidate: 60 * 60 * 24, // everyday
   };
