@@ -1,14 +1,14 @@
 import { AnimatePresence } from "framer-motion";
 import AnimatedDiv from "@components/FramerMotion/AnimatedDiv";
 import { FadeContainer } from "@content/FramerMotionVariants";
-import { ISnippet } from "@lib/interface/sanity";
+// import { ISnippet } from "@lib/interface/sanity";
 import Metadata from "@components/MetaData";
 import PageTop from "@components/PageTop";
 import SnippetCard from "@components/SnippetCard";
-import { getAllSnippetsMeta } from "@lib/sanityContent";
+// import { getAllSnippetsMeta } from "@lib/sanityContent";
 import pageMeta from "@content/meta";
 
-export default function Snippets({ snippets }: { snippets: ISnippet[] }) {
+export default function Snippets({ snippets }: { snippets: unknown[] }) {
   return (
     <>
       <Metadata
@@ -29,7 +29,7 @@ export default function Snippets({ snippets }: { snippets: ISnippet[] }) {
             className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
           >
             <AnimatePresence>
-              {snippets.map((snippet, index) => {
+              {(snippets || []).map((snippet, index) => {
                 return <SnippetCard key={index} snippet={snippet} />;
               })}
             </AnimatePresence>
@@ -41,9 +41,9 @@ export default function Snippets({ snippets }: { snippets: ISnippet[] }) {
 }
 
 export async function getStaticProps() {
-  const snippets = await getAllSnippetsMeta();
+  // const snippets = await getAllSnippetsMeta();
 
   return {
-    props: { snippets },
+    props: { snippets: [] },
   };
 }

@@ -1,5 +1,4 @@
 import AnimatedDiv from "@components/FramerMotion/AnimatedDiv";
-import { ISnippet } from "@lib/interface/sanity";
 import Image from "next/image";
 import { opacityVariant } from "@content/FramerMotionVariants";
 
@@ -7,7 +6,7 @@ export default function SnippetLayout({
   snippet,
   children,
 }: {
-  snippet: ISnippet;
+  snippet: any;
   children: JSX.Element;
 }) {
   return (

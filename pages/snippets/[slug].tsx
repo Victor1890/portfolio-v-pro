@@ -1,7 +1,4 @@
-import { getAllSlugs, getSnippetFromSlug } from "@lib/sanityContent";
-
 import { GetStaticPropsContext } from "next";
-import { ISnippet } from "@lib/interface/sanity";
 import MDXComponents from "@components/MDXComponents";
 import { MDXRemote } from "next-mdx-remote";
 import Metadata from "@components/MetaData";
@@ -13,7 +10,7 @@ export default function SnippetPage({
   snippet,
   error,
 }: {
-  snippet: ISnippet;
+  snippet: any;
   error: boolean;
 }) {
   if (error) return <PageNotFound />;
@@ -54,13 +51,16 @@ type StaticProps = GetStaticPropsContext & {
 export async function getStaticProps({ params }: StaticProps) {
   const { slug } = params;
 
-  const snippet = await getSnippetFromSlug(slug);
+  console.log("slug: ", slug)
+
+  const snippet = null
+  // const snippet = await getSnippetFromSlug(slug);
 
   if (snippet != null) {
     return {
       props: {
         error: false,
-        snippet,
+        snippet: null,
       },
     };
   } else {
@@ -74,10 +74,10 @@ export async function getStaticProps({ params }: StaticProps) {
 }
 
 export async function getStaticPaths() {
-  const slugs = await getAllSlugs({
-    type: "snippet",
-  });
-  const paths = slugs.map((slug: any) => ({ params: { slug } }));
+  // const slugs = await getAllSlugs({
+  //   type: "snippet",
+  // });
+  const paths = [].map((slug: any) => ({ params: { slug } }));
 
   return {
     paths,

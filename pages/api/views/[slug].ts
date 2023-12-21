@@ -1,4 +1,7 @@
-import { addView, getViewBySlug } from "@lib/supabase";
+import {
+  // addView,
+  getViewBySlug
+} from "@lib/supabase";
 import { NextApiRequest, NextApiResponse } from "next";
 
 /* Extending API request because by default quey.slug return string | string[] and I only want string */

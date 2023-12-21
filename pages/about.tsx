@@ -7,7 +7,7 @@ import StaticPage from "@components/StaticPage";
 import { linkedinData } from "@content/linkedinData";
 import pageMeta from "@content/meta";
 import MDXContent from "@lib/MDXContent";
-import { fetchTMDBData } from "@lib/tmdb";
+// import { fetchTMDBData } from "@lib/tmdb";
 import { months } from "@utils/date";
 import classNames from "classnames";
 import { motion } from "framer-motion";
