@@ -6,6 +6,8 @@
     "paths": {
       "@config": ["config"],
       "@config/*": ["config/*"],
+      "@interfaces": ["interfaces"],
+      "@interfaces/*": ["interfaces/*"],
       "@provider": ["provider"],
       "@provider/*": ["provider/*"],
       "@components/*": ["components/*"],

@@ -1,5 +1,5 @@
 import { FadeContainer, opacityVariant } from "@content/FramerMotionVariants";
-import { ITMDBData } from "@lib/interface";
+// import { ITMDBData } from "@lib/interface";
 
 import AnimatedDiv from "@components/FramerMotion/AnimatedDiv";
 import MovieCard from "@components/MovieCard";
@@ -16,10 +16,10 @@ import { IStaticInfo } from "interfaces/about/about.interface";
 
 export default function About({
   about,
-  movies,
+  movies = [],
 }: {
   about: IStaticInfo;
-  movies: ITMDBData[];
+  movies: any[];
 }) {
   return (
     <>

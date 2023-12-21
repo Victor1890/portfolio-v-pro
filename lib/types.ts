@@ -50,16 +50,6 @@ export type SkillType = {
   Icon: IconType;
 };
 
-export type CertificateType = {
-  id: string;
-  title: string;
-  issuedDate: string;
-  orgName: string;
-  orgLogo: string;
-  url: string;
-  pinned: boolean;
-};
-
 export type SocialPlatform = {
   title: string;
   Icon: IconType;

@@ -8,7 +8,6 @@ import pageMeta from "@content/meta";
 // import { CertificateType } from "@lib/types";
 // import { getCertificates } from "@lib/supabase";
 import CreateAnIssue from "@components/CreateAnIssue";
-import { getFormattedDate } from "@utils/date";
 import certificatesData from "@content/certificatesData";
 
 export default function Certificates() {
@@ -54,14 +53,15 @@ export default function Certificates() {
                   </div>
                   <div className="flex flex-col ">
                     <Link
-                      href={cer.url}
+                      href={cer.url || "#"}
+                      target={cer.url ? "_blank" : "_self"}
                       className="text-sm font-semibold hover:underline sm:text-base md:text-lg text-neutral-900 dark:text-neutral-200"
                     >
                       {cer.title}
                     </Link>
                     <p className="text-xs text-gray-500">
                       {cer.orgName} &#x2022;{" "}
-                      {getFormattedDate(new Date(cer.issuedDate))}
+                      {cer.issuedDate}
                     </p>
                   </div>
                 </div>
@@ -74,13 +74,3 @@ export default function Certificates() {
     </>
   );
 }
-
-// export async function getStaticProps() {
-//   const { certificates, error } = await getCertificates();
-//   return {
-//     props: {
-//       certificates,
-//       error,
-//     },
-//   };
-// }

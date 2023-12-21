@@ -1,4 +1,4 @@
-import { ILinkedinResponse } from "@lib/interface";
+import { ILinkedinResponse } from "interfaces/linkedin/linkedin.interface";
 
 export const linkedinData: ILinkedinResponse = {
     experiences: [
