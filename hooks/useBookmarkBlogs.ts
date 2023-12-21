@@ -16,7 +16,7 @@ const useBookmarkBlogs = (key: string, defaultValue: []) => {
   });
 
   function getValue() {
-    var data = JSON.parse(localStorage.getItem(key)!);
+    const data = JSON.parse(localStorage.getItem(key)!);
     if (data === null) {
       localStorage.setItem(key, JSON.stringify([]));
       return JSON.parse(localStorage.getItem(key)!);
@@ -25,7 +25,7 @@ const useBookmarkBlogs = (key: string, defaultValue: []) => {
   }
 
   function addToBookmark(blogToBookmark: FrontMatter) {
-    var data = getValue();
+    const data = getValue();
     if (!data.includes(blogToBookmark)) {
       data.unshift(blogToBookmark); // add blog to the starting of the array
       setBookmarkedBlogs(data);
@@ -33,7 +33,7 @@ const useBookmarkBlogs = (key: string, defaultValue: []) => {
   }
 
   function removeFromBookmark(blogToRemove: string) {
-    var data = getValue();
+    const data = getValue();
     setBookmarkedBlogs(
       data.filter((blog: FrontMatter) => blog.slug != blogToRemove)
     );

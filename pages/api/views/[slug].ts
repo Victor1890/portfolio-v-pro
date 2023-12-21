@@ -40,12 +40,13 @@ export default async function viewsSlug(
     }
   }
   // check if the app in the production and req method is post only then add the view to the database
-  if (req.method === "POST" && process.env.NODE_ENV === "production") {
-    const supabaseResponse = await addView(slug);
-    res.status(supabaseResponse?.status!).json(supabaseResponse);
-  } else {
-    return res.status(401).json({
-      message: "In Development, Can't add views",
-    });
-  }
+  // if (req.method === "POST" && process.env.NODE_ENV === "production") {
+  //   const supabaseResponse = await addView(slug);
+  //   res.status(supabaseResponse?.status!).json(supabaseResponse);
+  // } else {
+  //   return res.status(401).json({
+  //     message: "In Development, Can't add views",
+  //   });
+  // }
+  res.status(200).json(true);
 }

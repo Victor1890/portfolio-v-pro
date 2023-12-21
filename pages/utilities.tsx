@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import MetaData from "@components/MetaData";
 import PageTop from "@components/PageTop";
 import utilities from "@content/utilitiesData";

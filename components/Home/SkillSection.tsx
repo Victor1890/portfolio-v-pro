@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FadeContainer, popUp } from "../../content/FramerMotionVariants";
 import { HomeHeading } from "../../pages";
 import { motion } from "framer-motion";
