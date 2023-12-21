@@ -1,5 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
 type TrackProps = {
   url: string;
@@ -19,16 +19,16 @@ export default function Track({
   return (
     <Link
       href={url}
-      rel="noreferrer"
-      target="_blank"
-      className="bg-gray-100 hover:bg-white dark:bg-darkPrimary hover:dark:bg-darkSecondary border-l first:border-t border-r border-b  border-gray-300 dark:border-neutral-600 p-4 font-barlow flex items-center gap-5 overflow-hidden relative xs:pl-16 md:!pl-20 "
+      rel='noreferrer'
+      target='_blank'
+      className='relative flex items-center gap-5 overflow-hidden border-l border-r border-b  border-gray-300 bg-gray-100 p-4 font-barlow first:border-t hover:bg-white dark:border-neutral-600 dark:bg-darkPrimary hover:dark:bg-darkSecondary xs:pl-16 md:!pl-20 '
     >
       <>
-        <div className="absolute hidden text-xl tracking-wider text-gray-500 origin-center transform left-4 md:left-6 font-inter xs:inline-flex">
+        <div className='absolute left-4 hidden origin-center transform font-inter text-xl tracking-wider text-gray-500 xs:inline-flex md:left-6'>
           #{id + 1}
         </div>
 
-        <div className="relative w-12 h-12 origin-center transform">
+        <div className='relative h-12 w-12 origin-center transform'>
           {coverImage ? (
             <Image
               src={coverImage}
@@ -38,16 +38,16 @@ export default function Track({
               quality={50}
             ></Image>
           ) : (
-            <div className="w-full h-full bg-white animate-pulse"></div>
+            <div className='h-full w-full animate-pulse bg-white'></div>
           )}
         </div>
         <div>
-          <p className="text-base font-semibold text-gray-900 origin-left transform md:text-xl dark:text-white font-barlow">
-            {title ?? <div className="w-full h-4 bg-white animate-pulse"></div>}
+          <p className='origin-left transform font-barlow text-base font-semibold text-gray-900 dark:text-white md:text-xl'>
+            {title ?? <div className='h-4 w-full animate-pulse bg-white'></div>}
           </p>
-          <p className="text-xs text-gray-500 origin-left transform sm:text-sm md:text-base line-clamp-1">
+          <p className='origin-left transform text-xs text-gray-500 line-clamp-1 sm:text-sm md:text-base'>
             {artist ?? (
-              <div className="w-full h-4 bg-white animate-pulse"></div>
+              <div className='h-4 w-full animate-pulse bg-white'></div>
             )}
           </p>
         </div>

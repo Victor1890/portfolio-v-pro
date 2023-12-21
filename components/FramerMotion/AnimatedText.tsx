@@ -1,5 +1,5 @@
-import { AnimatedTAGProps } from "@lib/types";
-import { motion } from "framer-motion";
+import { AnimatedTAGProps } from '@lib/types';
+import { motion } from 'framer-motion';
 
 export default function AnimatedText({
   variants,
@@ -9,8 +9,8 @@ export default function AnimatedText({
 }: AnimatedTAGProps) {
   return (
     <motion.p
-      initial="hidden"
-      whileInView="visible"
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: !infinity }}
       variants={variants}
       className={className}

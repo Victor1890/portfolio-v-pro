@@ -254,7 +254,6 @@
 
 // /* Linkedin Interface */
 
-
 // export interface ITMDBData {
 //   adult: boolean;
 //   backdrop_path: string;

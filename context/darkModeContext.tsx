@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect, createContext } from "react";
+import React, { useState, useContext, useEffect, createContext } from 'react';
 
 export interface DarkModeContextType {
   isDarkMode: boolean;
@@ -11,12 +11,12 @@ export function DarkModeProvider({ children }: { children: React.ReactNode }) {
   const [isDarkMode, setDarkMode] = useState(false);
 
   function updateTheme() {
-    const currentTheme = localStorage.getItem("isDarkMode") || "false";
-    if (currentTheme === "true") {
-      document.body.classList.add("dark");
+    const currentTheme = localStorage.getItem('isDarkMode') || 'false';
+    if (currentTheme === 'true') {
+      document.body.classList.add('dark');
       setDarkMode(true);
     } else {
-      document.body.classList.remove("dark");
+      document.body.classList.remove('dark');
       setDarkMode(false);
     }
   }
@@ -24,7 +24,7 @@ export function DarkModeProvider({ children }: { children: React.ReactNode }) {
     updateTheme();
   }, []);
   function changeDarkMode(value: boolean) {
-    localStorage.setItem("isDarkMode", value.toString());
+    localStorage.setItem('isDarkMode', value.toString());
     updateTheme();
   }
 

@@ -1,15 +1,15 @@
-import { FadeContainer, opacityVariant } from "@content/FramerMotionVariants";
-import { lockScroll, removeScrollLock } from "@utils/functions";
-import { useEffect, useState } from "react";
+import { FadeContainer, opacityVariant } from '@content/FramerMotionVariants';
+import { lockScroll, removeScrollLock } from '@utils/functions';
+import { useEffect, useState } from 'react';
 
-import AnimatedDiv from "./FramerMotion/AnimatedDiv";
-import AnimatedHeading from "./FramerMotion/AnimatedHeading";
-import { CgSearch } from "react-icons/cg";
-import Link from "next/link";
-import { TableOfContents as TableOfContentType } from "@lib/types";
-import { stringToSlug } from "@utils/string.util";
-import useScrollPercentage from "@hooks/useScrollPercentage";
-import useWindowSize from "@hooks/useWindowSize";
+import AnimatedDiv from './FramerMotion/AnimatedDiv';
+import AnimatedHeading from './FramerMotion/AnimatedHeading';
+import { CgSearch } from 'react-icons/cg';
+import Link from 'next/link';
+import { TableOfContents as TableOfContentType } from '@lib/types';
+import { stringToSlug } from '@utils/string.util';
+import useScrollPercentage from '@hooks/useScrollPercentage';
+import useWindowSize from '@hooks/useWindowSize';
 
 export default function TableOfContents({
   tableOfContents,
@@ -20,7 +20,7 @@ export default function TableOfContents({
   setIsTOCActive: (val: boolean) => void;
   isTOCActive: boolean;
 }) {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [toc, setToc] = useState(tableOfContents);
 
   const scrollPercentage = useScrollPercentage();
@@ -45,41 +45,43 @@ export default function TableOfContents({
       {tableOfContents.length > 0 && (
         <>
           <div
-            className={`fixed h-full print:hidden ${isTOCActive
-                ? "left-0 opacity-100 top-[44px] md:top-[60px]"
-                : "-left-full opacity-0"
-              } ${scrollPercentage > 95 ? "xl:-left-full" : "xl:left-0"
-              } md:left-0 md:opacity-100 md:max-w-[35%] lg:max-w-[30%]  transition-all duration-500 flex flex-col gap-1 !pb-[100px] overflow-y-scroll p-10 md:p-14 h-screen fixed w-full font-barlow bg-darkWhite dark:bg-darkPrimary text-neutral-800 dark:text-gray-200 z-50 `}
+            className={`fixed h-full print:hidden ${
+              isTOCActive
+                ? 'left-0 top-[44px] opacity-100 md:top-[60px]'
+                : '-left-full opacity-0'
+            } ${
+              scrollPercentage > 95 ? 'xl:-left-full' : 'xl:left-0'
+            } fixed z-50 flex h-screen  w-full flex-col gap-1 overflow-y-scroll bg-darkWhite p-10 !pb-[100px] font-barlow text-neutral-800 transition-all duration-500 dark:bg-darkPrimary dark:text-gray-200 md:left-0 md:max-w-[35%] md:p-14 md:opacity-100 lg:max-w-[30%] `}
           >
             {/* TOC Search Bar */}
-            <div className="relative w-full group mx-auto text-slate-700 dark:text-gray-300  rounded-md -ml-[5px]">
-              <CgSearch className="ml-3 w-5 h-5 absolute top-[50%] -translate-y-1/2 z-10" />
+            <div className='group relative mx-auto -ml-[5px] w-full rounded-md  text-slate-700 dark:text-gray-300'>
+              <CgSearch className='absolute top-[50%] z-10 ml-3 h-5 w-5 -translate-y-1/2' />
 
               <input
-                className="w-full px-5 py-2 pl-10 transition duration-200 bg-white rounded-md shadow outline-none dark:bg-darkSecondary ring-1 ring-slate-900/10 hover:ring-slate-400"
-                type="text"
+                className='w-full rounded-md bg-white px-5 py-2 pl-10 shadow outline-none ring-1 ring-slate-900/10 transition duration-200 hover:ring-slate-400 dark:bg-darkSecondary'
+                type='text'
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
-                placeholder="Search Content..."
+                placeholder='Search Content...'
               />
             </div>
             <AnimatedHeading
               variants={opacityVariant}
-              className="font-bold text-xl md:text-2xl -ml-[5px] md:-ml-[6px] mt-2"
+              className='-ml-[5px] mt-2 text-xl font-bold md:-ml-[6px] md:text-2xl'
             >
               Table of Contents
             </AnimatedHeading>
 
             <AnimatedDiv
               variants={FadeContainer}
-              className="flex flex-col relative before:absolute before:left-0 before:h-full before:w-[1.5px] before:bg-neutral-500 mb-20"
+              className='relative mb-20 flex flex-col before:absolute before:left-0 before:h-full before:w-[1.5px] before:bg-neutral-500'
             >
               {toc.map((content: any) => {
                 return (
                   <Link
                     key={content.id}
                     href={`#${stringToSlug(content.id)}`}
-                    className="relative overflow-hidden hover:bg-darkSecondary px-2 py-0.5 md:py-1 rounded-tr-md rounded-br-md md:line-clamp-1 text-neutral-700 hover:text-white  dark:text-neutral-200 font-medium border-l-2 border-neutral-500 dark:hover:border-white"
+                    className='relative overflow-hidden rounded-tr-md rounded-br-md border-l-2 border-neutral-500 px-2 py-0.5 font-medium text-neutral-700 hover:bg-darkSecondary  hover:text-white dark:text-neutral-200 dark:hover:border-white md:py-1 md:line-clamp-1'
                     style={{ marginLeft: `${content.level * 15}px` }}
                     onClick={() => {
                       if (size.width < 768) {
@@ -97,7 +99,7 @@ export default function TableOfContents({
             </AnimatedDiv>
             {/* When you search but found nothing */}
             {toc.length === 0 && (
-              <div className="text-center">No Result found</div>
+              <div className='text-center'>No Result found</div>
             )}
           </div>
 
@@ -106,7 +108,7 @@ export default function TableOfContents({
               setIsTOCActive(!isTOCActive);
               lockScroll();
             }}
-            className="fixed bottom-0 z-50 w-full py-2 font-medium text-white bg-black outline-none md:hidden dark:bg-white dark:text-black"
+            className='fixed bottom-0 z-50 w-full bg-black py-2 font-medium text-white outline-none dark:bg-white dark:text-black md:hidden'
           >
             Table of Contents
           </button>

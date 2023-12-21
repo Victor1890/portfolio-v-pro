@@ -2,7 +2,7 @@
 // import Link from "next/link";
 
 export default function SnippetCard({ snippet }: { snippet: unknown }) {
-  console.log("snippet", snippet)
+  console.log('snippet', snippet);
   return (
     <h1>a</h1>
     // <Link

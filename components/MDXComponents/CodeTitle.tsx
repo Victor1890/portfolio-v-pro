@@ -1,4 +1,4 @@
-import { BsFileEarmarkCodeFill } from "react-icons/bs";
+import { BsFileEarmarkCodeFill } from 'react-icons/bs';
 import {
   SiCss3,
   SiPython,
@@ -9,10 +9,10 @@ import {
   SiNextdotjs,
   SiVercel,
   SiTypescript,
-} from "react-icons/si";
-import { VscJson } from "react-icons/vsc";
-import { IoLogoJavascript } from "react-icons/io5";
-import { AiOutlineFileText, AiOutlineFolderOpen } from "react-icons/ai";
+} from 'react-icons/si';
+import { VscJson } from 'react-icons/vsc';
+import { IoLogoJavascript } from 'react-icons/io5';
+import { AiOutlineFileText, AiOutlineFolderOpen } from 'react-icons/ai';
 
 type Props = {
   title?: string;
@@ -22,43 +22,43 @@ type Props = {
 export default function CodeTitle({ title, lang }: Props) {
   let Icon;
   switch (lang) {
-    case "html":
+    case 'html':
       Icon = SiHtml5;
       break;
-    case "css":
+    case 'css':
       Icon = SiCss3;
       break;
-    case "js":
+    case 'js':
       Icon = IoLogoJavascript;
       break;
-    case "bash":
+    case 'bash':
       Icon = SiGnubash;
       break;
-    case "py":
+    case 'py':
       Icon = SiPython;
       break;
-    case "json":
+    case 'json':
       Icon = VscJson;
       break;
-    case "jsx":
+    case 'jsx':
       Icon = SiReact;
       break;
-    case "text":
+    case 'text':
       Icon = AiOutlineFileText;
       break;
-    case "md":
+    case 'md':
       Icon = SiMarkdown;
       break;
-    case "next":
+    case 'next':
       Icon = SiNextdotjs;
       break;
-    case "directory":
+    case 'directory':
       Icon = AiOutlineFolderOpen;
       break;
-    case "vercel":
+    case 'vercel':
       Icon = SiVercel;
       break;
-    case "ts" || "tsx":
+    case 'ts' || 'tsx':
       Icon = SiTypescript;
       break;
     default:
@@ -66,11 +66,11 @@ export default function CodeTitle({ title, lang }: Props) {
       break;
   }
   return (
-    <div className="relative !z-10">
-      <div className="bg-white text-darkSecondary dark:bg-darkSecondary dark:text-gray-200  rounded-tl-md rounded-tr-md p-3  flex items-center justify-between font-mono !mt-4 overflow-x-scroll xs:overflow-auto border border-black   dark:border-gray-200/60  ">
-        <div className="flex items-center gap-2">
-          <Icon className="flex items-center w-4 h-4" />
-          <p className="!my-0 font-[500] text-sm">{title || lang}</p>
+    <div className='relative !z-10'>
+      <div className='!mt-4 flex items-center justify-between  overflow-x-scroll rounded-tl-md rounded-tr-md  border border-black bg-white p-3 font-mono text-darkSecondary dark:border-gray-200/60 dark:bg-darkSecondary dark:text-gray-200   xs:overflow-auto  '>
+        <div className='flex items-center gap-2'>
+          <Icon className='flex h-4 w-4 items-center' />
+          <p className='!my-0 text-sm font-[500]'>{title || lang}</p>
         </div>
       </div>
     </div>

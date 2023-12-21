@@ -1,10 +1,10 @@
-import { GetStaticPropsContext } from "next";
-import MDXComponents from "@components/MDXComponents";
-import { MDXRemote } from "next-mdx-remote";
-import Metadata from "@components/MetaData";
-import PageNotFound from "pages/404";
-import SnippetLayout from "@layout/SnippetLayout";
-import pageMeta from "@content/meta";
+import { GetStaticPropsContext } from 'next';
+import MDXComponents from '@components/MDXComponents';
+import { MDXRemote } from 'next-mdx-remote';
+import Metadata from '@components/MetaData';
+import PageNotFound from 'pages/404';
+import SnippetLayout from '@layout/SnippetLayout';
+import pageMeta from '@content/meta';
 
 export default function SnippetPage({
   snippet,
@@ -19,7 +19,7 @@ export default function SnippetPage({
     <>
       <Metadata
         title={snippet.title}
-        suffix="Jatin Sharma"
+        suffix='Jatin Sharma'
         description={snippet.excerpt}
         previewImage={pageMeta.snippets.image}
         keywords={pageMeta.snippets.keywords}
@@ -51,9 +51,9 @@ type StaticProps = GetStaticPropsContext & {
 export async function getStaticProps({ params }: StaticProps) {
   const { slug } = params;
 
-  console.log("slug: ", slug)
+  console.log('slug: ', slug);
 
-  const snippet = null
+  const snippet = null;
   // const snippet = await getSnippetFromSlug(slug);
 
   if (snippet != null) {

@@ -1,23 +1,23 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from 'framer-motion';
 import {
   FadeContainer,
   popUp,
   popUpFromBottomForText,
   searchBarSlideAnimation,
-} from "@content/FramerMotionVariants";
-import React, { useEffect, useRef, useState } from "react";
+} from '@content/FramerMotionVariants';
+import React, { useEffect, useRef, useState } from 'react';
 
-import AnimatedDiv from "@components/FramerMotion/AnimatedDiv";
-import { BiRss } from "react-icons/bi";
-import Blog from "@components/Blog";
-import { CgSearch } from "react-icons/cg";
-import Link from "next/link";
-import Metadata from "@components/MetaData";
-import PageTop from "@components/PageTop";
-import { debounce } from "@utils/functions";
-import pageMeta from "@content/meta";
-import devToProvider from "@provider/dev.to/devto.provider";
-import { IArticleDevTo } from "@provider/dev.to/devto.interface";
+import AnimatedDiv from '@components/FramerMotion/AnimatedDiv';
+import { BiRss } from 'react-icons/bi';
+import Blog from '@components/Blog';
+import { CgSearch } from 'react-icons/cg';
+import Link from 'next/link';
+import Metadata from '@components/MetaData';
+import PageTop from '@components/PageTop';
+import { debounce } from '@utils/functions';
+import pageMeta from '@content/meta';
+import devToProvider from '@provider/dev.to/devto.provider';
+import { IArticleDevTo } from '@provider/dev.to/devto.interface';
 
 // import { BsBookmark } from "react-icons/bs";
 
@@ -40,14 +40,14 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
    * Handles automatic search functionality when a specific keyboard shortcut is pressed.
    */
   function handleAutoSearch(e: any) {
-    if (e.code === "Slash" && e.ctrlKey) {
+    if (e.code === 'Slash' && e.ctrlKey) {
       searchRef.current.focus();
     }
   }
 
   useEffect(() => {
-    document.addEventListener("keydown", handleAutoSearch);
-    return () => document.removeEventListener("keydown", handleAutoSearch);
+    document.addEventListener('keydown', handleAutoSearch);
+    return () => document.removeEventListener('keydown', handleAutoSearch);
   }, []);
 
   return (
@@ -59,42 +59,42 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
         keywords={pageMeta.blogs.keywords}
       />
 
-      <section className="pageTop flex flex-col gap-2">
-        <PageTop pageTitle="Blogs">
+      <section className='pageTop flex flex-col gap-2'>
+        <PageTop pageTitle='Blogs'>
           I've been writing online since 2021, mostly about web development and
           tech careers. In total, I've written {blogs.length} articles till now.
         </PageTop>
 
         <AnimatedDiv
-          className="relative group w-0 mx-auto text-slate-400 dark:text-gray-300 bg-white dark:bg-darkSecondary rounded-md"
+          className='group relative mx-auto w-0 rounded-md bg-white text-slate-400 dark:bg-darkSecondary dark:text-gray-300'
           variants={searchBarSlideAnimation}
         >
-          <CgSearch className="ml-3 w-5 h-5 absolute top-[50%] -translate-y-1/2 z-10" />
+          <CgSearch className='absolute top-[50%] z-10 ml-3 h-5 w-5 -translate-y-1/2' />
           <input
             ref={searchRef}
-            className="px-12  py-3 w-full  outline-none transition duration-200 bg-transparent font-medium font-inter lg:flex items-center text-sm leading-6 text-slate-400 rounded-md ring-1 ring-slate-900/10 shadow-sm hover:ring-slate-400  dark:highlight-white/5 dark:hover:bg-darkSecondary/90 mx-auto flex relative  group focus:ring-slate-400"
-            type="text"
+            className='dark:highlight-white/5  group relative  mx-auto flex w-full items-center rounded-md bg-transparent px-12 py-3 font-inter text-sm font-medium leading-6 text-slate-400 shadow-sm outline-none ring-1  ring-slate-900/10 transition duration-200 hover:ring-slate-400 focus:ring-slate-400  dark:hover:bg-darkSecondary/90 lg:flex'
+            type='text'
             onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Press (CTRL + /) to search... "
+            placeholder='Press (CTRL + /) to search... '
           />
         </AnimatedDiv>
 
-        <section className="relative py-5  flex flex-col gap-2 min-h-[50vh]">
+        <section className='relative flex  min-h-[50vh] flex-col gap-2 py-5'>
           <AnimatePresence>
             {filteredBlogs.length != 0 ? (
               <>
                 <AnimatedDiv
                   variants={FadeContainer}
-                  className="flex items-center justify-between"
+                  className='flex items-center justify-between'
                 >
                   <motion.h3
                     variants={popUpFromBottomForText}
-                    className="text-left font-bold text-2xl sm:text-3xl my-5"
+                    className='my-5 text-left text-2xl font-bold sm:text-3xl'
                   >
                     All Posts ({filteredBlogs.length})
                   </motion.h3>
 
-                  <div className="flex items-center gap-2">
+                  <div className='flex items-center gap-2'>
                     {/* <Link href="/blogs/bookmark" legacyBehavior>
                       <motion.div variants={popUp}>
                         <BsBookmark
@@ -104,11 +104,11 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
                       </motion.div>
                     </Link> */}
 
-                    <Link href="/rss" legacyBehavior>
+                    <Link href='/rss' legacyBehavior>
                       <motion.div variants={popUp}>
                         <BiRss
-                          title="RSS"
-                          className="text-3xl cursor-pointer"
+                          title='RSS'
+                          className='cursor-pointer text-3xl'
                         />
                       </motion.div>
                     </Link>
@@ -117,7 +117,7 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 
                 <AnimatedDiv
                   variants={FadeContainer}
-                  className="grid grid-cols-1 gap-4 mx-auto"
+                  className='mx-auto grid grid-cols-1 gap-4'
                 >
                   {filteredBlogs.map((blog, index) => {
                     return <Blog key={index} blog={blog} />;
@@ -125,7 +125,7 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
                 </AnimatedDiv>
               </>
             ) : (
-              <div className="font-inter text-center font-medium dark:text-gray-400">
+              <div className='text-center font-inter font-medium dark:text-gray-400'>
                 No Result Found
               </div>
             )}

@@ -1,6 +1,6 @@
-import { IoIosArrowUp } from "react-icons/io";
-import { useEffect, useState } from "react";
-import useScrollPercentage from "@hooks/useScrollPercentage";
+import { IoIosArrowUp } from 'react-icons/io';
+import { useEffect, useState } from 'react';
+import useScrollPercentage from '@hooks/useScrollPercentage';
 
 export default function ScrollToTopButton() {
   const [showButton, setShowButton] = useState(false);
@@ -18,7 +18,7 @@ export default function ScrollToTopButton() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // for smoothly scrolling
+      behavior: 'smooth', // for smoothly scrolling
     });
   };
 
@@ -27,10 +27,10 @@ export default function ScrollToTopButton() {
       {showButton && (
         <button
           onClick={scrollToTop}
-          aria-label="Scroll To Top"
-          className="fixed bottom-20 right-8 md:bottom-[50px] md:right-[20px]  z-40 print:hidden"
+          aria-label='Scroll To Top'
+          className='fixed bottom-20 right-8 z-40 print:hidden  md:bottom-[50px] md:right-[20px]'
         >
-          <IoIosArrowUp className="bg-black dark:bg-gray-200 dark:text-darkPrimary text-white rounded-lg shadow-lg text-[45px] md:mr-10" />
+          <IoIosArrowUp className='rounded-lg bg-black text-[45px] text-white shadow-lg dark:bg-gray-200 dark:text-darkPrimary md:mr-10' />
         </button>
       )}
     </>

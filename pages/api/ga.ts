@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { BetaAnalyticsDataClient } from "@google-analytics/data";
+import { NextApiRequest, NextApiResponse } from 'next';
+import { BetaAnalyticsDataClient } from '@google-analytics/data';
 
 const propertyId = process.env.GA_PROPERTY_ID;
 const DAYS = 7;
@@ -20,17 +20,17 @@ export default async function handler(
     dateRanges: [
       {
         startDate: `${DAYS}daysAgo`,
-        endDate: "today",
+        endDate: 'today',
       },
     ],
     dimensions: [
       {
-        name: "year",
+        name: 'year',
       },
     ],
     metrics: [
       {
-        name: "activeUsers",
+        name: 'activeUsers',
       },
     ],
   });
@@ -41,8 +41,8 @@ export default async function handler(
   });
 
   res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=43200, stale-while-revalidate=21600"
+    'Cache-Control',
+    'public, s-maxage=43200, stale-while-revalidate=21600'
   );
 
   return res.status(200).json({

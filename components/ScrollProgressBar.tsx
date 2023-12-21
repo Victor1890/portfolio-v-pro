@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 
 export default function ScrollProgressBar() {
-  const [scroll, setScroll] = useState("0");
+  const [scroll, setScroll] = useState('0');
 
   const progressBarHandler = useCallback(() => {
     const totalScroll = document.documentElement.scrollTop;
@@ -14,12 +14,12 @@ export default function ScrollProgressBar() {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", progressBarHandler);
-    return () => window.removeEventListener("scroll", progressBarHandler);
+    window.addEventListener('scroll', progressBarHandler);
+    return () => window.removeEventListener('scroll', progressBarHandler);
   }, [progressBarHandler]);
   return (
     <div
-      className="!fixed left-0 w-full h-1 bg-black dark:bg-white origin-top-left  transform duration-300  top-[44px] sm:top-[63.5px] md:top-[52px]"
+      className='!fixed left-0 top-[44px] h-1 w-full origin-top-left transform  bg-black duration-300  dark:bg-white sm:top-[63.5px] md:top-[52px]'
       style={{
         transform: `scale(${scroll},1)`,
         zIndex: 100,

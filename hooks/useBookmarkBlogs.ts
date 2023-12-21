@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
-import { FrontMatter } from "@lib/types";
-import { IArticleDevTo } from "@provider/dev.to/devto.interface";
+import { useEffect, useState } from 'react';
+import { FrontMatter } from '@lib/types';
+import { IArticleDevTo } from '@provider/dev.to/devto.interface';
 
 const useBookmarkBlogs = (key: string, defaultValue: []) => {
-  const [bookmarkedBlogs, setBookmarkedBlogs] = useState((): IArticleDevTo[] => {
-    let currentValue: IArticleDevTo[] = [];
+  const [bookmarkedBlogs, setBookmarkedBlogs] = useState(
+    (): IArticleDevTo[] => {
+      let currentValue: IArticleDevTo[] = [];
 
-    try {
-      currentValue = JSON.parse(localStorage.getItem(key)!);
-    } catch (error) {
-      currentValue = defaultValue;
+      try {
+        currentValue = JSON.parse(localStorage.getItem(key)!);
+      } catch (error) {
+        currentValue = defaultValue;
+      }
+
+      return currentValue;
     }
-
-    return currentValue;
-  });
+  );
 
   function getValue() {
     const data = JSON.parse(localStorage.getItem(key)!);
@@ -42,8 +44,7 @@ const useBookmarkBlogs = (key: string, defaultValue: []) => {
   function isAlreadyBookmarked(searchBySlug: string) {
     return bookmarkedBlogs
       ?.map(
-        (bookmarkedBlog: IArticleDevTo) =>
-          bookmarkedBlog.slug === searchBySlug
+        (bookmarkedBlog: IArticleDevTo) => bookmarkedBlog.slug === searchBySlug
       )
       .includes(true);
   }

@@ -1,12 +1,12 @@
-import { AnimatePresence } from "framer-motion";
-import AnimatedDiv from "@components/FramerMotion/AnimatedDiv";
-import { FadeContainer } from "@content/FramerMotionVariants";
+import { AnimatePresence } from 'framer-motion';
+import AnimatedDiv from '@components/FramerMotion/AnimatedDiv';
+import { FadeContainer } from '@content/FramerMotionVariants';
 // import { ISnippet } from "@lib/interface/sanity";
-import Metadata from "@components/MetaData";
-import PageTop from "@components/PageTop";
-import SnippetCard from "@components/SnippetCard";
+import Metadata from '@components/MetaData';
+import PageTop from '@components/PageTop';
+import SnippetCard from '@components/SnippetCard';
 // import { getAllSnippetsMeta } from "@lib/sanityContent";
-import pageMeta from "@content/meta";
+import pageMeta from '@content/meta';
 
 export default function Snippets({ snippets }: { snippets: unknown[] }) {
   return (
@@ -18,15 +18,15 @@ export default function Snippets({ snippets }: { snippets: unknown[] }) {
         keywords={pageMeta.snippets.keywords}
       />
 
-      <section className="pageTop flex flex-col gap-2">
+      <section className='pageTop flex flex-col gap-2'>
         <PageTop pageTitle={pageMeta.snippets.title}>
           {pageMeta.snippets.description}
         </PageTop>
 
-        <section className="relative flex flex-col gap-2 min-h-[50vh]">
+        <section className='relative flex min-h-[50vh] flex-col gap-2'>
           <AnimatedDiv
             variants={FadeContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full"
+            className='grid w-full grid-cols-1 gap-4 sm:grid-cols-2'
           >
             <AnimatePresence>
               {(snippets || []).map((snippet, index) => {

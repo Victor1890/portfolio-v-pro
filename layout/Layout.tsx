@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import TopNavbar from "../components/TopNavbar";
-import ScrollToTopButton from "../components/ScrollToTopButton";
-import Footer from "../components/Footer";
-import QRCodeContainer from "@components/QRCodeContainer";
+import React, { useState } from 'react';
+import TopNavbar from '../components/TopNavbar';
+import ScrollToTopButton from '../components/ScrollToTopButton';
+import Footer from '../components/Footer';
+import QRCodeContainer from '@components/QRCodeContainer';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [showQR, setShowQR] = useState(false);

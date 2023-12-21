@@ -1,38 +1,38 @@
-import { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import { AiOutlineSend } from "react-icons/ai";
-import { useDarkMode } from "@context/darkModeContext";
-import { CgSpinnerTwo } from "react-icons/cg";
+import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import { AiOutlineSend } from 'react-icons/ai';
+import { useDarkMode } from '@context/darkModeContext';
+import { CgSpinnerTwo } from 'react-icons/cg';
 
 export default function Newsletter() {
   const { isDarkMode } = useDarkMode();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [validationLoading, setValidationLoading] = useState(false);
 
   async function subscribeNewsLetter(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setValidationLoading(true);
 
-    fetch("/api/validate/email", {
-      method: "POST",
+    fetch('/api/validate/email', {
+      method: 'POST',
       body: JSON.stringify({
         email,
       }),
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.status === "success" && res.valid === true) {
+        if (res.status === 'success' && res.valid === true) {
           try {
             fetch(process.env.NEXT_PUBLIC_EMAIL_LIST + email, {
-              mode: "no-cors",
+              mode: 'no-cors',
             });
           } catch (error) {
             console.error(error);
           }
-          toast.success("You have been added to my mailing list.");
-          setEmail("");
+          toast.success('You have been added to my mailing list.');
+          setEmail('');
         } else {
-          toast.error("Please enter valid email address.");
+          toast.error('Please enter valid email address.');
         }
         setValidationLoading(false);
       })
@@ -44,37 +44,37 @@ export default function Newsletter() {
 
   return (
     <>
-      <div className="flex flex-col w-full gap-4 p-4 my-10 bg-white rounded-lg font-barlow ring-2 ring-gray-400 dark:bg-black dark:border-neutral-600 print:hidden">
-        <h2 className="text-2xl font-bold dark:text-white !my-0">
+      <div className='my-10 flex w-full flex-col gap-4 rounded-lg bg-white p-4 font-barlow ring-2 ring-gray-400 dark:border-neutral-600 dark:bg-black print:hidden'>
+        <h2 className='!my-0 text-2xl font-bold dark:text-white'>
           Jatin's Newsletter
         </h2>
-        <p className="text-gray-600 dark:text-gray-300 font-medium !my-0">
+        <p className='!my-0 font-medium text-gray-600 dark:text-gray-300'>
           I write monthly Tech, Web Development and chrome extension that will
           improve your productivity. Trust me, I won't spam you.
         </p>
 
-        <form className="relative w-full" onSubmit={subscribeNewsLetter}>
+        <form className='relative w-full' onSubmit={subscribeNewsLetter}>
           <input
-            className="px-4 py-2.5 rounded-lg text-lg bg-gray-200 dark:bg-darkSecondary outline-none border-0 w-full placeholder:text-gray-700 dark:placeholder:text-gray-400 dark:text-gray-300"
-            type="email"
-            name="email"
+            className='w-full rounded-lg border-0 bg-gray-200 px-4 py-2.5 text-lg outline-none placeholder:text-gray-700 dark:bg-darkSecondary dark:text-gray-300 dark:placeholder:text-gray-400'
+            type='email'
+            name='email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="example@email.com"
+            placeholder='example@email.com'
             required={true}
           />
 
           <button
-            className="absolute right-0 top-0 bottom-0 px-4 m-[3px] bg-white dark:text-white dark:bg-neutral-600/40   rounded-md font-medium font-inter transform duration-200 active:scale-90 select-none"
-            type="submit"
+            className='absolute right-0 top-0 bottom-0 m-[3px] transform select-none rounded-md bg-white   px-4 font-inter font-medium duration-200 active:scale-90 dark:bg-neutral-600/40 dark:text-white'
+            type='submit'
           >
-            <div className="relative flex items-center gap-2 !my-0 sm:w-[100px]">
+            <div className='relative !my-0 flex items-center gap-2 sm:w-[100px]'>
               {validationLoading ? (
-                <CgSpinnerTwo className="text-xl mx-auto animate-[spin_0.5s_linear_infinite]" />
+                <CgSpinnerTwo className='mx-auto animate-[spin_0.5s_linear_infinite] text-xl' />
               ) : (
                 <>
-                  <AiOutlineSend className="text-xl" />
-                  <p className="hidden sm:inline-flex !my-0">Subscribe</p>
+                  <AiOutlineSend className='text-xl' />
+                  <p className='!my-0 hidden sm:inline-flex'>Subscribe</p>
                 </>
               )}
             </div>
@@ -83,7 +83,7 @@ export default function Newsletter() {
       </div>
 
       <ToastContainer
-        theme={isDarkMode ? "dark" : "light"}
+        theme={isDarkMode ? 'dark' : 'light'}
         style={{ zIndex: 1000 }}
         autoClose={3000}
       />

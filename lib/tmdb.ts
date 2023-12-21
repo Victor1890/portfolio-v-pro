@@ -1,9 +1,9 @@
-import { ITMDBData } from "./interface";
+import { ITMDBData } from './interface';
 
 const options: RequestInit = {
-  method: "GET",
+  method: 'GET',
   headers: {
-    accept: "application/json",
+    accept: 'application/json',
     Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`,
   },
 };
@@ -12,7 +12,7 @@ async function fetchData(url: string): Promise<ITMDBData[]> {
   try {
     const response = await fetch(url, options);
     if (!response.ok) {
-      throw new Error("Error while fetching TMDB data: " + response.statusText);
+      throw new Error('Error while fetching TMDB data: ' + response.statusText);
     }
     const data = await response.json();
     return (data?.results ?? data?.items) as ITMDBData[];

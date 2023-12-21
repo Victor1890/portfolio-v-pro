@@ -1,28 +1,28 @@
-import { getMDXTableOfContents } from "@utils/mdx.util";
-import { readFileSync } from "fs";
-import { sync } from "glob";
-import matter from "gray-matter";
-import { serialize } from "next-mdx-remote/serialize";
-import path from "path";
-import readTime from "reading-time";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import { FrontMatter } from "./types";
+import { getMDXTableOfContents } from '@utils/mdx.util';
+import { readFileSync } from 'fs';
+import { sync } from 'glob';
+import matter from 'gray-matter';
+import { serialize } from 'next-mdx-remote/serialize';
+import path from 'path';
+import readTime from 'reading-time';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
+import rehypeSlug from 'rehype-slug';
+import { FrontMatter } from './types';
 
 export default class MDXContent {
   private readonly POST_PATH: string;
 
   constructor(folderName: string) {
-    this.POST_PATH = path.join(process.cwd(), "content", "md", folderName);
+    this.POST_PATH = path.join(process.cwd(), 'content', 'md', folderName);
   }
 
   getSlugs() {
     const paths = sync(`${this.POST_PATH}/*.mdx`);
     return paths.map((path) => {
-      const parts = path.split("/");
+      const parts = path.split('/');
       const fileName = parts[parts.length - 1];
-      const [slug, _ext] = fileName.split(".");
+      const [slug, _ext] = fileName.split('.');
       return slug;
     });
   }
@@ -38,11 +38,11 @@ export default class MDXContent {
     return {
       slug,
       readingTime,
-      excerpt: data.excerpt ?? "",
+      excerpt: data.excerpt ?? '',
       title: data.title ?? slug,
       date: (data.date ?? new Date()).toString(),
-      keywords: data.keywords ?? "",
-      image: data.image ?? "https://imgur.com/aNqa9cE.png",
+      keywords: data.keywords ?? '',
+      image: data.image ?? 'https://imgur.com/aNqa9cE.png',
       org: data.org ?? null,
     };
   }
@@ -56,27 +56,27 @@ export default class MDXContent {
     const frontMatter = this.getFrontMatter(slug);
 
     const prettyCodeOptions = {
-      theme: "one-dark-pro",
+      theme: 'one-dark-pro',
       onVisitLine(node: any) {
         // Prevent lines from collapsing in `display: grid` mode, and
         // allow empty lines to be copy/pasted
         if (node.children.length === 0) {
-          node.children = [{ type: "text", value: " " }];
+          node.children = [{ type: 'text', value: ' ' }];
         }
       },
       // Feel free to add classNames that suit your docs
       onVisitHighlightedLine(node: any) {
-        node.properties.className.push("highlighted");
+        node.properties.className.push('highlighted');
       },
       onVisitHighlightedWord(node: any) {
-        node.properties.className = ["word"];
+        node.properties.className = ['word'];
       },
     };
     const mdxSource = await serialize(content, {
       mdxOptions: {
         rehypePlugins: [
           rehypeSlug,
-          [rehypeAutolinkHeadings, { behaviour: "wrap" }],
+          [rehypeAutolinkHeadings, { behaviour: 'wrap' }],
           [rehypePrettyCode, prettyCodeOptions],
         ],
       },

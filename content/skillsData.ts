@@ -1,4 +1,4 @@
-import { SkillType } from "@lib/types";
+import { SkillType } from '@lib/types';
 import {
   SiBootstrap,
   SiCss3,
@@ -20,92 +20,92 @@ import {
   SiSupabase,
   SiTailwindcss,
   SiTypescript,
-  SiSocketdotio
-} from "react-icons/si";
+  SiSocketdotio,
+} from 'react-icons/si';
 
 const skills: SkillType[] = [
   {
-    name: "HTML",
+    name: 'HTML',
     Icon: SiHtml5,
   },
   {
-    name: "CSS",
+    name: 'CSS',
     Icon: SiCss3,
   },
   {
-    name: "Javascript",
+    name: 'Javascript',
     Icon: SiJavascript,
   },
   {
-    name: "Typescript",
+    name: 'Typescript',
     Icon: SiTypescript,
   },
   {
-    name: "Node.js",
+    name: 'Node.js',
     Icon: SiNodedotjs,
   },
   {
-    name: "Next.js",
+    name: 'Next.js',
     Icon: SiNextdotjs,
   },
   {
-    name: "Redux",
+    name: 'Redux',
     Icon: SiRedux,
   },
   {
-    name: "Socket IO",
+    name: 'Socket IO',
     Icon: SiSocketdotio,
   },
   {
-    name: "Tailwind CSS",
+    name: 'Tailwind CSS',
     Icon: SiTailwindcss,
   },
   {
-    name: "Bootstrap",
+    name: 'Bootstrap',
     Icon: SiBootstrap,
   },
   {
-    name: "Material UI (MUI)",
+    name: 'Material UI (MUI)',
     Icon: SiMaterialui,
   },
   {
-    name: "Docker and Composer",
+    name: 'Docker and Composer',
     Icon: SiDocker,
   },
   {
-    name: "MySQL",
+    name: 'MySQL',
     Icon: SiMysql,
   },
   {
-    name: "PostgresSQL",
+    name: 'PostgresSQL',
     Icon: SiPostgresql,
   },
   {
-    name: "MongoDB",
+    name: 'MongoDB',
     Icon: SiMongodb,
   },
   {
-    name: "Redis",
+    name: 'Redis',
     Icon: SiRedis,
   },
   {
-    name: "Firebase",
+    name: 'Firebase',
     Icon: SiFirebase,
   },
   {
-    name: "Supabase",
+    name: 'Supabase',
     Icon: SiSupabase,
   },
   {
-    name: "Markdown",
+    name: 'Markdown',
     Icon: SiMarkdown,
   },
   {
-    name: "Git",
+    name: 'Git',
     Icon: SiGit,
   },
   {
-    name: "Figma",
+    name: 'Figma',
     Icon: SiFigma,
   },
 ];

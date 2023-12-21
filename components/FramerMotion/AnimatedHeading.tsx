@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { AnimatedTAGProps } from "@lib/types";
+import { motion } from 'framer-motion';
+import { AnimatedTAGProps } from '@lib/types';
 
 export default function AnimatedHeading({
   variants,
@@ -9,8 +9,8 @@ export default function AnimatedHeading({
 }: AnimatedTAGProps) {
   return (
     <motion.h1
-      initial="hidden"
-      whileInView="visible"
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: !infinity }}
       variants={variants}
       className={className}

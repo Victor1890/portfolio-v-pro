@@ -1,8 +1,8 @@
 import {
   // addView,
-  getViewBySlug
-} from "@lib/supabase";
-import { NextApiRequest, NextApiResponse } from "next";
+  getViewBySlug,
+} from '@lib/supabase';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 /* Extending API request because by default quey.slug return string | string[] and I only want string */
 interface ExtendedNextApiRequest extends NextApiRequest {
@@ -29,15 +29,13 @@ export default async function viewsSlug(
   res: NextApiResponse
 ) {
   const slug = req.query.slug;
-  if (req.method === "GET") {
+  if (req.method === 'GET') {
     const data = await getViewBySlug(slug);
     if (data === undefined) {
-      return res
-        .status(404)
-        .json({
-          message:
-            "Sorry, the slug you're looking for has gone for a coffee break. Please try again later or make a cup of tea while you wait.",
-        });
+      return res.status(404).json({
+        message:
+          "Sorry, the slug you're looking for has gone for a coffee break. Please try again later or make a cup of tea while you wait.",
+      });
     } else {
       return res.status(200).json(data);
     }

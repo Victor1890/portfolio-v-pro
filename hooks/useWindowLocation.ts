@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 type URL = string;
 
 export default function useWindowLocation() {
-  const [currentURL, setCurrentURL] = useState<URL>("");
+  const [currentURL, setCurrentURL] = useState<URL>('');
   const router = useRouter();
 
   useEffect(() => {

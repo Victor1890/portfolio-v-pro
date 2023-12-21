@@ -1,8 +1,8 @@
-import { IconType } from "react-icons/lib";
-import { MDXRemoteSerializeResult } from "next-mdx-remote";
-import React from "react";
-import { ReadTimeResults } from "reading-time";
-import { Variants } from "framer-motion";
+import { IconType } from 'react-icons/lib';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import React from 'react';
+import { ReadTimeResults } from 'reading-time';
+import { Variants } from 'framer-motion';
 
 /* Custom Animated Components types */
 export type AnimatedTAGProps = {

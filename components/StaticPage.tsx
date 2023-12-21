@@ -1,11 +1,11 @@
-import AnimatedDiv from "@components/FramerMotion/AnimatedDiv";
-import MDXComponents from "@components/MDXComponents";
-import { MDXRemote } from "next-mdx-remote";
-import MetaData from "@components/MetaData";
-import { PageData } from "@lib/types";
-import PageTop from "@components/PageTop";
-import { opacityVariant } from "@content/FramerMotionVariants";
-import { IStaticInfo } from "interfaces/about/about.interface";
+import AnimatedDiv from '@components/FramerMotion/AnimatedDiv';
+import MDXComponents from '@components/MDXComponents';
+import { MDXRemote } from 'next-mdx-remote';
+import MetaData from '@components/MetaData';
+import { PageData } from '@lib/types';
+import PageTop from '@components/PageTop';
+import { opacityVariant } from '@content/FramerMotionVariants';
+import { IStaticInfo } from 'interfaces/about/about.interface';
 
 export default function StaticPage({
   metadata,
@@ -25,16 +25,16 @@ export default function StaticPage({
         keywords={metadata.keywords}
       />
 
-      <section className="pageTop">
-        <PageTop containerClass="mb-0" pageTitle={page.title}>
+      <section className='pageTop'>
+        <PageTop containerClass='mb-0' pageTitle={page.title}>
           {showDescription && (metadata.description || page.excerpt)}
         </PageTop>
         <AnimatedDiv
           variants={opacityVariant}
-          className="max-w-full prose dark:prose-invert"
+          className='prose max-w-full dark:prose-invert'
         >
           <MDXRemote
-            {...page.content as any}
+            {...(page.content as any)}
             frontmatter={{
               slug: page.slug,
               excerpt: page.excerpt,

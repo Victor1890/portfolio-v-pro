@@ -1,9 +1,9 @@
-import QRCode from "react-qr-code";
-import Ripples from "react-ripples";
-import useWindowLocation from "@hooks/useWindowLocation";
-import { CgClose } from "react-icons/cg";
-import { AnimatePresence, motion } from "framer-motion";
-import { useDarkMode } from "@context/darkModeContext";
+import QRCode from 'react-qr-code';
+import Ripples from 'react-ripples';
+import useWindowLocation from '@hooks/useWindowLocation';
+import { CgClose } from 'react-icons/cg';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useDarkMode } from '@context/darkModeContext';
 
 export default function QRCodeContainer({
   showQR,
@@ -16,18 +16,18 @@ export default function QRCodeContainer({
   const { isDarkMode } = useDarkMode();
 
   function downloadQRCode() {
-    const svg = document.getElementById("QRCode");
+    const svg = document.getElementById('QRCode');
     const svgData = new XMLSerializer().serializeToString(svg!);
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
     const img = new Image();
     img.onload = () => {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx?.drawImage(img, 0, 0);
-      const pngFile = canvas.toDataURL("image/png");
-      const downloadLink = document.createElement("a");
-      downloadLink.download = "QRCode";
+      const pngFile = canvas.toDataURL('image/png');
+      const downloadLink = document.createElement('a');
+      downloadLink.download = 'QRCode';
       downloadLink.href = `${pngFile}`;
       downloadLink.click();
     };
@@ -38,47 +38,47 @@ export default function QRCodeContainer({
       <AnimatePresence>
         {showQR && (
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            exit="hidden"
+            initial='hidden'
+            whileInView='visible'
+            exit='hidden'
             variants={{
-              hidden: { y: "100vh", opacity: 0 },
+              hidden: { y: '100vh', opacity: 0 },
               visible: {
                 y: 0,
                 opacity: 1,
               },
             }}
             transition={{
-              type: "spring",
+              type: 'spring',
               bounce: 0.15,
             }}
-            className="fixed inset-0 grid bg-white dark:bg-darkSecondary place-items-center"
+            className='fixed inset-0 grid place-items-center bg-white dark:bg-darkSecondary'
             style={{ zIndex: 10000 }}
           >
             <button
-              className="absolute text-black outline-none right-5 top-5 dark:text-white"
+              className='absolute right-5 top-5 text-black outline-none dark:text-white'
               onClick={() => setShowQR(false)}
             >
-              <CgClose className="w-8 h-8" />
+              <CgClose className='h-8 w-8' />
             </button>
 
-            <div className="flex flex-col gap-2 text-black dark:text-white">
-              <h1 className="text-xl font-semibold">Share this page</h1>
+            <div className='flex flex-col gap-2 text-black dark:text-white'>
+              <h1 className='text-xl font-semibold'>Share this page</h1>
               <QRCode
-                id="QRCode"
+                id='QRCode'
                 value={currentURL}
-                bgColor={isDarkMode ? "#25282a" : "white"}
-                fgColor={isDarkMode ? "white" : "#25282a"}
+                bgColor={isDarkMode ? '#25282a' : 'white'}
+                fgColor={isDarkMode ? 'white' : '#25282a'}
               />
 
               <Ripples
-                className="mt-2"
+                className='mt-2'
                 color={
-                  isDarkMode ? "rgba(0,0,0, 0.2)" : "rgba(225, 225, 225, 0.2)"
+                  isDarkMode ? 'rgba(0,0,0, 0.2)' : 'rgba(225, 225, 225, 0.2)'
                 }
               >
                 <button
-                  className="w-full px-3 py-2 text-sm font-medium text-white rounded bg-darkPrimary dark:bg-gray-100 dark:text-darkPrimary"
+                  className='w-full rounded bg-darkPrimary px-3 py-2 text-sm font-medium text-white dark:bg-gray-100 dark:text-darkPrimary'
                   onClick={downloadQRCode}
                 >
                   Download

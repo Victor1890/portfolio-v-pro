@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from '@supabase/supabase-js';
 
 // A Supabase client object for making requests to a Supabase server.
 export const supabase = createClient(
@@ -12,10 +12,10 @@ export const supabase = createClient(
  */
 export async function getProjects() {
   const { data: projects, error } = await supabase
-    .from("projects")
-    .select("*")
-    .eq("pinned", "true")
-    .order("created_at", { ascending: false });
+    .from('projects')
+    .select('*')
+    .eq('pinned', 'true')
+    .order('created_at', { ascending: false });
 
   return {
     projects,
@@ -29,10 +29,10 @@ export async function getProjects() {
  */
 export async function getCertificates() {
   const { data: certificates, error } = await supabase
-    .from("certificates")
-    .select("*")
-    .eq("pinned", "true")
-    .order("created_at", { ascending: false });
+    .from('certificates')
+    .select('*')
+    .eq('pinned', 'true')
+    .order('created_at', { ascending: false });
 
   return {
     certificates,
@@ -51,11 +51,11 @@ export async function addView(slug: string) {
 
     if (blogSlug !== undefined) {
       return await supabase
-        .from("views")
+        .from('views')
         .update({ views: blogSlug.views + 1 })
-        .eq("slug", slug);
+        .eq('slug', slug);
     } else {
-      return await supabase.from("views").insert({
+      return await supabase.from('views').insert({
         slug: slug,
         views: 1,
       });
@@ -72,9 +72,9 @@ export async function addView(slug: string) {
 export async function getViewBySlug(slug: string) {
   try {
     const { data } = await supabase
-      .from("views")
-      .select("views")
-      .eq("slug", slug);
+      .from('views')
+      .select('views')
+      .eq('slug', slug);
     return data![0];
   } catch (error) {
     console.error(error);
@@ -90,8 +90,8 @@ export async function getViewBySlug(slug: string) {
 export async function getAllViews() {
   try {
     // views_sum is defined in supabase
-    const { data: totalViews } = await supabase.rpc("views_sum");
-    const { data: posts } = await supabase.from("views").select("*");
+    const { data: totalViews } = await supabase.rpc('views_sum');
+    const { data: posts } = await supabase.from('views').select('*');
 
     return {
       totalViews,
@@ -106,11 +106,11 @@ export async function getAllViews() {
  */
 export async function getUserDataValue(key: string) {
   const { data, error } = await supabase
-    .from("user_data")
-    .select("value")
-    .eq("key", key)
+    .from('user_data')
+    .select('value')
+    .eq('key', key)
     .limit(1)
-    .order("created_at", { ascending: false });
+    .order('created_at', { ascending: false });
 
   if (!data?.length || !data) {
     return {
