@@ -1,3 +1,10 @@
+## [0.1.5](https://github.com/Victor1890/portfolio-v-pro/compare/v0.0.1...v0.1.5) (2023-12-22)
+
+### Features
+
+- :memo: add changelog.md ([00c6a06](https://github.com/Victor1890/portfolio-v-pro/commit/00c6a068c91c180f7b419fd57c6c28155109b0b2))
+- :sparkles: add new certificates and interfaces ([2a53dfc](https://github.com/Victor1890/portfolio-v-pro/commit/2a53dfc752315c7c79813a0e623d0f1e12f87a1b))
+
 ## 0.0.1 (2023-12-21)
 
 ### Features
