@@ -1,7 +1,5 @@
-import { Fragment } from 'react';
-import SyntaxHighlighter, {
-  SyntaxHighlighterProps,
-} from 'react-syntax-highlighter';
+import { Fragment } from 'react'
+import SyntaxHighlighter, { SyntaxHighlighterProps } from 'react-syntax-highlighter'
 // import {
 // darcula,
 // nnfxDark,
@@ -15,15 +13,15 @@ import SyntaxHighlighter, {
 interface ICodeProps extends SyntaxHighlighterProps {}
 
 export default function Code({ className, ...props }: ICodeProps) {
-  return (
-    <Fragment>
-      <SyntaxHighlighter
-        // language={'javascript'}
-        language={'typescript'}
-        PreTag='div'
-        // style={stackoverflowDark}
-        {...props}
-      />
-    </Fragment>
-  );
+	return (
+		<Fragment>
+			<SyntaxHighlighter
+				// language={'javascript'}
+				language={'typescript'}
+				PreTag='div'
+				// style={stackoverflowDark}
+				{...props}
+			/>
+		</Fragment>
+	)
 }

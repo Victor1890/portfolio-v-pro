@@ -1,28 +1,24 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react'
 export default function useScrollPercentage() {
-  // fifteen
-  const [scrollPercentage, setScrollPercentage] = useState(0);
-  function getScrollPercent(): number {
-    const h = document.documentElement;
-    const b = document.body;
+	// fifteen
+	const [scrollPercentage, setScrollPercentage] = useState(0)
+	function getScrollPercent(): number {
+		const h = document.documentElement
+		const b = document.body
 
-    return (
-      ((h.scrollTop || b.scrollTop) /
-        ((h.scrollHeight || b.scrollHeight) - h.clientHeight)) *
-      100
-    );
-  }
+		return ((h.scrollTop || b.scrollTop) / ((h.scrollHeight || b.scrollHeight) - h.clientHeight)) * 100
+	}
 
-  const scrollEvent = useCallback(() => {
-    setScrollPercentage(getScrollPercent());
-  }, []);
+	const scrollEvent = useCallback(() => {
+		setScrollPercentage(getScrollPercent())
+	}, [])
 
-  useEffect(() => {
-    window.addEventListener('scroll', scrollEvent);
-    return () => {
-      window.removeEventListener('scroll', scrollEvent);
-    };
-  }, [scrollEvent]);
+	useEffect(() => {
+		window.addEventListener('scroll', scrollEvent)
+		return () => {
+			window.removeEventListener('scroll', scrollEvent)
+		}
+	}, [scrollEvent])
 
-  return scrollPercentage;
+	return scrollPercentage
 }

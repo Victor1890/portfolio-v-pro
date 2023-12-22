@@ -1,26 +1,23 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js'
 
 // A Supabase client object for making requests to a Supabase server.
-export const supabase = createClient(
-  process.env.SUPABASE_URL!,
-  process.env.SUPABASE_KEY!
-);
+export const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_KEY!)
 
 /**
  * Asynchronously fetches all projects from the database where the 'pinned' column is set to true.
  * The results are sorted by the 'created_at' column in descending order.
  */
 export async function getProjects() {
-  const { data: projects, error } = await supabase
-    .from('projects')
-    .select('*')
-    .eq('pinned', 'true')
-    .order('created_at', { ascending: false });
+	const { data: projects, error } = await supabase
+		.from('projects')
+		.select('*')
+		.eq('pinned', 'true')
+		.order('created_at', { ascending: false })
 
-  return {
-    projects,
-    error: error !== null,
-  };
+	return {
+		projects,
+		error: error !== null,
+	}
 }
 
 /**
@@ -28,16 +25,16 @@ export async function getProjects() {
  * The results are sorted by the 'created_at' column in descending order.
  */
 export async function getCertificates() {
-  const { data: certificates, error } = await supabase
-    .from('certificates')
-    .select('*')
-    .eq('pinned', 'true')
-    .order('created_at', { ascending: false });
+	const { data: certificates, error } = await supabase
+		.from('certificates')
+		.select('*')
+		.eq('pinned', 'true')
+		.order('created_at', { ascending: false })
 
-  return {
-    certificates,
-    error: error !== null,
-  };
+	return {
+		certificates,
+		error: error !== null,
+	}
 }
 
 /**
@@ -46,23 +43,23 @@ export async function getCertificates() {
  * If the post does not exist, it creates a new record with the slug and views set to 1.
  */
 export async function addView(slug: string) {
-  try {
-    const blogSlug = await getViewBySlug(slug);
+	try {
+		const blogSlug = await getViewBySlug(slug)
 
-    if (blogSlug !== undefined) {
-      return await supabase
-        .from('views')
-        .update({ views: blogSlug.views + 1 })
-        .eq('slug', slug);
-    } else {
-      return await supabase.from('views').insert({
-        slug: slug,
-        views: 1,
-      });
-    }
-  } catch (err) {
-    console.error(err);
-  }
+		if (blogSlug !== undefined) {
+			return await supabase
+				.from('views')
+				.update({ views: blogSlug.views + 1 })
+				.eq('slug', slug)
+		} else {
+			return await supabase.from('views').insert({
+				slug: slug,
+				views: 1,
+			})
+		}
+	} catch (err) {
+		console.error(err)
+	}
 }
 
 /**
@@ -70,15 +67,12 @@ export async function addView(slug: string) {
  * It queries the database and selects the "views" field for the record with a matching "slug" value.
  */
 export async function getViewBySlug(slug: string) {
-  try {
-    const { data } = await supabase
-      .from('views')
-      .select('views')
-      .eq('slug', slug);
-    return data![0];
-  } catch (error) {
-    console.error(error);
-  }
+	try {
+		const { data } = await supabase.from('views').select('views').eq('slug', slug)
+		return data![0]
+	} catch (error) {
+		console.error(error)
+	}
 }
 
 /**
@@ -88,38 +82,38 @@ export async function getViewBySlug(slug: string) {
  * Then it retrieves all the records from "views" table.
  */
 export async function getAllViews() {
-  try {
-    // views_sum is defined in supabase
-    const { data: totalViews } = await supabase.rpc('views_sum');
-    const { data: posts } = await supabase.from('views').select('*');
+	try {
+		// views_sum is defined in supabase
+		const { data: totalViews } = await supabase.rpc('views_sum')
+		const { data: posts } = await supabase.from('views').select('*')
 
-    return {
-      totalViews,
-      posts,
-    };
-  } catch (error) {
-    console.error(error);
-  }
+		return {
+			totalViews,
+			posts,
+		}
+	} catch (error) {
+		console.error(error)
+	}
 }
 /*
  * This function will retrieve the individual custom data from the supabase such as linkedin data
  */
 export async function getUserDataValue(key: string) {
-  const { data, error } = await supabase
-    .from('user_data')
-    .select('value')
-    .eq('key', key)
-    .limit(1)
-    .order('created_at', { ascending: false });
+	const { data, error } = await supabase
+		.from('user_data')
+		.select('value')
+		.eq('key', key)
+		.limit(1)
+		.order('created_at', { ascending: false })
 
-  if (!data?.length || !data) {
-    return {
-      data: null,
-      error: null,
-    };
-  }
-  return {
-    data: data![0].value,
-    error: error !== null,
-  };
+	if (!data?.length || !data) {
+		return {
+			data: null,
+			error: null,
+		}
+	}
+	return {
+		data: data![0].value,
+		error: error !== null,
+	}
 }

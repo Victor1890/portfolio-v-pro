@@ -1,15 +1,15 @@
 {
-  "cSpell.words": [
-    "devto",
-    "Editec",
-    "frontmatter",
-    "Iberoamerican",
-    "linkedin",
-    "spotify",
-    "sunday",
-    "tailwindcss",
-    "vespaiach"
-  ],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+	"cSpell.words": [
+		"devto",
+		"Editec",
+		"frontmatter",
+		"Iberoamerican",
+		"linkedin",
+		"spotify",
+		"sunday",
+		"tailwindcss",
+		"vespaiach"
+	],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true
 }
