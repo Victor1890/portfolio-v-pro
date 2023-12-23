@@ -13,12 +13,15 @@ import { debounce } from '@utils/functions'
 import pageMeta from '@content/meta'
 import devToProvider from '@provider/dev.to/devto.provider'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
+// import useWindowSize from '@hooks/useWindowSize'
 
 // import { BsBookmark } from "react-icons/bs";
 
 export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 	const [filteredBlogs, setFilteredBlogs] = useState([...blogs])
 	const searchRef = useRef<HTMLInputElement>(null!)
+
+	// const size = useWindowSize()
 
 	/**
 	 * Handles search functionality with debounce.
@@ -100,7 +103,7 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 									</div>
 								</AnimatedDiv>
 
-								<AnimatedDiv variants={FadeContainer} className='mx-auto grid grid-cols-1 gap-4'>
+								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-3 md:grid-cols-1 gap-4`}>
 									{filteredBlogs.map((blog, index) => {
 										return <Blog key={index} blog={blog} />
 									})}

@@ -129,6 +129,7 @@ function WhenPlaying({ song }: { song: Song }) {
 			<h4 className='text-lg font-semibold dark:text-gray-300'>Now Playing</h4>
 			<Link
 				href={song.songUrl}
+				target='_blank'
 				className='flex items-center justify-between rounded-sm bg-gray-200 p-3 dark:bg-darkSecondary sm:p-4'
 			>
 				<div className='flex items-center gap-2 '>

@@ -117,8 +117,6 @@ export default function About({ about }: { about: IStaticInfo }) {
 export async function getStaticProps() {
 	const { post: aboutData } = await new MDXContent('static_pages').getPostFromSlug('about')
 
-	console.log('aboutData: ', aboutData)
-
 	const about: IStaticInfo = {
 		slug: aboutData?.meta?.slug || '',
 		title: aboutData?.meta?.title || '',

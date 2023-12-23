@@ -14,7 +14,9 @@
 		"format:fix": "prettier --write --ignore-path .gitignore .",
 		"find:unused": "next-unused",
 		"prepare": "husky install",
-		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+		"p:check": "ncu",
+		"p:run": "ncu -u"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^3.6.2",
@@ -79,6 +81,7 @@
 		"husky": "8.0.3",
 		"lint-staged": "15.2.0",
 		"next-unused": "^0.0.6",
+		"npm-check-updates": "16.14.12",
 		"postcss": "^8.4.20",
 		"prettier": "3.1.1",
 		"prettier-plugin-tailwindcss": "0.5.9",
