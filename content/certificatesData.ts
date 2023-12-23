@@ -1,4 +1,4 @@
-import { ICertificate } from '@interfaces/common/common.interface'
+import { ICertificate } from '@interfaces/certificate/certificate.interface'
 import { generateUUID } from '@utils/string.util'
 
 const certificatesData: ICertificate[] = [

@@ -34,17 +34,6 @@ export type SpotifyArtist = {
 	popularity: number
 }
 
-export type ProjectType = {
-	id: string
-	name: string
-	coverImage: string
-	description: string
-	githubURL: string
-	previewURL?: string
-	tools?: string[]
-	pinned?: boolean
-}
-
 export type SkillType = {
 	name: string
 	Icon: IconType

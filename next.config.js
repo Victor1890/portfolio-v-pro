@@ -29,6 +29,7 @@ module.exports = withPWA({
 			'm.media-amazon.com',
 			'image.tmdb.org', // tmdb images,
 			'media.licdn.com',
+			'raw.githubusercontent.com',
 		],
 	},
 	typescript: {

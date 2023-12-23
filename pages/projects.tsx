@@ -29,7 +29,7 @@ export default function Projects() {
 
 				<AnimatedDiv variants={FadeContainer} className='mx-auto grid grid-cols-1 gap-4 md:ml-[20%] xl:ml-[24%]'>
 					{projectData.map((project) => {
-						if (project.name === '' && project.githubURL === '') return null
+						if (!project.name) return null
 						return <Project key={project.id} project={project} />
 					})}
 				</AnimatedDiv>
