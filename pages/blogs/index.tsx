@@ -66,7 +66,7 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 					<CgSearch className='absolute top-[50%] z-10 ml-3 h-5 w-5 -translate-y-1/2' />
 					<input
 						ref={searchRef}
-						className='dark:highlight-white/5  group relative  mx-auto flex w-full items-center rounded-md bg-transparent px-12 py-3 font-inter text-sm font-medium leading-6 text-slate-400 shadow-sm outline-none ring-1  ring-slate-900/10 transition duration-200 hover:ring-slate-400 focus:ring-slate-400  dark:hover:bg-darkSecondary/90 lg:flex'
+						className='dark:highlight-white/5  group relative  mx-auto flex w-full items-center rounded-md bg-transparent px-12 py-3 font-inter text-sm font-medium leading-6 text-slate-400 shadow-sm outline-none ring-1  ring-slate-900/10 transition duration-200 hover:ring-slate-400 focus:ring-slate-400  lg:flex dark:hover:bg-darkSecondary/90'
 						type='text'
 						onChange={(e) => handleSearch(e.target.value)}
 						placeholder='Press (CTRL + /) to search... '
@@ -103,7 +103,7 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 									</div>
 								</AnimatedDiv>
 
-								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-3 md:grid-cols-1 gap-4`}>
+								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-3 gap-4 md:grid-cols-1`}>
 									{filteredBlogs.map((blog, index) => {
 										return <Blog key={index} blog={blog} />
 									})}

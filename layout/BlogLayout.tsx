@@ -62,7 +62,7 @@ export default function BlogLayout({
 				<h1
 					className={`text-3xl ${
 						post.tableOfContents.length > 0 ? '' : 'text-center'
-					} font-bold tracking-tight text-black dark:text-white md:text-5xl`}
+					} font-bold tracking-tight text-black md:text-5xl dark:text-white`}
 				>
 					{post.title}
 				</h1>
@@ -96,10 +96,10 @@ export default function BlogLayout({
 							</div>
 						</div>
 						<div className='flex items-center gap-1'>
-							<div className='rounded-md bg-white py-1 px-2 text-xs text-black dark:bg-darkSecondary dark:text-gray-400'>
+							<div className='rounded-md bg-white px-2 py-1 text-xs text-black dark:bg-darkSecondary dark:text-gray-400'>
 								{getFormattedDate(new Date(post.published_at))}
 							</div>
-							<div className='rounded-md bg-white py-1 px-2 text-xs text-black dark:bg-darkSecondary dark:text-gray-400'>
+							<div className='rounded-md bg-white px-2 py-1 text-xs text-black dark:bg-darkSecondary dark:text-gray-400'>
 								{post.reading_time_minutes} min read
 							</div>
 							{/* <div className="py-1 px-2 text-xs rounded-md bg-white text-black dark:bg-darkSecondary dark:text-gray-400">
@@ -123,7 +123,7 @@ export default function BlogLayout({
 				</div>
 				<AnimatedDiv
 					variants={opacityVariant}
-					className='blog-container prose-no-margin:!m-0 prose-sm max-w-full marker:text-black prose-h4:mb-6 prose-pre:bg-white prose-pre:saturate-150 prose-img:mx-auto prose-img:rounded-md dark:marker:text-white dark:prose-pre:bg-darkSecondary dark:prose-pre:saturate-100 sm:prose-base'
+					className='blog-container prose-no-margin:!m-0 prose-sm max-w-full sm:prose-base marker:text-black prose-h4:mb-6 prose-pre:bg-white prose-pre:saturate-150 prose-img:mx-auto prose-img:rounded-md dark:marker:text-white dark:prose-pre:bg-darkSecondary dark:prose-pre:saturate-100'
 				>
 					{children}
 				</AnimatedDiv>

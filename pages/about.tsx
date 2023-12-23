@@ -29,12 +29,12 @@ export default function About({ about }: { about: IStaticInfo }) {
 					Recent Experience
 				</motion.h3>
 
-				<AnimatedDiv variants={FadeContainer} className='flex flex-col gap-2 overflow-x-scroll pt-10 pb-5 md:gap-4'>
+				<AnimatedDiv variants={FadeContainer} className='flex flex-col gap-2 overflow-x-scroll pb-5 pt-10 md:gap-4'>
 					{linkedinData.experiences.map((experience) => {
 						return (
 							<div
 								key={experience.company_linkedin_profile_url}
-								className='flex-start flex flex-col gap-3 rounded-lg bg-white p-5 shadow dark:bg-darkSecondary xs:flex-row'
+								className='flex-start flex flex-col gap-3 rounded-lg bg-white p-5 shadow xs:flex-row dark:bg-darkSecondary'
 							>
 								<div className='relative mt-1 h-14 w-14 min-w-[56px] max-w-[56px]'>
 									<Image

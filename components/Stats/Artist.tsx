@@ -35,10 +35,10 @@ export default function Artist({ name, url, coverImage, popularity, id }: Artist
 					></Image>
 				</div>
 				<div>
-					<h2 className='origin-left transform font-barlow text-base font-semibold text-gray-900 dark:text-white sm:text-lg md:text-xl md:font-bold xl:text-2xl'>
+					<h2 className='origin-left transform font-barlow text-base font-semibold text-gray-900 sm:text-lg md:text-xl md:font-bold xl:text-2xl dark:text-white'>
 						{name}
 					</h2>
-					<p className='origin-left transform text-xs text-gray-500 line-clamp-1 sm:text-sm md:text-base md:font-medium'>
+					<p className='line-clamp-1 origin-left transform text-xs text-gray-500 sm:text-sm md:text-base md:font-medium'>
 						Popularity: {popularity}
 					</p>
 				</div>

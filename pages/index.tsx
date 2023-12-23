@@ -26,7 +26,7 @@ export default function Home({ blogs }: { blogs: IArticleDevTo[] }) {
 				previewImage={pageMeta.home.image}
 				keywords={pageMeta.home.keywords}
 			/>
-			<div className='relative mx-auto max-w-4xl dark:bg-darkPrimary dark:text-gray-100 2xl:max-w-5xl 3xl:max-w-7xl'>
+			<div className='relative mx-auto max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl dark:bg-darkPrimary dark:text-gray-100'>
 				<motion.section
 					initial='hidden'
 					whileInView='visible'
@@ -37,7 +37,7 @@ export default function Home({ blogs }: { blogs: IArticleDevTo[] }) {
 					<div className='relative mx-auto flex w-full flex-col items-center gap-10'>
 						<motion.div
 							variants={popUp}
-							className='relative flex h-44 w-44 items-center justify-center rounded-full p-3 before:absolute before:inset-0 before:animate-photo-spin before:rounded-full before:border-t-4 before:border-b-4 before:border-black before:dark:border-white xs:h-52 xs:w-52'
+							className='relative flex h-44 w-44 items-center justify-center rounded-full p-3 before:absolute before:inset-0 before:animate-photo-spin before:rounded-full before:border-b-4 before:border-t-4 before:border-black xs:h-52 xs:w-52 before:dark:border-white'
 						>
 							<Image
 								src={homeProfileImage}
@@ -57,7 +57,7 @@ export default function Home({ blogs }: { blogs: IArticleDevTo[] }) {
 								</motion.h1>
 								<motion.p
 									variants={opacityVariant}
-									className='text-xs font-medium text-[#383838] dark:text-gray-200 md:text-sm lg:text-lg'
+									className='text-xs font-medium text-[#383838] md:text-sm lg:text-lg dark:text-gray-200'
 								>
 									FullStack Developer, Competitive Programmer
 								</motion.p>
@@ -65,7 +65,7 @@ export default function Home({ blogs }: { blogs: IArticleDevTo[] }) {
 
 							<motion.p
 								variants={opacityVariant}
-								className=' text-center text-sm font-medium text-[#474747] dark:text-gray-300 md:text-base'
+								className=' text-center text-sm font-medium text-[#474747] md:text-base dark:text-gray-300'
 							>
 								{/* I am currently pursuing my Bachelor Degree in Computer Science. */}I can code in JavaScript,
 								TypeScript, C#, Python, etc.

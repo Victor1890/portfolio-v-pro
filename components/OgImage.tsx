@@ -1,7 +1,7 @@
 import Image from 'next/image'
 function OgImage({ src, alt }: { src: string; alt: string }) {
 	return (
-		<div className='relative -mt-[35%] w-full shrink-0 overflow-hidden rounded-xl shadow-2xl before:absolute before:inset-0 before:z-10 dark:before:bg-black/20 sm:-mt-0 sm:w-1/2 md:-ml-[35%] md:w-8/12'>
+		<div className='relative -mt-[35%] w-full shrink-0 overflow-hidden rounded-xl shadow-2xl before:absolute before:inset-0 before:z-10 sm:-mt-0 sm:w-1/2 md:-ml-[35%] md:w-8/12 dark:before:bg-black/20'>
 			<Image
 				title={alt}
 				alt={alt}

@@ -30,7 +30,7 @@ export default function GitHubActivityGraph() {
 			<div className='mb-10 max-w-full font-barlow'>
 				<AnimatedHeading
 					variants={opacityVariant}
-					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
+					className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
 				>
 					GitHub Activity Graph
 				</AnimatedHeading>
@@ -75,7 +75,7 @@ export default function GitHubActivityGraph() {
 			<div className='mb-10 max-w-full font-barlow'>
 				<AnimatedHeading
 					variants={opacityVariant}
-					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
+					className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
 				>
 					My Productivity by Day of the Week
 				</AnimatedHeading>

@@ -7,7 +7,7 @@ export default function SnippetLayout({ snippet, children }: { snippet: any; chi
 		<section className='relative mt-[44px]  !overflow-hidden md:mt-[60px]'>
 			<section className='prose relative mx-auto max-w-3xl p-5 font-barlow dark:prose-invert sm:pt-10'>
 				<div className='flex items-center justify-between'>
-					<h1 className='m-0 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl'>
+					<h1 className='m-0 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white'>
 						{snippet.title}
 					</h1>
 
@@ -26,7 +26,7 @@ export default function SnippetLayout({ snippet, children }: { snippet: any; chi
 
 				<AnimatedDiv
 					variants={opacityVariant}
-					className='blog-container prose-sm max-w-full marker:text-black prose-pre:bg-white prose-pre:shadow prose-pre:saturate-150 dark:marker:text-white dark:prose-pre:bg-darkSecondary dark:prose-pre:shadow-black/80 dark:prose-pre:saturate-100 sm:prose-base'
+					className='blog-container prose-sm max-w-full sm:prose-base marker:text-black prose-pre:bg-white prose-pre:shadow prose-pre:saturate-150 dark:marker:text-white dark:prose-pre:bg-darkSecondary dark:prose-pre:shadow-black/80 dark:prose-pre:saturate-100'
 				>
 					{children}
 				</AnimatedDiv>

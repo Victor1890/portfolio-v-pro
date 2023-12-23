@@ -15,7 +15,7 @@ const Pre = ({ children }: { children?: ReactNode }) => {
 	}
 
 	return (
-		<div className='relative mb-3 -mt-[14px]' ref={textInput}>
+		<div className='relative -mt-[14px] mb-3' ref={textInput}>
 			<button
 				aria-label='Copy code'
 				type='button'

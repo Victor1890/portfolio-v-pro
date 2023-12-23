@@ -164,7 +164,7 @@ export default function Form() {
 					<textarea
 						name='message'
 						id='floating_message'
-						className='peer mt-2 block min-h-[100px] w-full resize-y appearance-none border-0 border-b-2 border-slate-500 bg-transparent py-2 px-0 text-sm text-gray-900 focus:border-black focus:outline-none  focus:ring-0 dark:border-gray-400 dark:text-white dark:focus:border-white'
+						className='peer mt-2 block min-h-[100px] w-full resize-y appearance-none border-0 border-b-2 border-slate-500 bg-transparent px-0 py-2 text-sm text-gray-900 focus:border-black focus:outline-none  focus:ring-0 dark:border-gray-400 dark:text-white dark:focus:border-white'
 						placeholder=' '
 						required
 					/>

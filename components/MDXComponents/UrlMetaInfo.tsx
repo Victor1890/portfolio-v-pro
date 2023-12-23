@@ -62,7 +62,7 @@ function UrlMetaInfo({ url }: UrlMetaInfoProps) {
 			<div className='unset relative my-4 flex cursor-pointer items-center gap-2 rounded-lg ring-2 ring-gray-500 dark:hover:bg-darkSecondary'>
 				<div className='!m-0 flex flex-col gap-2 px-5 py-5 sm:py-0'>
 					<h4 className='!m-0 line-clamp-1'>{metaData.title}</h4>
-					<p className='!m-0 text-sm !text-gray-400 line-clamp-2'>{metaData.description}</p>
+					<p className='!m-0 line-clamp-2 text-sm !text-gray-400'>{metaData.description}</p>
 				</div>
 				<div className='hidden w-[184px] shrink-0 sm:flex'>
 					<Image

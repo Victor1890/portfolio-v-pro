@@ -15,7 +15,7 @@ export default function Project({ project }: IProjectProps) {
 
 			<div className='flex flex-col justify-start gap-3'>
 				<h1 className='font-bold text-neutral-900 dark:text-neutral-200'>{project.name}</h1>
-				<p className='text-sm text-gray-400 line-clamp-5 dark:text-neutral-400'>{project.description}</p>
+				<p className='line-clamp-5 text-sm text-gray-400 dark:text-neutral-400'>{project.description}</p>
 
 				<div className='flex flex-wrap items-center gap-1'>
 					{project.tools!.map((tool, index) => {

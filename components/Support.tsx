@@ -128,7 +128,7 @@ function UPIPaymentForm({ close }: { close: () => void }) {
 								animate='visible'
 								variants={popUp}
 								type='submit'
-								className='clickable_button mx-auto flex w-9/12 justify-center rounded-lg bg-black px-4 py-1.5 font-semibold text-white dark:bg-white dark:text-black sm:w-1/2'
+								className='clickable_button mx-auto flex w-9/12 justify-center rounded-lg bg-black px-4 py-1.5 font-semibold text-white sm:w-1/2 dark:bg-white dark:text-black'
 							>
 								Pay {amount && <span className='ml-2 line-clamp-1'>&#8377; {amount}</span>}
 							</motion.button>

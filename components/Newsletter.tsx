@@ -44,7 +44,7 @@ export default function Newsletter() {
 
 	return (
 		<>
-			<div className='my-10 flex w-full flex-col gap-4 rounded-lg bg-white p-4 font-barlow ring-2 ring-gray-400 dark:border-neutral-600 dark:bg-black print:hidden'>
+			<div className='my-10 flex w-full flex-col gap-4 rounded-lg bg-white p-4 font-barlow ring-2 ring-gray-400 print:hidden dark:border-neutral-600 dark:bg-black'>
 				<h2 className='!my-0 text-2xl font-bold dark:text-white'>Jatin's Newsletter</h2>
 				<p className='!my-0 font-medium text-gray-600 dark:text-gray-300'>
 					I write monthly Tech, Web Development and chrome extension that will improve your productivity. Trust me, I
@@ -63,7 +63,7 @@ export default function Newsletter() {
 					/>
 
 					<button
-						className='absolute right-0 top-0 bottom-0 m-[3px] transform select-none rounded-md bg-white   px-4 font-inter font-medium duration-200 active:scale-90 dark:bg-neutral-600/40 dark:text-white'
+						className='absolute bottom-0 right-0 top-0 m-[3px] transform select-none rounded-md bg-white   px-4 font-inter font-medium duration-200 active:scale-90 dark:bg-neutral-600/40 dark:text-white'
 						type='submit'
 					>
 						<div className='relative !my-0 flex items-center gap-2 sm:w-[100px]'>

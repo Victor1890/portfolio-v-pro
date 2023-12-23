@@ -108,7 +108,7 @@ export default function Stats() {
 				<div className='mb-10 font-barlow'>
 					<AnimatedHeading
 						variants={opacityVariant}
-						className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
+						className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
 					>
 						GitHub Contribution
 					</AnimatedHeading>
@@ -130,7 +130,7 @@ export default function Stats() {
 				<div className='font-barlow'>
 					<AnimatedHeading
 						variants={opacityVariant}
-						className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
+						className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
 					>
 						My Top streams songs
 					</AnimatedHeading>
@@ -171,7 +171,7 @@ export default function Stats() {
 				<div className='font-barlow'>
 					<AnimatedHeading
 						variants={opacityVariant}
-						className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
+						className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
 					>
 						My Top Artists
 					</AnimatedHeading>

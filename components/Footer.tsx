@@ -16,13 +16,13 @@ export default function Footer({ setShowQR, showQR }: { setShowQR: (value: boole
 	const { data: visitors } = useSWR('/api/ga', fetcher)
 
 	return (
-		<footer className='mb-14 w-screen font-inter text-gray-600 dark:text-gray-400/50 print:hidden'>
+		<footer className='mb-14 w-screen font-inter text-gray-600 print:hidden dark:text-gray-400/50'>
 			<motion.div
 				initial='hidden'
 				whileInView='visible'
 				variants={FadeContainer}
 				viewport={{ once: true }}
-				className='mx-auto flex max-w-4xl flex-col gap-5 border-t-2 border-gray-200 p-5 text-sm dark:border-gray-400/10 sm:text-base 2xl:max-w-5xl 3xl:max-w-7xl'
+				className='mx-auto flex max-w-4xl flex-col gap-5 border-t-2 border-gray-200 p-5 text-sm sm:text-base 2xl:max-w-5xl 3xl:max-w-7xl dark:border-gray-400/10'
 			>
 				<div>{currentSong?.isPlaying ? <WhenPlaying song={currentSong} /> : <NotPlaying />}</div>
 
@@ -52,7 +52,7 @@ export default function Footer({ setShowQR, showQR }: { setShowQR: (value: boole
 					</div>
 				</section>
 				<motion.div variants={opacityVariant} className='mt-5 flex w-full items-center justify-between gap-4 '>
-					<div className='relative flex items-center rounded-full bg-white px-4 py-1 text-xs shadow dark:bg-darkSecondary sm:text-sm'>
+					<div className='relative flex items-center rounded-full bg-white px-4 py-1 text-xs shadow sm:text-sm dark:bg-darkSecondary'>
 						<BsDot className='-ml-2 h-7 w-7 animate-ping text-green-500' />
 						<div className='flex items-center gap-1'>
 							{visitors?.totalVisitors ?? (
@@ -115,7 +115,7 @@ function NotPlaying() {
 		<div className='flex flex-row-reverse items-center justify-between gap-2 sm:flex-row sm:justify-start'>
 			<SiSpotify className='h-6 w-6' />
 			<div className='flex flex-col sm:flex-row sm:items-center sm:gap-3'>
-				<div className='font-semibold text-black dark:text-white md:text-lg'>Not Playing</div>
+				<div className='font-semibold text-black md:text-lg dark:text-white'>Not Playing</div>
 				<span className='hidden md:inline-flex'>—</span>
 				<p className='text-xs text-gray-500 sm:text-sm'>Spotify</p>
 			</div>
@@ -130,7 +130,7 @@ function WhenPlaying({ song }: { song: Song }) {
 			<Link
 				href={song.songUrl}
 				target='_blank'
-				className='flex items-center justify-between rounded-sm bg-gray-200 p-3 dark:bg-darkSecondary sm:p-4'
+				className='flex items-center justify-between rounded-sm bg-gray-200 p-3 sm:p-4 dark:bg-darkSecondary'
 			>
 				<div className='flex items-center gap-2 '>
 					<div className='h-10 w-10'>
@@ -145,10 +145,10 @@ function WhenPlaying({ song }: { song: Song }) {
 						/>
 					</div>
 					<div className='flex flex-col sm:flex-row sm:items-center sm:gap-3'>
-						<h3 className='animate- font-semibold text-black dark:text-white md:text-lg'>{song.title}</h3>
-						<span className='hidden dark:text-gray-300 md:inline-flex'>—</span>
+						<h3 className='animate- font-semibold text-black md:text-lg dark:text-white'>{song.title}</h3>
+						<span className='hidden md:inline-flex dark:text-gray-300'>—</span>
 
-						<p className='text-xs text-gray-600 dark:text-gray-400 sm:text-sm'>{song.artist}</p>
+						<p className='text-xs text-gray-600 sm:text-sm dark:text-gray-400'>{song.artist}</p>
 					</div>
 				</div>
 				<div className='flex items-center gap-2'>

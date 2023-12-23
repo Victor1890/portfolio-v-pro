@@ -6,7 +6,7 @@ const { github } = config
 
 export default function CreateAnIssue() {
 	return (
-		<div className='grid h-screen w-full place-items-center px-10 dark:text-gray-200 sm:px-20'>
+		<div className='grid h-screen w-full place-items-center px-10 sm:px-20 dark:text-gray-200'>
 			<p>
 				Something went wrong. I know you don't know what's the problem. So Let me know by{' '}
 				<Link

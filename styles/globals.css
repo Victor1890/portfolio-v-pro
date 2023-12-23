@@ -205,7 +205,7 @@ code > .line::before {
 		@apply mb-[2px] cursor-pointer text-2xl;
 	}
 	.top-nav-link {
-		@apply mx-1 cursor-pointer select-none list-none border-black px-3 py-1 text-lg font-semibold transition-all duration-200 hover:rounded-md hover:bg-gray-100 dark:border-white dark:hover:bg-darkSecondary sm:text-sm md:text-base;
+		@apply mx-1 cursor-pointer select-none list-none border-black px-3 py-1 text-lg font-semibold transition-all duration-200 hover:rounded-md hover:bg-gray-100 sm:text-sm md:text-base dark:border-white dark:hover:bg-darkSecondary;
 	}
 	.contact_field {
 		@apply m-2 w-full rounded-md border-none px-4 py-2 text-sm font-medium text-black shadow-inner shadow-slate-200 outline-none focus:ring-1 focus:ring-purple-500 dark:bg-darkPrimary dark:text-white dark:placeholder-gray-500 dark:shadow-zinc-800;
@@ -214,15 +214,15 @@ code > .line::before {
 		@apply text-center text-xl font-bold  dark:bg-darkPrimary dark:text-gray-100;
 	}
 	.icon {
-		@apply m-1 transform cursor-pointer text-2xl text-zinc-500 duration-200 hover:text-zinc-800 dark:hover:text-white sm:text-3xl lg:hover:scale-150;
+		@apply m-1 transform cursor-pointer text-2xl text-zinc-500 duration-200 hover:text-zinc-800 sm:text-3xl lg:hover:scale-150 dark:hover:text-white;
 	}
 
 	.page_container {
-		@apply grid grid-cols-1 gap-6 p-5 pb-10 dark:bg-darkPrimary dark:text-gray-200 sm:grid-cols-2 md:px-24  lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5;
+		@apply grid grid-cols-1 gap-6 p-5 pb-10 sm:grid-cols-2 md:px-24 lg:grid-cols-3 xl:grid-cols-4  3xl:grid-cols-5 dark:bg-darkPrimary dark:text-gray-200;
 	}
 
 	.blog_bottom_icon {
-		@apply ml-1 cursor-pointer rounded-md bg-gray-100 p-1 text-3xl ring-1 ring-gray-300 dark:bg-darkSecondary dark:ring-gray-500 sm:bg-transparent sm:hover:bg-gray-100;
+		@apply ml-1 cursor-pointer rounded-md bg-gray-100 p-1 text-3xl ring-1 ring-gray-300 sm:bg-transparent sm:hover:bg-gray-100 dark:bg-darkSecondary dark:ring-gray-500;
 	}
 	.blog_bottom_button {
 		@apply block w-full transform cursor-pointer select-none rounded-md bg-gray-200 py-1 duration-100 active:scale-90 sm:hidden lg:hover:bg-gray-300;
@@ -241,7 +241,7 @@ code > .line::before {
 		@apply flex min-h-[200px] w-full select-none snap-x gap-2 overflow-x-scroll p-5 md:px-24 lg:snap-none;
 	}
 	.home-content-section {
-		@apply relative min-w-[250px] scale-95 cursor-pointer select-none snap-center break-words rounded-xl bg-white p-3 shadow shadow-black/20 ring-gray-400  transition dark:bg-darkSecondary dark:shadow-white/20 md:first:ml-24 md:last:mr-24 lg:snap-align-none lg:hover:scale-105 xl:min-w-[300px];
+		@apply relative min-w-[250px] scale-95 cursor-pointer select-none snap-center break-words rounded-xl bg-white p-3 shadow shadow-black/20 ring-gray-400  transition md:first:ml-24 md:last:mr-24 lg:snap-align-none lg:hover:scale-105 xl:min-w-[300px] dark:bg-darkSecondary dark:shadow-white/20;
 	}
 	.blog-hover-button {
 		@apply flex w-min items-center space-x-2 border-2 border-white px-3 py-1 font-semibold text-white hover:bg-white hover:text-black dark:border-zinc-600 dark:text-white dark:hover:bg-zinc-600;
@@ -250,13 +250,13 @@ code > .line::before {
 		@apply relative overflow-hidden before:absolute before:-right-10 before:top-4 before:-z-10 before:h-full before:w-40 before:rotate-[20deg] before:scale-y-150 before:bg-stone-900 before:opacity-10 before:duration-700 hover:before:scale-[7] dark:before:bg-gray-50 dark:before:opacity-5;
 	}
 	.pageTop {
-		@apply relative mx-auto mt-[44px] mb-10 max-w-4xl p-4 text-neutral-900 dark:text-neutral-200 md:mt-[60px] 2xl:max-w-5xl 3xl:max-w-7xl;
+		@apply relative mx-auto mb-10 mt-[44px] max-w-4xl p-4 text-neutral-900 md:mt-[60px] 2xl:max-w-5xl 3xl:max-w-7xl dark:text-neutral-200;
 	}
 	.utilities-svg {
 		@apply !pointer-events-none mb-4 h-8 w-8;
 	}
 	.card {
-		@apply mt-[30%] flex max-w-2xl flex-col items-center gap-8 rounded-lg bg-white p-5 shadow-md transition-all dark:bg-darkSecondary sm:mt-8 sm:flex-row sm:p-10;
+		@apply mt-[30%] flex max-w-2xl flex-col items-center gap-8 rounded-lg bg-white p-5 shadow-md transition-all sm:mt-8 sm:flex-row sm:p-10 dark:bg-darkSecondary;
 	}
 	.blog-container {
 		@apply my-5 !w-full font-medium dark:text-neutral-400;

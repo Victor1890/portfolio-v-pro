@@ -47,7 +47,7 @@ export default function TableOfContents({
 							isTOCActive ? 'left-0 top-[44px] opacity-100 md:top-[60px]' : '-left-full opacity-0'
 						} ${
 							scrollPercentage > 95 ? 'xl:-left-full' : 'xl:left-0'
-						} fixed z-50 flex h-screen  w-full flex-col gap-1 overflow-y-scroll bg-darkWhite p-10 !pb-[100px] font-barlow text-neutral-800 transition-all duration-500 dark:bg-darkPrimary dark:text-gray-200 md:left-0 md:max-w-[35%] md:p-14 md:opacity-100 lg:max-w-[30%] `}
+						} fixed z-50 flex h-screen  w-full flex-col gap-1 overflow-y-scroll bg-darkWhite p-10 !pb-[100px] font-barlow text-neutral-800 transition-all duration-500 md:left-0 md:max-w-[35%] md:p-14 md:opacity-100 lg:max-w-[30%] dark:bg-darkPrimary dark:text-gray-200 `}
 					>
 						{/* TOC Search Bar */}
 						<div className='group relative mx-auto -ml-[5px] w-full rounded-md  text-slate-700 dark:text-gray-300'>
@@ -77,7 +77,7 @@ export default function TableOfContents({
 									<Link
 										key={content.id}
 										href={`#${stringToSlug(content.id)}`}
-										className='relative overflow-hidden rounded-tr-md rounded-br-md border-l-2 border-neutral-500 px-2 py-0.5 font-medium text-neutral-700 hover:bg-darkSecondary  hover:text-white dark:text-neutral-200 dark:hover:border-white md:py-1 md:line-clamp-1'
+										className='relative overflow-hidden rounded-br-md rounded-tr-md border-l-2 border-neutral-500 px-2 py-0.5 font-medium text-neutral-700 hover:bg-darkSecondary  hover:text-white md:line-clamp-1 md:py-1 dark:text-neutral-200 dark:hover:border-white'
 										style={{ marginLeft: `${content.level * 15}px` }}
 										onClick={() => {
 											if (size.width < 768) {
@@ -102,7 +102,7 @@ export default function TableOfContents({
 							setIsTOCActive(!isTOCActive)
 							lockScroll()
 						}}
-						className='fixed bottom-0 z-50 w-full bg-black py-2 font-medium text-white outline-none dark:bg-white dark:text-black md:hidden'
+						className='fixed bottom-0 z-50 w-full bg-black py-2 font-medium text-white outline-none md:hidden dark:bg-white dark:text-black'
 					>
 						Table of Contents
 					</button>

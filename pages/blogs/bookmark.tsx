@@ -22,7 +22,7 @@ export default function Blogs() {
 			<section className='pageTop flex flex-col gap-2 text-neutral-900 dark:text-neutral-200'>
 				<PageTop pageTitle='Bookmarks'>Here you can find article bookmarked by you for Later use.</PageTop>
 
-				<section className='relative flex min-h-[50vh] flex-col gap-2 py-5 px-2'>
+				<section className='relative flex min-h-[50vh] flex-col gap-2 px-2 py-5'>
 					<AnimatePresence>
 						{bookmarkedBlogs?.length != 0 ? (
 							<AnimatedDiv variants={FadeContainer} className='mx-auto grid grid-cols-1 gap-4'>

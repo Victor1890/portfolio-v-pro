@@ -7,7 +7,7 @@ export default function PageNotFound() {
 		<>
 			<MetaData title='404' suffix='Page Not Found' description='You are lost in Space !!!' />
 			<section className='pageTop flex flex-col gap-5 md:pt-20'>
-				<h1 className='font-barlow text-3xl font-bold uppercase dark:text-white md:text-5xl'>
+				<h1 className='font-barlow text-3xl font-bold uppercase md:text-5xl dark:text-white'>
 					Stay calm and don't freak out!!
 				</h1>
 				<p className='font-inter text-gray-500 dark:text-gray-400/70'>
@@ -17,7 +17,7 @@ export default function PageNotFound() {
 
 				<Link
 					href='/'
-					className='mx-auto w-full select-none rounded-md bg-gray-300 p-3 text-center font-bold text-black ring-black/50 transition-all active:scale-95 dark:bg-darkSecondary dark:text-white  dark:ring-white/50 xs:mx-0  xs:max-w-[200px] sm:p-3 lg:hover:ring-2'
+					className='mx-auto w-full select-none rounded-md bg-gray-300 p-3 text-center font-bold text-black ring-black/50 transition-all active:scale-95 xs:mx-0 xs:max-w-[200px]  sm:p-3 lg:hover:ring-2  dark:bg-darkSecondary dark:text-white dark:ring-white/50'
 				>
 					Take me there!
 				</Link>

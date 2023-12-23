@@ -29,7 +29,7 @@ export default function Utilities() {
 					))}
 				</div>
 
-				<AnimatedText variants={opacityVariant} className='mt-12 -mb-10'>
+				<AnimatedText variants={opacityVariant} className='-mb-10 mt-12'>
 					Last Update on <span className='font-semibold'>{utilities.lastUpdate}</span>
 				</AnimatedText>
 			</section>
@@ -60,7 +60,7 @@ function UtilitySection({ utility }: { utility: UtilityType }) {
 								rel='noopener noreferrer'
 								target='_blank'
 								href={item.link}
-								className='relative flex flex-col items-center justify-center gap-3 rounded-md border border-transparent bg-white p-8  text-gray-700 shadow transition-all hover:z-10 hover:origin-center hover:border-gray-400 hover:text-black hover:shadow-lg active:!scale-90 dark:bg-darkSecondary dark:text-gray-300/80 dark:shadow-md dark:hover:border-neutral-600 dark:hover:text-white lg:hover:!scale-125'
+								className='relative flex flex-col items-center justify-center gap-3 rounded-md border border-transparent bg-white p-8  text-gray-700 shadow transition-all hover:z-10 hover:origin-center hover:border-gray-400 hover:text-black hover:shadow-lg active:!scale-90 lg:hover:!scale-125 dark:bg-darkSecondary dark:text-gray-300/80 dark:shadow-md dark:hover:border-neutral-600 dark:hover:text-white'
 							>
 								{/* @ts-ignore */}
 								<Icon className='utilities-svg' />
