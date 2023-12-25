@@ -17,7 +17,7 @@ export default function Blog({ blog, animate = false }: { blog: IArticleDevTo; a
 			initial={animate && 'hidden'}
 			whileInView={animate ? 'visible' : ''}
 			viewport={{ once: true }}
-			className='w-ull mx-auto flex flex-col items-center gap-2 rounded-2xl bg-white p-2 shadow-md sm:w-[95%] sm:flex-row md:gap-7 md:shadow-lg dark:bg-darkSecondary'
+			className='w-ull mx-auto flex flex-col items-center gap-2 rounded-2xl bg-white p-2 shadow-md sm:w-[95%] md:gap-7 md:shadow-lg dark:bg-darkSecondary'
 		>
 			<div className='w-full'>
 				<Image
@@ -39,7 +39,7 @@ export default function Blog({ blog, animate = false }: { blog: IArticleDevTo; a
 				>
 					{blog.title}
 				</Link>
-				<p className='mb-2 mt-3 line-clamp-3 text-sm  text-gray-600 sm:line-clamp-2 sm:text-xs md:line-clamp-4 md:text-sm dark:text-[#b5b7ba]'>
+				<p className='mb-5 mt-3 line-clamp-3 text-sm  text-gray-600 sm:line-clamp-2 sm:text-xs md:line-clamp-4 md:text-sm dark:text-[#b5b7ba]'>
 					{blog.description}
 				</p>
 

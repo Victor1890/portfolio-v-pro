@@ -7,13 +7,15 @@ const { devTo } = config
 
 class DevToProvider extends Base {
 	private readonly PER_PAGE_DEFAULT: number = 1000
-	private readonly ONE_DAY_MILLISECONDS = 24 * 60 * 60 * 1000
+	private readonly ONE_DAY_MILLISECONDS = 50 * 60 * 60 * 1000
 	private readonly articleStorage: ArticleStorage
 	private readonly followStorage: FollowStorage
 
 	constructor() {
 		super(devTo.api, { api_key: devTo.apiKey })
+
 		this.articleStorage = new ArticleStorage()
+
 		this.followStorage = new FollowStorage()
 	}
 

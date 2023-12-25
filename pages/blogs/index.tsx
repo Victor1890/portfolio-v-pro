@@ -13,26 +13,19 @@ import { debounce } from '@utils/functions'
 import pageMeta from '@content/meta'
 import devToProvider from '@provider/dev.to/devto.provider'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-// import useWindowSize from '@hooks/useWindowSize'
-
-// import { BsBookmark } from "react-icons/bs";
+import Pagination from '@components/app/pagination'
+import { usePagination } from '@hooks/usePagination'
 
 export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
-	const [filteredBlogs, setFilteredBlogs] = useState([...blogs])
+	const { data, paginationInfo, setPaginationInfo } = usePagination(blogs, 1, 10)
+
+	const [filteredBlogs, setFilteredBlogs] = useState([...data])
 	const searchRef = useRef<HTMLInputElement>(null!)
 
-	// const size = useWindowSize()
-
-	/**
-	 * Handles search functionality with debounce.
-	 */
 	const handleSearch = debounce((value: string) => {
 		setFilteredBlogs(blogs.filter((post) => post.title.toLowerCase().includes(value.trim().toLowerCase())))
 	}, 300)
 
-	/**
-	 * Handles automatic search functionality when a specific keyboard shortcut is pressed.
-	 */
 	function handleAutoSearch(e: any) {
 		if (e.code === 'Slash' && e.ctrlKey) {
 			searchRef.current.focus()
@@ -103,11 +96,21 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 									</div>
 								</AnimatedDiv>
 
-								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-3 gap-4 md:grid-cols-1`}>
+								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2`}>
 									{filteredBlogs.map((blog, index) => {
 										return <Blog key={index} blog={blog} />
 									})}
 								</AnimatedDiv>
+								{Math.ceil(filteredBlogs.length / paginationInfo.take) > 1 && (
+									<AnimatedDiv variants={FadeContainer} className={`mx-auto flex items-center justify-center`}>
+										<Pagination
+											total={Math.ceil(filteredBlogs.length / paginationInfo.take)}
+											maxRowsPerPage={paginationInfo.take}
+											handleChange={(page) => setPaginationInfo({ ...paginationInfo, offset: page + 1 })}
+											page={paginationInfo.offset}
+										/>
+									</AnimatedDiv>
+								)}
 							</>
 						) : (
 							<div className='text-center font-inter font-medium dark:text-gray-400'>No Result Found</div>
@@ -122,6 +125,6 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 export async function getStaticProps() {
 	const blogs = await devToProvider.getPageOfPosts().catch(() => null)
 	return {
-		props: { blogs },
+		props: { blogs: blogs ? blogs : [] },
 	}
 }

@@ -1,6 +1,10 @@
 import config from '@config'
 import Base from '@provider/base'
-import { IGitHubProfileResponse, IGitHubRepositoriesAPIResponse, IGithubContributionResponse } from './github.interface'
+import {
+	IGitHubProfileResponse,
+	IGitHubRepositoriesAPIResponse,
+	IGithubContributionResponse
+} from './github.interface'
 
 const { github } = config
 
@@ -10,9 +14,9 @@ class GithubProvider extends Base {
 	constructor() {
 		super(
 			github.api,
-			new Headers({
+			{
 				Authorization: `token ${github.key}`,
-			})
+			}
 		)
 	}
 

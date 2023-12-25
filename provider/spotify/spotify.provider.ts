@@ -63,7 +63,9 @@ class SpotifyProvider extends Base {
 			`/v1/me/top/tracks?limit=${limit}&time_range=short_term`,
 			{},
 			{
-				Authorization: `Bearer ${this.refresh_token}`,
+				headers: {
+					Authorization: `Bearer ${this.refresh_token}`,
+				}
 			}
 		)
 	}
@@ -74,7 +76,9 @@ class SpotifyProvider extends Base {
 			`/v1/me/top/artists?limit=${limit}&time_range=short_term`,
 			{},
 			{
-				Authorization: `Bearer ${this.refresh_token}`,
+				headers: {
+					Authorization: `Bearer ${this.refresh_token}`,
+				}
 			}
 		)
 	}
@@ -85,7 +89,9 @@ class SpotifyProvider extends Base {
 			`/v1/me/player/currently-playing`,
 			{},
 			{
-				Authorization: `Bearer ${this.refresh_token}`,
+				headers: {
+					Authorization: `Bearer ${this.refresh_token}`,
+				}
 			}
 		)
 	}
