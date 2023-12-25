@@ -1,10 +1,6 @@
 import config from '@config'
 import Base from '@provider/base'
-import {
-	IGitHubProfileResponse,
-	IGitHubRepositoriesAPIResponse,
-	IGithubContributionResponse
-} from './github.interface'
+import { IGitHubProfileResponse, IGitHubRepositoriesAPIResponse, IGithubContributionResponse } from './github.interface'
 
 const { github } = config
 
@@ -12,12 +8,9 @@ class GithubProvider extends Base {
 	private readonly PER_PAGE_DEFAULT: number = 1000
 
 	constructor() {
-		super(
-			github.api,
-			{
-				Authorization: `token ${github.key}`,
-			}
-		)
+		super(github.api, {
+			Authorization: `token ${github.key}`,
+		})
 	}
 
 	public async getProfile(): Promise<IGitHubProfileResponse> {

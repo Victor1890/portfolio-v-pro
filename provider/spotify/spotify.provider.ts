@@ -65,7 +65,7 @@ class SpotifyProvider extends Base {
 			{
 				headers: {
 					Authorization: `Bearer ${this.refresh_token}`,
-				}
+				},
 			}
 		)
 	}
@@ -78,7 +78,7 @@ class SpotifyProvider extends Base {
 			{
 				headers: {
 					Authorization: `Bearer ${this.refresh_token}`,
-				}
+				},
 			}
 		)
 	}
@@ -91,7 +91,7 @@ class SpotifyProvider extends Base {
 			{
 				headers: {
 					Authorization: `Bearer ${this.refresh_token}`,
-				}
+				},
 			}
 		)
 	}
