@@ -1,3 +1,16 @@
+## [0.2.7](https://github.com/Victor1890/portfolio-v-pro/compare/v0.1.5...v0.2.7) (2023-12-25)
+
+### Features
+
+- :bug: remove console log ([6a7c975](https://github.com/Victor1890/portfolio-v-pro/commit/6a7c9756065ca566111a60ecf1acf4a7001cd689))
+- :package: update tailwind css ([dcfddfd](https://github.com/Victor1890/portfolio-v-pro/commit/dcfddfda588698d01cc42c34bb22edd34a602824))
+- :poop: add projects ([bceff1f](https://github.com/Victor1890/portfolio-v-pro/commit/bceff1fee2d3a1825c95384c5675864dd92e8cff))
+- :sparkles: remove infinity blogs and add blog pagination ([24262d4](https://github.com/Victor1890/portfolio-v-pro/commit/24262d4ea80fb9cb094d877c2cd377d2b961b060))
+
+### Performance Improvements
+
+- nothing ([afe1bb2](https://github.com/Victor1890/portfolio-v-pro/commit/afe1bb23f6fd9b5569072b8772c93f9c6e12448c))
+
 ## [0.1.5](https://github.com/Victor1890/portfolio-v-pro/compare/v0.0.1...v0.1.5) (2023-12-22)
 
 ### Features
