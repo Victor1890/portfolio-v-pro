@@ -58,12 +58,6 @@ const pageMeta: PageMeta = {
 		image: 'https://imgur.com/b0HRaPv.png',
 		keywords: 'about, about me, ',
 	},
-	privacy: {
-		title: 'Privacy Policy',
-		description: 'Privacy is an important factor for everyone. Following is the privacy policies of j471n.in',
-		image: 'https://imgur.com/ghlRutT.png',
-		keywords: 'Privacy, Privacy Policies, ',
-	},
 	snippets: {
 		title: 'Code Snippets',
 		description:
