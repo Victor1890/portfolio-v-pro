@@ -39,3 +39,8 @@ export interface IEmailValidation {
 	mx_info: string
 	last_changed_at: string
 }
+
+export interface IPagination {
+	offset: number
+	take: number
+}

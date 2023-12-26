@@ -37,7 +37,7 @@ export default function Home({ blogs }: { blogs: IArticleDevTo[] }) {
 					<div className='relative mx-auto flex w-full flex-col items-center gap-10'>
 						<motion.div
 							variants={popUp}
-							className='relative flex h-44 w-44 items-center justify-center rounded-full p-3 before:absolute before:inset-0 before:animate-photo-spin before:rounded-full before:border-b-4 before:border-t-4 before:border-black xs:h-52 xs:w-52 before:dark:border-white'
+							className='xs:h-52 xs:w-52 relative flex h-44 w-44 items-center justify-center rounded-full p-3 before:absolute before:inset-0 before:animate-photo-spin before:rounded-full before:border-b-4 before:border-t-4 before:border-black before:dark:border-white'
 						>
 							<Image
 								src={homeProfileImage}

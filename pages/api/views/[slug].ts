@@ -1,7 +1,7 @@
-import {
-	// addView,
-	getViewBySlug,
-} from '@lib/supabase'
+// import {
+// 	// addView,
+// 	getViewBySlug,
+// } from '@lib/supabase'
 import { NextApiRequest, NextApiResponse } from 'next'
 
 /* Extending API request because by default quey.slug return string | string[] and I only want string */
@@ -24,19 +24,19 @@ interface ExtendedNextApiRequest extends NextApiRequest {
  * If the request method is POST and the app is running in development environment, it sends a response with a status code of 401 and a JSON object with a message of "In Development, Can't add views"
  */
 
-export default async function viewsSlug(req: ExtendedNextApiRequest, res: NextApiResponse) {
-	const slug = req.query.slug
-	if (req.method === 'GET') {
-		const data = await getViewBySlug(slug)
-		if (data === undefined) {
-			return res.status(404).json({
-				message:
-					"Sorry, the slug you're looking for has gone for a coffee break. Please try again later or make a cup of tea while you wait.",
-			})
-		} else {
-			return res.status(200).json(data)
-		}
-	}
+export default async function viewsSlug(_req: ExtendedNextApiRequest, res: NextApiResponse) {
+	// const slug = req.query.slug
+	// if (req.method === 'GET') {
+	// 	const data = await getViewBySlug(slug)
+	// 	if (data === undefined) {
+	// 		return res.status(404).json({
+	// 			message:
+	// 				"Sorry, the slug you're looking for has gone for a coffee break. Please try again later or make a cup of tea while you wait.",
+	// 		})
+	// 	} else {
+	// 		return res.status(200).json(data)
+	// 	}
+	// }
 	// check if the app in the production and req method is post only then add the view to the database
 	// if (req.method === "POST" && process.env.NODE_ENV === "production") {
 	//   const supabaseResponse = await addView(slug);

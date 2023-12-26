@@ -4,9 +4,9 @@ function LoadingSongs() {
 			{Array.from(Array(10).keys()).map((item) => (
 				<div
 					key={item}
-					className='relative flex h-[80.8px] items-center gap-5  overflow-hidden  border-b border-l border-r border-gray-300  bg-gray-100 p-4 font-barlow first:h-[81.6px] first:border-t xs:pl-16 md:h-[84.8px] md:!pl-20 first:md:h-[85.6px] dark:border-neutral-600 dark:bg-darkPrimary '
+					className='xs:pl-16 relative flex h-[80.8px] items-center  gap-5  overflow-hidden border-b border-l border-r  border-gray-300 bg-gray-100 p-4 font-barlow first:h-[81.6px] first:border-t md:h-[84.8px] md:!pl-20 first:md:h-[85.6px] dark:border-neutral-600 dark:bg-darkPrimary '
 				>
-					<div className='absolute left-4 hidden origin-center transform font-inter tracking-wider xs:inline-flex md:left-6'>
+					<div className='xs:inline-flex absolute left-4 hidden origin-center transform font-inter tracking-wider md:left-6'>
 						#{item + 1}
 					</div>
 

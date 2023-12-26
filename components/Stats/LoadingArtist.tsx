@@ -7,7 +7,7 @@ function LoadingArtists() {
 					className='flex h-[80.8px] items-center gap-5  overflow-hidden  border-b  border-l border-r border-gray-300 bg-gray-100 p-4 font-barlow first:h-[81.6px] first:border-t md:h-[128.8px] first:md:h-[129.6px] dark:border-neutral-600 dark:bg-darkPrimary'
 				>
 					<>
-						<div className='hidden origin-center transform font-inter tracking-wider xs:inline-flex'>#{item + 1}</div>
+						<div className='xs:inline-flex hidden origin-center transform font-inter tracking-wider'>#{item + 1}</div>
 						<div
 							aria-label='image'
 							className='relative h-12 w-12 animate-pulse rounded-full bg-gray-300 md:h-24 md:w-24 dark:bg-darkSecondary'

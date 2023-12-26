@@ -15,10 +15,10 @@ export default function Track({ url, title, artist, coverImage, id }: TrackProps
 			href={url}
 			rel='noreferrer'
 			target='_blank'
-			className='relative flex items-center gap-5 overflow-hidden border-b border-l border-r  border-gray-300 bg-gray-100 p-4 font-barlow first:border-t hover:bg-white xs:pl-16 md:!pl-20 dark:border-neutral-600 dark:bg-darkPrimary hover:dark:bg-darkSecondary '
+			className='xs:pl-16 relative flex items-center gap-5 overflow-hidden border-b border-l  border-r border-gray-300 bg-gray-100 p-4 font-barlow first:border-t hover:bg-white md:!pl-20 dark:border-neutral-600 dark:bg-darkPrimary hover:dark:bg-darkSecondary '
 		>
 			<>
-				<div className='absolute left-4 hidden origin-center transform font-inter text-xl tracking-wider text-gray-500 xs:inline-flex md:left-6'>
+				<div className='xs:inline-flex absolute left-4 hidden origin-center transform font-inter text-xl tracking-wider text-gray-500 md:left-6'>
 					#{id + 1}
 				</div>
 

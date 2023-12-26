@@ -17,7 +17,7 @@ export default function PageNotFound() {
 
 				<Link
 					href='/'
-					className='mx-auto w-full select-none rounded-md bg-gray-300 p-3 text-center font-bold text-black ring-black/50 transition-all active:scale-95 xs:mx-0 xs:max-w-[200px]  sm:p-3 lg:hover:ring-2  dark:bg-darkSecondary dark:text-white dark:ring-white/50'
+					className='xs:mx-0 xs:max-w-[200px] mx-auto w-full select-none rounded-md bg-gray-300 p-3 text-center font-bold text-black ring-black/50 transition-all active:scale-95 sm:p-3 lg:hover:ring-2  dark:bg-darkSecondary dark:text-white dark:ring-white/50'
 				>
 					Take me there!
 				</Link>

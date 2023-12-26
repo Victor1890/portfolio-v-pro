@@ -14,16 +14,19 @@ import pageMeta from '@content/meta'
 import devToProvider from '@provider/dev.to/devto.provider'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import Pagination from '@components/app/pagination'
-import { usePagination } from '@hooks/usePagination'
+import { IPagination } from '@interfaces/common/common.interface'
 
 export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
-	const { data, paginationInfo, setPaginationInfo } = usePagination(blogs, 1, 10)
-
-	const [filteredBlogs, setFilteredBlogs] = useState([...data])
+	const [paginationInfo, setPaginationInfo] = useState<IPagination>({ offset: 0, take: 5 })
+	const [filteredBlogs, setFilteredBlogs] = useState([...blogs])
 	const searchRef = useRef<HTMLInputElement>(null!)
 
 	const handleSearch = debounce((value: string) => {
-		setFilteredBlogs(blogs.filter((post) => post.title.toLowerCase().includes(value.trim().toLowerCase())))
+		setFilteredBlogs(
+			[...blogs]
+				.filter((post) => post.title.toLowerCase().includes(value.trim().toLowerCase()))
+				.slice(paginationInfo.offset, paginationInfo.offset + paginationInfo.take)
+		)
 	}, 300)
 
 	function handleAutoSearch(e: any) {
@@ -36,6 +39,11 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 		document.addEventListener('keydown', handleAutoSearch)
 		return () => document.removeEventListener('keydown', handleAutoSearch)
 	}, [])
+
+	useEffect(() => {
+		if (!blogs.length) return
+		setFilteredBlogs([...blogs].slice(paginationInfo.offset, paginationInfo.offset + paginationInfo.take))
+	}, [paginationInfo])
 
 	return (
 		<>
@@ -96,17 +104,17 @@ export default function Blogs({ blogs }: { blogs: IArticleDevTo[] }) {
 									</div>
 								</AnimatedDiv>
 
-								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-1 gap-4 sm:grid-cols-2`}>
+								<AnimatedDiv variants={FadeContainer} className={`mx-auto grid grid-cols-1 gap-4`}>
 									{filteredBlogs.map((blog, index) => {
 										return <Blog key={index} blog={blog} />
 									})}
 								</AnimatedDiv>
-								{Math.ceil(filteredBlogs.length / paginationInfo.take) > 1 && (
+								{Math.ceil(blogs.length / paginationInfo.take) > 1 && (
 									<AnimatedDiv variants={FadeContainer} className={`mx-auto flex items-center justify-center`}>
 										<Pagination
-											total={Math.ceil(filteredBlogs.length / paginationInfo.take)}
+											total={blogs.length}
 											maxRowsPerPage={paginationInfo.take}
-											handleChange={(page) => setPaginationInfo({ ...paginationInfo, offset: page + 1 })}
+											handleChange={(offset) => setPaginationInfo({ ...paginationInfo, offset })}
 											page={paginationInfo.offset}
 										/>
 									</AnimatedDiv>

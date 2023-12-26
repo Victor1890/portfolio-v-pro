@@ -40,7 +40,7 @@ function Pagination({ handleChange, maxRowsPerPage = 10, page = 0, total = 10 }:
 				}
 				onPageChange={({ selected }) => handleChange?.(selected)}
 				pageRangeDisplayed={3}
-				pageCount={total}
+				pageCount={Math.ceil(total / maxRowsPerPage)}
 				previousLabel={
 					showPrevButton ? (
 						<span className='bg-red bg-lightGray mr-4 flex h-10 w-10 items-center justify-center rounded-md text-darkPrimary dark:text-white'>

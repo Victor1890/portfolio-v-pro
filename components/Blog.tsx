@@ -6,8 +6,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 
-// import { FrontMatter } from "@lib/types";
-
 export default function Blog({ blog, animate = false }: { blog: IArticleDevTo; animate?: boolean }) {
 	const blogRef = useRef(null)
 	return (
@@ -17,7 +15,7 @@ export default function Blog({ blog, animate = false }: { blog: IArticleDevTo; a
 			initial={animate && 'hidden'}
 			whileInView={animate ? 'visible' : ''}
 			viewport={{ once: true }}
-			className='w-ull mx-auto flex flex-col items-center gap-2 rounded-2xl bg-white p-2 shadow-md sm:w-[95%] md:gap-7 md:shadow-lg dark:bg-darkSecondary'
+			className={`w-ull mx-auto flex flex-col items-center gap-2 rounded-2xl bg-white p-2 shadow-md sm:w-[95%] sm:flex-row md:gap-7 md:shadow-lg dark:bg-darkSecondary`}
 		>
 			<div className='w-full'>
 				<Image

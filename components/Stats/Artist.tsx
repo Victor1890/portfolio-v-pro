@@ -18,7 +18,7 @@ export default function Artist({ name, url, coverImage, popularity, id }: Artist
 			className='flex items-center gap-5 overflow-hidden border-b border-l border-r border-gray-300 bg-gray-100 p-4 font-barlow first:border-t hover:bg-white dark:border-neutral-600 dark:bg-darkPrimary hover:dark:bg-darkSecondary'
 		>
 			<>
-				<div className='hidden origin-center transform font-inter text-xl tracking-wider text-gray-500 xs:inline-flex'>
+				<div className='xs:inline-flex hidden origin-center transform font-inter text-xl tracking-wider text-gray-500'>
 					#{id + 1}
 				</div>
 				<div className='relative h-12 w-12 origin-center transform md:h-24 md:w-24'>
