@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { FadeContainer, popUp } from '../../content/FramerMotionVariants'
+import { FadeContainer, popUp } from '../../../content/FramerMotionVariants'
 import HomeHeading from '@components/app/heading'
 import { motion } from 'framer-motion'
 import { useDarkMode } from '@context/darkModeContext'

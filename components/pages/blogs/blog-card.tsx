@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 
-export default function Blog({ blog, animate = false }: { blog: IArticleDevTo; animate?: boolean }) {
+export default function BlogCard({ blog, animate = false }: { blog: IArticleDevTo; animate?: boolean }) {
 	const blogRef = useRef(null)
 	return (
 		<motion.article

@@ -1,4 +1,4 @@
-import Blog from '../Blog'
+import Blog from '../blogs/blog-card'
 import HomeHeading from '@components/app/heading'
 import Link from 'next/link'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'

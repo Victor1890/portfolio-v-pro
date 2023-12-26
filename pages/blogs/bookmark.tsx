@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
 import { FadeContainer } from '@content/FramerMotionVariants'
-import Blog from '@components/Blog'
+import Blog from '@components/pages/blogs/blog-card'
 import Metadata from '@components/app/meta/MetaData'
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/PageTop'
