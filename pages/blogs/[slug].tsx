@@ -12,7 +12,10 @@ type StaticProps = GetStaticPropsContext & {
 	}
 }
 
-const PostPage = ({ post, error }: {
+const PostPage = ({
+	post,
+	error,
+}: {
 	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[] }
 	error: boolean
 }) => <BlogPostPage error={error} post={post} />
