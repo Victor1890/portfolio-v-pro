@@ -135,7 +135,6 @@ export type PageMeta = {
 	certificates: PageData
 	projects: PageData
 	about: PageData
-	privacy: PageData
 	snippets: PageData
 }
 
