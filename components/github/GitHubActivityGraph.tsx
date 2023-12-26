@@ -12,8 +12,8 @@ import {
 } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
 
-import AnimatedHeading from './FramerMotion/AnimatedHeading'
-import AnimatedText from './FramerMotion/AnimatedText'
+import AnimatedHeading from '../FramerMotion/AnimatedHeading'
+import AnimatedText from '../FramerMotion/AnimatedText'
 import React from 'react'
 import fetcher from '@lib/fetcher'
 import { getFormattedDate } from '@utils/date'

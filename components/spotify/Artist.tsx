@@ -9,7 +9,7 @@ type ArtistProps = {
 	id: number
 }
 
-export default function Artist({ name, url, coverImage, popularity, id }: ArtistProps) {
+export default function SpotifyArtist({ name, url, coverImage, popularity, id }: ArtistProps) {
 	return (
 		<Link
 			rel='noreferrer'

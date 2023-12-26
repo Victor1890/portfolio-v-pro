@@ -12,28 +12,6 @@ export type AnimatedTAGProps = {
 	infinity?: boolean
 }
 
-/* Spotify Track  */
-export type SpotifyTrack = {
-	id: number
-	title: string
-	url: string
-	coverImage: {
-		url: string
-	}
-	artist: string
-}
-
-/* Spotify Artist  */
-export type SpotifyArtist = {
-	id: number
-	name: string
-	url: string
-	coverImage: {
-		url: string
-	}
-	popularity: number
-}
-
 export type SkillType = {
 	name: string
 	Icon: IconType

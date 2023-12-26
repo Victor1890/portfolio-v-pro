@@ -1,4 +1,4 @@
-function LoadingArtists() {
+function SpotifyLoadingArtists() {
 	return (
 		<>
 			{Array.from(Array(5).keys()).map((item) => (
@@ -26,4 +26,4 @@ function LoadingArtists() {
 	)
 }
 
-export default LoadingArtists
+export default SpotifyLoadingArtists

@@ -9,7 +9,7 @@ type TrackProps = {
 	id: number
 }
 
-export default function Track({ url, title, artist, coverImage, id }: TrackProps) {
+export default function SpotifyTrack({ url, title, artist, coverImage, id }: TrackProps) {
 	return (
 		<Link
 			href={url}
