@@ -1,7 +1,7 @@
 import { AnimatePresence } from 'framer-motion'
 import { FadeContainer } from '@content/FramerMotionVariants'
 import Blog from '@components/Blog'
-import Metadata from '@components/MetaData'
+import Metadata from '@components/app/meta/MetaData'
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/PageTop'
 import useBookmarkBlogs from '@hooks/useBookmarkBlogs'

@@ -1,7 +1,7 @@
 import { GetStaticPropsContext } from 'next'
 import MDXComponents from '@components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
-import Metadata from '@components/MetaData'
+import Metadata from '@components/app/meta/MetaData'
 import PageNotFound from 'pages/404'
 import SnippetLayout from '@layout/SnippetLayout'
 import pageMeta from '@content/meta'

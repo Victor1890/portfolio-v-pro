@@ -2,7 +2,7 @@ import { AnimatePresence } from 'framer-motion'
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import { FadeContainer } from '@content/FramerMotionVariants'
 // import { ISnippet } from "@lib/interface/sanity";
-import Metadata from '@components/MetaData'
+import Metadata from '@components/app/meta/MetaData'
 import PageTop from '@components/PageTop'
 import SnippetCard from '@components/SnippetCard'
 // import { getAllSnippetsMeta } from "@lib/sanityContent";

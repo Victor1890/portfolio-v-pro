@@ -1,4 +1,4 @@
-import MetaData from '@components/MetaData'
+import MetaData from '@components/app/meta/MetaData'
 import { popUpFromBottomForText } from '@content/FramerMotionVariants'
 import Image from 'next/image'
 import Link from 'next/link'

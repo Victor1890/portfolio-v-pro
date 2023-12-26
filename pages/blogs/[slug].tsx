@@ -1,5 +1,5 @@
 import MDXComponents from '@components/MDXComponents'
-import Metadata from '@components/MetaData'
+import Metadata from '@components/app/meta/MetaData'
 import BlogLayout from '@layout/BlogLayout'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import devToProvider from '@provider/dev.to/devto.provider'

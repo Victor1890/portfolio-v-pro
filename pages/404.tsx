@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import MetaData from '@components/MetaData'
+import MetaData from '@components/app/meta/MetaData'
 
 export default function PageNotFound() {
 	return (

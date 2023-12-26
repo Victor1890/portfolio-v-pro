@@ -1,7 +1,7 @@
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import MDXComponents from '@components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
-import MetaData from '@components/MetaData'
+import MetaData from '@components/app/meta/MetaData'
 import { PageData } from '@lib/types'
 import PageTop from '@components/PageTop'
 import { opacityVariant } from '@content/FramerMotionVariants'

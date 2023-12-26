@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { FadeContainer, popUp } from '../../content/FramerMotionVariants'
-import { HomeHeading } from '../../pages'
+import HomeHeading from '@components/app/heading'
 import { motion } from 'framer-motion'
 import { useDarkMode } from '@context/darkModeContext'
 import * as WindowsAnimation from '@lib/windowsAnimation'

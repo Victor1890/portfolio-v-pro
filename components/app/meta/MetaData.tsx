@@ -3,8 +3,6 @@ import { NextSeo } from 'next-seo'
 import useWindowLocation from '@hooks/useWindowLocation'
 import config from '@config'
 
-// import Head from "next/head";
-
 type Props = {
 	title: string
 	description: string
