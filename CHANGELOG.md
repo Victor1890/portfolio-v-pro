@@ -1,3 +1,9 @@
+## [0.2.12](https://github.com/Victor1890/portfolio-v-pro/compare/v0.2.7...v0.2.12) (2023-12-27)
+
+### Features
+
+- :art: fix pagination and fix tailwind css format ([45cc14b](https://github.com/Victor1890/portfolio-v-pro/commit/45cc14b331475242ead92ed15f381b76deb5a654))
+
 ## [0.2.7](https://github.com/Victor1890/portfolio-v-pro/compare/v0.1.5...v0.2.7) (2023-12-25)
 
 ### Features
