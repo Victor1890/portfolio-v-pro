@@ -3,19 +3,17 @@ import MDXComponents from '@components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
 import MetaData from '@components/app/meta/MetaData'
 import { PageData } from '@lib/types'
-import PageTop from '@components/PageTop'
+import PageTop from '@components/app/page-top'
 import { opacityVariant } from '@content/FramerMotionVariants'
 import { IStaticInfo } from 'interfaces/about/about.interface'
 
-export default function StaticPage({
-	metadata,
-	page,
-	showDescription = false,
-}: {
+interface IStaticPageProps {
 	metadata: PageData
 	page: IStaticInfo
 	showDescription?: boolean
-}) {
+}
+
+export default function StaticPage({ metadata, page, showDescription = false }: IStaticPageProps) {
 	return (
 		<>
 			<MetaData

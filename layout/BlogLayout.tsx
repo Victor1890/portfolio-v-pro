@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'
 
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
-import Newsletter from '@components/Newsletter'
+import Newsletter from '@components/app/newsletter'
 import ScrollProgressBar from '@components/ScrollProgressBar'
 import TableOfContents from '@components/TableOfContents'
 import { opacityVariant } from '@content/FramerMotionVariants'

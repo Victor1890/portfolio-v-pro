@@ -1,18 +1,15 @@
-import { fromLeftVariant, opacityVariant } from '../content/FramerMotionVariants'
-import AnimatedHeading from './FramerMotion/AnimatedHeading'
-import AnimatedText from './FramerMotion/AnimatedText'
+import AnimatedHeading from '@components/FramerMotion/AnimatedHeading'
+import AnimatedText from '@components/FramerMotion/AnimatedText'
+import { fromLeftVariant, opacityVariant } from '@content/FramerMotionVariants'
 
-export default function PageTop({
-	pageTitle,
-	headingClass,
-	containerClass,
-	children,
-}: {
+interface PageTopProps {
 	pageTitle: string
 	headingClass?: string
 	containerClass?: string
 	children?: React.ReactNode
-}) {
+}
+
+export default function PageTop({ pageTitle, headingClass, containerClass, children }: PageTopProps) {
 	return (
 		<div className={`mb-10 flex w-full select-none flex-col gap-3 py-5 ${containerClass}`}>
 			<AnimatedHeading

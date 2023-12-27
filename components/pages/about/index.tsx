@@ -1,5 +1,5 @@
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
-import StaticPage from '@components/StaticPage'
+import StaticPage from '@components/app/static-page'
 import { FadeContainer, opacityVariant } from '@content/FramerMotionVariants'
 import { linkedinData } from '@content/linkedinData'
 import pageMeta from '@content/meta'

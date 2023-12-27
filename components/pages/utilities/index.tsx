@@ -1,5 +1,5 @@
 import AnimatedText from '@components/FramerMotion/AnimatedText'
-import PageTop from '@components/PageTop'
+import PageTop from '@components/app/page-top'
 import MetaData from '@components/app/meta/MetaData'
 import { opacityVariant } from '@content/FramerMotionVariants'
 import pageMeta from '@content/meta'
