@@ -40,7 +40,7 @@ const Footer = ({ setShowQR, showQR }: IFooterProps) => {
 						{navigationRoutes.slice(5, navigationRoutes.length).map((route, index) => {
 							let text = route
 							if (route === 'rss') text = 'RSS'
-							return <FooterLink key={`${index}-${text}`} route={route} text={text} />
+							return <FooterLink key={`${index}-${text}`} route={`/${route}`} text={text} />
 						})}
 					</div>
 					<div className='flex flex-col gap-4 capitalize'>

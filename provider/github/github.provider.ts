@@ -8,9 +8,12 @@ class GithubProvider extends Base {
 	private readonly PER_PAGE_DEFAULT: number = 1000
 
 	constructor() {
-		super(github.api, {
-			Authorization: `token ${github.key}`,
-		})
+		super(
+			github.api,
+			new Headers({
+				Authorization: `token ${github.key}`,
+			})
+		)
 	}
 
 	public async getProfile(): Promise<IGitHubProfileResponse> {

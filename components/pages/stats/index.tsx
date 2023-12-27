@@ -140,7 +140,7 @@ const StatPage = () => {
 							) : (
 								<span className='h-6 w-20 bg-white dark:bg-darkSecondary'></span>
 							)}
-						</span>{' '}
+						</span>
 						most streamed song of mine in last 4 weeks. Here's my top tracks on Spotify updated daily.
 					</AnimatedText>
 					<div className='my-10 flex flex-col gap-0 font-barlow'>
@@ -181,7 +181,7 @@ const StatPage = () => {
 							) : (
 								<span className='h-6 w-20 bg-white dark:bg-darkSecondary'></span>
 							)}
-						</span>{' '}
+						</span>
 						in last 4 weeks on Spotify.
 					</AnimatedText>
 

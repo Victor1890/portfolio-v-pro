@@ -9,7 +9,7 @@ interface IFooterLinkProps {
 
 const FooterLink = ({ route, text }: IFooterLinkProps) => {
 	return (
-		<Link href={`/${route}`}>
+		<Link href={route}>
 			<motion.p className='w-fit hover:text-black dark:hover:text-white' variants={popUp}>
 				{text}
 			</motion.p>

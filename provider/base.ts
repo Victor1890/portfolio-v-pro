@@ -1,19 +1,10 @@
-import axios, { AxiosHeaders, AxiosInstance, AxiosRequestConfig, HeadersDefaults, RawAxiosRequestHeaders } from 'axios'
-
 class Base {
-	private readonly axios: AxiosInstance
+	private readonly api: string
+	private readonly headers: HeadersInit
 
-	constructor(
-		api: string,
-		headers: RawAxiosRequestHeaders | AxiosHeaders | Partial<HeadersDefaults> = {},
-		config: AxiosRequestConfig = {}
-	) {
-		this.axios = axios.create({
-			baseURL: api,
-			withCredentials: true,
-			headers: { ...config.headers, ...headers },
-			...(config || {}),
-		})
+	constructor(api: string, headers: HeadersInit = {}) {
+		this.api = api
+		this.headers = headers
 	}
 
 	private params(params: Record<string, any>): string {
@@ -26,96 +17,73 @@ class Base {
 			.join('&')
 	}
 
-	private getMessage(error: { response?: any; message?: string }): string {
-		const response = error.response
+	private async getMessage(response: Response): Promise<string> {
+		const data = await response.json()
+		const conditionError = data && data.error
+		const conditionWithMessage = data && data.message
 
-		const conditionError = response && response.data && response.data.error
-		const conditionWithMessage = response && response.data && response.data.message
+		if (conditionWithMessage) return data.message
+		if (conditionError) return data.error.message
 
-		if (conditionWithMessage) return response.data.message
-		if (conditionError) return response.data.error.message
-
-		return `${error.message}`
+		return `${response.statusText}`
 	}
 
-	protected get<T = unknown>(
+	protected async get<T = unknown>(
 		url: string,
 		params: Record<string, any> = {},
-		config: AxiosRequestConfig = {}
+		headers: HeadersInit = {}
 	): Promise<T> {
-		return new Promise((resolve, reject) => {
-			const _isParam = Object.keys(params).length > 0
-			this.axios
-				.get<T>(`${url}${_isParam ? `?${this.params(params)}` : ''}`, config)
-				.then((res) => resolve(res.data))
-				.catch((error) => {
-					const message = this.getMessage(error)
-
-					return reject({ message })
-				})
+		const _isParam = Object.keys(params).length > 0
+		const response = await fetch(`${this.api}${url}${_isParam ? `?${this.params(params)}` : ''}`, {
+			headers: { ...this.headers, ...headers },
 		})
+
+		if (!response.ok) {
+			throw new Error(await this.getMessage(response))
+		}
+
+		return response.json()
 	}
 
-	protected _download(url: string, params: Record<string, any> = {}, config: AxiosRequestConfig = {}): Promise<any> {
-		return new Promise((resolve, reject) => {
-			const _isParam = Object.keys(params).length > 0
-			this.axios
-				.get(`${url}${_isParam ? `?${this.params(params)}` : ''}`, config)
-				.then((res) => resolve(res))
-				.catch((error) => {
-					const message = this.getMessage(error)
-
-					return reject({ message })
-				})
+	protected async post<T = unknown>(url: string, data: Record<string, any> = {}): Promise<T> {
+		const response = await fetch(`${this.api}${url}`, {
+			method: 'POST',
+			headers: this.headers,
+			body: JSON.stringify(data),
 		})
+
+		if (!response.ok) {
+			throw new Error(await this.getMessage(response))
+		}
+
+		return response.json()
 	}
 
-	protected post<T = unknown>(url: string, data: object = {}, config: AxiosRequestConfig = {}): Promise<any> {
-		return new Promise((resolve, reject) => {
-			this.axios
-				.post<T>(url, data, config)
-				.then((res) => resolve(res.data))
-				.catch((error) => {
-					const message = this.getMessage(error)
-					let data = error?.response?.data || {}
-					data = data?.error || data || {}
-					return reject({ message, ...data })
-				})
+	protected async update<T = unknown>(url: string, data: Record<string, any> = {}): Promise<T> {
+		const response = await fetch(`${this.api}${url}`, {
+			method: 'PATCH',
+			headers: this.headers,
+			body: JSON.stringify(data),
 		})
+
+		if (!response.ok) {
+			throw new Error(await this.getMessage(response))
+		}
+
+		return response.json()
 	}
 
-	protected update<T = unknown>(url: string, data: object = {}, config: AxiosRequestConfig = {}): Promise<any> {
-		return new Promise((resolve, reject) => {
-			this.axios
-				.patch<T>(url, data, config)
-				.then((res) => resolve(res.data))
-				.catch((error) => {
-					const message = this.getMessage(error)
-
-					return reject({ message })
-				})
+	protected async delete<T = unknown>(url: string): Promise<T> {
+		const response = await fetch(`${this.api}${url}`, {
+			method: 'DELETE',
+			headers: this.headers,
 		})
-	}
 
-	protected delete<T>(url: string, config: AxiosRequestConfig = {}, data: object = {}): Promise<any> {
-		return new Promise((resolve, reject) => {
-			this.axios
-				.delete<T>(url, {
-					...(config && config),
-					data,
-				})
-				.then((res) => resolve(res.data))
-				.catch((error) => {
-					const message = this.getMessage(error)
-					return reject({ message })
-				})
-		})
-	}
+		if (!response.ok) {
+			throw new Error(await this.getMessage(response))
+		}
 
-	protected cancelToken = axios.CancelToken.source()
-
-	protected cancelRequest(message: string) {
-		this.cancelToken.cancel(message)
+		return response.json()
 	}
 }
 

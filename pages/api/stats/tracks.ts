@@ -3,6 +3,7 @@ import spotifyProvider from '@provider/spotify/spotify.provider'
 
 export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
 	const topTracks = await spotifyProvider.getTopTracks().catch(() => null)
+
 	if (!topTracks) {
 		return res.status(500).json({ error: { message: 'Failed to fetch top tracks' } })
 	}
