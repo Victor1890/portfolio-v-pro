@@ -2,9 +2,9 @@ import MDXContent from '@lib/MDXContent'
 import AboutPage from '@components/pages/about'
 import { IStaticInfo } from 'interfaces/about/about.interface'
 
-export default function About({ about }: { about: IStaticInfo }) {
-	return <AboutPage about={about} />
-}
+const About = ({ about }: { about: IStaticInfo }) => <AboutPage about={about} />
+
+export default About
 
 export async function getStaticProps() {
 	const { post: aboutData } = await new MDXContent('static_pages').getPostFromSlug('about')

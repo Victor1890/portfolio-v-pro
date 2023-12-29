@@ -1,5 +1,5 @@
 import ProjectPage from '@components/pages/project'
 
-export default function Projects() {
-	return <ProjectPage />
-}
+const Projects = () => <ProjectPage />
+
+export default Projects
