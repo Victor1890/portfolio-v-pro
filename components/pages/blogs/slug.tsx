@@ -6,9 +6,10 @@ import BlogLayout from '@components/layout/blog'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@components/MDXComponents'
 import { Fragment } from 'react'
+import { ReadTimeResults } from 'reading-time'
 
 interface BlogPostPageProps {
-	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[] }
+	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[]; readingTime: ReadTimeResults }
 	error: boolean
 }
 

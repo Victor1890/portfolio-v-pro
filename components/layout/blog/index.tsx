@@ -1,37 +1,29 @@
-import { useEffect, useState } from 'react'
-import { BsBookmark, BsBookmarkFill } from 'react-icons/bs'
+import { useState } from 'react'
 
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import Newsletter from '@components/app/newsletter'
 import ScrollProgressBar from '@components/layout/ScrollProgressBar'
 import TableOfContents from '@components/layout/TableOfContents'
-import { opacityVariant } from 'constants/FramerMotionVariants'
-import useBookmarkBlogs from '@hooks/useBookmarkBlogs'
 import useWindowLocation from '@hooks/useWindowLocation'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import { getFormattedDate } from '@utils/date.util'
+import { opacityVariant } from 'constants/FramerMotionVariants'
+import { ITableOfContentMDX } from 'interfaces/common/common.interface'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiPrinter } from 'react-icons/fi'
+import { ReadTimeResults } from 'reading-time'
 import ShareOnSocialMedia from '../ShareOnSocialMedia'
-import { ITableOfContentMDX } from 'interfaces/common/common.interface'
 
 export default function BlogLayout({
 	post,
 	children,
 }: {
-	post: IArticleDevTo & { tableOfContents: ITableOfContentMDX[] }
+	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[]; readingTime: ReadTimeResults }
 	children: JSX.Element | string
 }) {
 	const { currentURL } = useWindowLocation()
 	const [isTOCActive, setIsTOCActive] = useState(false)
-	const [alreadyBookmarked, setAlreadyBookmarked] = useState(false)
-
-	const { isAlreadyBookmarked, removeFromBookmark } = useBookmarkBlogs('blogs', [])
-
-	useEffect(() => {
-		setAlreadyBookmarked(isAlreadyBookmarked(post.slug))
-	}, [isAlreadyBookmarked, post.slug])
 
 	return (
 		<section
@@ -102,23 +94,10 @@ export default function BlogLayout({
 							<div className='rounded-md bg-white px-2 py-1 text-xs text-black dark:bg-darkSecondary dark:text-gray-400'>
 								{post.reading_time_minutes} min read
 							</div>
-							{/* <div className="py-1 px-2 text-xs rounded-md bg-white text-black dark:bg-darkSecondary dark:text-gray-400">
-                {post.readingTime.words} words
-              </div> */}
+							<div className='rounded-md bg-white px-2 py-1 text-xs text-black dark:bg-darkSecondary dark:text-gray-400'>
+								{post.readingTime.words} words
+							</div>
 						</div>
-					</div>
-
-					<div className='ml-4 sm:place-self-center'>
-						<button
-							title='Save for Later'
-							className='mt-2 transition active:scale-75 sm:mt-1'
-							onClick={() => {
-								alreadyBookmarked ? removeFromBookmark(post.slug) : ''
-								// : addToBookmark(post.meta);
-							}}
-						>
-							{alreadyBookmarked ? <BsBookmarkFill className='h-6 w-6 ' /> : <BsBookmark className='h-6 w-6 ' />}
-						</button>
 					</div>
 				</div>
 				<AnimatedDiv

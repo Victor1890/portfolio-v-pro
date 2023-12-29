@@ -88,15 +88,6 @@ const BlogPage = ({ blogs }: IBlogPageProps) => {
 									</motion.h3>
 
 									<div className='flex items-center gap-2'>
-										{/* <Link href="/blogs/bookmark" legacyBehavior>
-                      <motion.div variants={popUp}>
-                        <BsBookmark
-                          title="Bookmark"
-                          className="text-2xl cursor-pointer"
-                        />
-                      </motion.div>
-                    </Link> */}
-
 										<Link href='/rss' legacyBehavior>
 											<motion.div variants={popUp}>
 												<BiRss title='RSS' className='cursor-pointer text-3xl' />

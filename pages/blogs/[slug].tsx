@@ -5,6 +5,7 @@ import { getMDXTableOfContents } from '@utils/mdx.util'
 import { ITableOfContentMDX } from 'interfaces/common/common.interface'
 import { GetStaticPropsContext } from 'next'
 import { serialize } from 'next-mdx-remote/serialize'
+import readTime, { ReadTimeResults } from 'reading-time'
 
 type StaticProps = GetStaticPropsContext & {
 	params: {
@@ -16,7 +17,7 @@ const PostPage = ({
 	post,
 	error,
 }: {
-	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[] }
+	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[]; readingTime: ReadTimeResults }
 	error: boolean
 }) => <BlogPostPage error={error} post={post} />
 
@@ -31,13 +32,16 @@ export async function getStaticProps({ params }: StaticProps) {
 	}
 
 	const mdxContent = post.body_markdown as string
+	const readingTime = readTime(mdxContent)
 	const content = await serialize(mdxContent)
 	const tableOfContents = getMDXTableOfContents(mdxContent)
+
+	console.log('readingTime: ', readingTime)
 
 	return {
 		props: {
 			error: false,
-			post: { ...post, content, tableOfContents },
+			post: { ...post, content, tableOfContents, readingTime },
 		},
 	}
 }
