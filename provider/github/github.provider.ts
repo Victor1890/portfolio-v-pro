@@ -1,10 +1,6 @@
 import config from '@config'
 import Base from '@provider/base'
-import {
-	IGitHubProfileResponse,
-	IGitHubRepositoriesAPIResponse,
-	IGithubContributionResponse
-} from './github.interface'
+import { IGitHubProfileResponse, IGitHubRepositoriesAPIResponse, IGithubContributionResponse } from './github.interface'
 
 const { github } = config
 

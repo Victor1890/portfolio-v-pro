@@ -35,8 +35,9 @@ export default function BlogLayout({
 
 	return (
 		<section
-			className={`relative mt-[44px] !overflow-hidden md:mt-[60px] ${!post.tableOfContents.length ? 'flex items-center justify-center' : ''
-				}`}
+			className={`relative mt-[44px] !overflow-hidden md:mt-[60px] ${
+				!post.tableOfContents.length ? 'flex items-center justify-center' : ''
+			}`}
 		>
 			{post.tableOfContents.length ? (
 				<TableOfContents
@@ -48,8 +49,9 @@ export default function BlogLayout({
 
 			{/* Blog Content */}
 			<section
-				className={`prose relative p-5 font-barlow dark:prose-invert sm:pt-10 ${post.tableOfContents.length > 0 ? 'md:ml-[35%] lg:ml-[30%]' : ''
-					} print:!mx-auto`}
+				className={`prose relative p-5 font-barlow dark:prose-invert sm:pt-10 ${
+					post.tableOfContents.length > 0 ? 'md:ml-[35%] lg:ml-[30%]' : ''
+				} print:!mx-auto`}
 				style={{
 					maxWidth: '800px',
 					opacity: `${isTOCActive} && "0.3"`,
@@ -58,8 +60,9 @@ export default function BlogLayout({
 			>
 				<ScrollProgressBar />
 				<h1
-					className={`text-3xl ${post.tableOfContents.length > 0 ? '' : 'text-center'
-						} font-bold tracking-tight text-black md:text-5xl dark:text-white`}
+					className={`text-3xl ${
+						post.tableOfContents.length > 0 ? '' : 'text-center'
+					} font-bold tracking-tight text-black md:text-5xl dark:text-white`}
 				>
 					{post.title}
 				</h1>

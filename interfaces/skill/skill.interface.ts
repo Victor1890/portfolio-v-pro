@@ -1,6 +1,6 @@
-import { IconType } from "react-icons/lib"
+import { IconType } from 'react-icons/lib'
 
 export type SkillType = {
-    name: string
-    Icon: IconType
+	name: string
+	Icon: IconType
 }

@@ -1,5 +1,5 @@
-import { Variants } from "framer-motion"
-import { ReadTimeResults } from "reading-time"
+import { Variants } from 'framer-motion'
+import { ReadTimeResults } from 'reading-time'
 
 export type ITableOfContentMDX = {
 	level: number
