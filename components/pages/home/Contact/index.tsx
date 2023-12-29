@@ -1,6 +1,6 @@
 import React from 'react'
 import 'react-toastify/dist/ReactToastify.css'
-import { popUpFromBottomForText } from '../../../../content/FramerMotionVariants'
+import { popUpFromBottomForText } from '../../../../constants/FramerMotionVariants'
 import AnimatedText from '../../../FramerMotion/AnimatedText'
 import AnimatedHeading from '../../../FramerMotion/AnimatedHeading'
 import ContactForm from './ContactForm'

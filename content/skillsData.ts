@@ -1,4 +1,4 @@
-import { SkillType } from '@lib/types'
+import { SkillType } from '@interfaces/skill/skill.interface'
 import {
 	SiBootstrap,
 	SiCss3,

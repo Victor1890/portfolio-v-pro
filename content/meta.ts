@@ -1,4 +1,4 @@
-import { PageMeta } from '@lib/types'
+import { PageMeta } from '@interfaces/common/common.interface'
 
 const pageMeta: PageMeta = {
 	home: {

@@ -1,28 +1,10 @@
+import { Variants } from "framer-motion"
+import { ReadTimeResults } from "reading-time"
+
 export type ITableOfContentMDX = {
 	level: number
 	id: string
 	heading: string
-}
-
-export interface ITMDBDataI {
-	adult: boolean
-	backdrop_path: string
-	genre_ids: number[]
-	id: number
-	original_language: string
-	original_title?: string
-	original_name?: string
-	overview: string
-	popularity: number
-	poster_path: string
-	release_date?: string
-	first_air_date?: string
-	title: string
-	name?: string
-	video: boolean
-	vote_average: number
-	vote_count: number
-	rating?: number
 }
 
 export interface IEmailValidation {
@@ -38,4 +20,41 @@ export interface IEmailValidation {
 	mx_ip: string
 	mx_info: string
 	last_changed_at: string
+}
+
+export type PageData = {
+	title: string
+	description: string
+	image: string
+	keywords: string
+}
+
+export type PageMeta = {
+	home: PageData
+	stats: PageData
+	utilities: PageData
+	blogs: PageData
+	bookmark: PageData
+	certificates: PageData
+	projects: PageData
+	about: PageData
+	snippets: PageData
+}
+
+export type FrontMatter = {
+	slug: string
+	readingTime: ReadTimeResults
+	excerpt: string
+	title: string
+	date: string
+	keywords: string
+	image: string
+	org?: string | null
+}
+
+export type AnimatedTAGProps = {
+	variants: Variants
+	className?: string
+	children: React.ReactNode
+	infinity?: boolean
 }

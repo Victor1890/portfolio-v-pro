@@ -8,7 +8,7 @@ import readTime from 'reading-time'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
-import { FrontMatter } from './types'
+import { FrontMatter } from '@interfaces/common/common.interface'
 
 export default class MDXContent {
 	private readonly POST_PATH: string

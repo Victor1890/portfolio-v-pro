@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { FrontMatter } from '@lib/types'
+import { FrontMatter } from '@interfaces/common/common.interface'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 
 const useBookmarkBlogs = (key: string, defaultValue: []) => {

@@ -1,6 +1,6 @@
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
-import { opacityVariant } from '@content/FramerMotionVariants'
+import { opacityVariant } from 'constants/FramerMotionVariants'
 import { useDarkMode } from '@context/darkModeContext'
 import fetcher from '@lib/fetcher'
 import useSWR from 'swr'

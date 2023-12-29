@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { popUp } from '../../../content/FramerMotionVariants'
+import { popUp } from '../../../constants/FramerMotionVariants'
 
 interface IStatsCardProps {
 	title: string

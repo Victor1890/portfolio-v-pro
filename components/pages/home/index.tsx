@@ -1,4 +1,4 @@
-import { FadeContainer, opacityVariant, popUp } from '@content/FramerMotionVariants'
+import { FadeContainer, opacityVariant, popUp } from 'constants/FramerMotionVariants'
 import pageMeta from '@content/meta'
 import MetaData from '@components/app/meta/MetaData'
 import { Fragment } from 'react'

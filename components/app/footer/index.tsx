@@ -1,4 +1,4 @@
-import { FadeContainer, opacityVariant } from '@content/FramerMotionVariants'
+import { FadeContainer, opacityVariant } from 'constants/FramerMotionVariants'
 import socialMedia from '@content/socialMedia'
 import fetcher from '@lib/fetcher'
 import { navigationRoutes } from '@utils/utils'

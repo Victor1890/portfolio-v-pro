@@ -1,7 +1,7 @@
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/app/page-top'
 import MetaData from '@components/app/meta/MetaData'
-import { FadeContainer, popUp, popUpFromBottomForText, searchBarSlideAnimation } from '@content/FramerMotionVariants'
+import { FadeContainer, popUp, popUpFromBottomForText, searchBarSlideAnimation } from 'constants/FramerMotionVariants'
 import pageMeta from '@content/meta'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -10,7 +10,7 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { CgSearch } from 'react-icons/cg'
 import { BiRss } from 'react-icons/bi'
 import Pagination from '@components/app/pagination'
-import { debounce } from '@utils/functions'
+import { debounce } from '@utils/functions.util'
 import BlogCard from './blog-card'
 
 interface IBlogPageProps {

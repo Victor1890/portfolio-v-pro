@@ -3,10 +3,10 @@ import { ToastContainer, toast } from 'react-toastify'
 import { useDarkMode } from '@context/darkModeContext'
 import emailjs from '@emailjs/browser'
 import { motion } from 'framer-motion'
-import { FadeContainer, mobileNavItemSideways } from '@content/FramerMotionVariants'
+import { FadeContainer, mobileNavItemSideways } from 'constants/FramerMotionVariants'
 import Ripples from 'react-ripples'
 import { useRef } from 'react'
-import { FormInput } from '@lib/types'
+import { FormInput } from '@interfaces/contact/contact.interface'
 import config from '@config'
 
 const {

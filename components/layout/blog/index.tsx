@@ -5,11 +5,11 @@ import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import Newsletter from '@components/app/newsletter'
 import ScrollProgressBar from '@components/layout/ScrollProgressBar'
 import TableOfContents from '@components/layout/TableOfContents'
-import { opacityVariant } from '@content/FramerMotionVariants'
+import { opacityVariant } from 'constants/FramerMotionVariants'
 import useBookmarkBlogs from '@hooks/useBookmarkBlogs'
 import useWindowLocation from '@hooks/useWindowLocation'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-import { getFormattedDate } from '@utils/date'
+import { getFormattedDate } from '@utils/date.util'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiPrinter } from 'react-icons/fi'
@@ -35,9 +35,8 @@ export default function BlogLayout({
 
 	return (
 		<section
-			className={`relative mt-[44px] !overflow-hidden md:mt-[60px] ${
-				!post.tableOfContents.length ? 'flex items-center justify-center' : ''
-			}`}
+			className={`relative mt-[44px] !overflow-hidden md:mt-[60px] ${!post.tableOfContents.length ? 'flex items-center justify-center' : ''
+				}`}
 		>
 			{post.tableOfContents.length ? (
 				<TableOfContents
@@ -49,9 +48,8 @@ export default function BlogLayout({
 
 			{/* Blog Content */}
 			<section
-				className={`prose relative p-5 font-barlow dark:prose-invert sm:pt-10 ${
-					post.tableOfContents.length > 0 ? 'md:ml-[35%] lg:ml-[30%]' : ''
-				} print:!mx-auto`}
+				className={`prose relative p-5 font-barlow dark:prose-invert sm:pt-10 ${post.tableOfContents.length > 0 ? 'md:ml-[35%] lg:ml-[30%]' : ''
+					} print:!mx-auto`}
 				style={{
 					maxWidth: '800px',
 					opacity: `${isTOCActive} && "0.3"`,
@@ -60,9 +58,8 @@ export default function BlogLayout({
 			>
 				<ScrollProgressBar />
 				<h1
-					className={`text-3xl ${
-						post.tableOfContents.length > 0 ? '' : 'text-center'
-					} font-bold tracking-tight text-black md:text-5xl dark:text-white`}
+					className={`text-3xl ${post.tableOfContents.length > 0 ? '' : 'text-center'
+						} font-bold tracking-tight text-black md:text-5xl dark:text-white`}
 				>
 					{post.title}
 				</h1>

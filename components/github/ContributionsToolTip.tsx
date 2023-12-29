@@ -1,4 +1,4 @@
-import { getFormattedDate } from '@utils/date'
+import { getFormattedDate } from '@utils/date.util'
 import { TooltipProps } from 'recharts'
 import { NameType, ValueType } from 'recharts/types/component/DefaultTooltipContent'
 

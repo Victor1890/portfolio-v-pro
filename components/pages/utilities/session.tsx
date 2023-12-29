@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
-import { FadeContainer, popUp, popUpFromBottomForText } from '@content/FramerMotionVariants'
+import { FadeContainer, popUp, popUpFromBottomForText } from 'constants/FramerMotionVariants'
 import { IUtilityData } from '@interfaces/utility/utility.interface'
 import { motion } from 'framer-motion'
 import Link from 'next/link'

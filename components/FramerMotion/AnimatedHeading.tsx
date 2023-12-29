@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { AnimatedTAGProps } from '@lib/types'
+import { AnimatedTAGProps } from '@interfaces/common/common.interface'
 
 export default function AnimatedHeading({ variants, className, children, infinity }: AnimatedTAGProps) {
 	return (

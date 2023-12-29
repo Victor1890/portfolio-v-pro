@@ -1,6 +1,6 @@
-import { BlogCardAnimation } from '@content/FramerMotionVariants'
+import { BlogCardAnimation } from 'constants/FramerMotionVariants'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-import { getFormattedDate } from '@utils/date'
+import { getFormattedDate } from '@utils/date.util'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'

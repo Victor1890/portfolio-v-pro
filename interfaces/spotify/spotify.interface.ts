@@ -1,3 +1,5 @@
+import { IconType } from 'react-icons/lib'
+
 export type SpotifyTrackType = {
 	id: number
 	title: string
@@ -16,4 +18,10 @@ export type SpotifyArtistType = {
 		url: string
 	}
 	popularity: number
+}
+
+export interface ISocialPlatform {
+	title: string
+	Icon: IconType
+	url: string
 }

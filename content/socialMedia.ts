@@ -1,9 +1,9 @@
-import { SocialPlatform } from '@lib/types'
+import { ISocialPlatform } from '@interfaces/spotify/spotify.interface'
 import { BsGithub, BsLinkedin } from 'react-icons/bs'
 import { FaDev } from 'react-icons/fa'
 import { HiMail } from 'react-icons/hi'
 
-const socialMedia: SocialPlatform[] = [
+const socialMedia: ISocialPlatform[] = [
 	{
 		title: 'LinkedIn',
 		Icon: BsLinkedin,

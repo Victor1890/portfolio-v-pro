@@ -1,6 +1,6 @@
 import AnimatedHeading from '@components/FramerMotion/AnimatedHeading'
 import AnimatedText from '@components/FramerMotion/AnimatedText'
-import { fromLeftVariant, opacityVariant } from '@content/FramerMotionVariants'
+import { fromLeftVariant, opacityVariant } from 'constants/FramerMotionVariants'
 
 interface PageTopProps {
 	pageTitle: string

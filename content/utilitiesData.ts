@@ -1,4 +1,4 @@
-import { Utilities } from '@lib/types'
+import { IUtility } from '@interfaces/utility/utility.interface'
 import { BsFillPaletteFill, BsWindows } from 'react-icons/bs'
 import { FaGitAlt } from 'react-icons/fa'
 import {
@@ -12,7 +12,7 @@ import {
 	SiYarn,
 } from 'react-icons/si'
 
-const utilities: Utilities = {
+const utilities: IUtility = {
 	title: 'Utilities',
 	description:
 		"In case you are wondering What tech I use, Here's the list of what tech I'm currently using for coding on the daily basis. This list is always changing.",

@@ -1,4 +1,4 @@
-import { AnimatedTAGProps } from '@lib/types'
+import { AnimatedTAGProps } from '@interfaces/common/common.interface'
 import { motion } from 'framer-motion'
 
 export default function AnimatedText({ variants, className, children, infinity }: AnimatedTAGProps) {

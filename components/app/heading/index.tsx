@@ -1,5 +1,5 @@
 import AnimatedHeading from '@components/FramerMotion/AnimatedHeading'
-import { headingFromLeft } from '@content/FramerMotionVariants'
+import { headingFromLeft } from 'constants/FramerMotionVariants'
 
 interface IHomeHeadingProps {
 	title: React.ReactNode | string

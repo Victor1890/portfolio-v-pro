@@ -1,4 +1,4 @@
-import { popUp } from '@content/FramerMotionVariants'
+import { popUp } from 'constants/FramerMotionVariants'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 

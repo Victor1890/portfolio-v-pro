@@ -2,9 +2,9 @@ import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import MDXComponents from '@components/MDXComponents'
 import { MDXRemote } from 'next-mdx-remote'
 import MetaData from '@components/app/meta/MetaData'
-import { PageData } from '@lib/types'
+import { PageData } from '@interfaces/common/common.interface'
 import PageTop from '@components/app/page-top'
-import { opacityVariant } from '@content/FramerMotionVariants'
+import { opacityVariant } from 'constants/FramerMotionVariants'
 import { IStaticInfo } from 'interfaces/about/about.interface'
 
 interface IStaticPageProps {
