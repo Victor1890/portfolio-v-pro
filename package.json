@@ -1,6 +1,6 @@
 {
 	"name": "portfolio-next",
-	"version": "0.2.13",
+	"version": "0.2.11",
 	"private": true,
 	"license": "MIT",
 	"scripts": {
@@ -14,7 +14,7 @@
 		"format:fix": "prettier --write --ignore-path .gitignore .",
 		"find:unused": "next-unused",
 		"prepare": "husky install",
-		"version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+		"version": "conventional-changelog -p angular -i CHANGELOG.md -s",
 		"p:check": "ncu",
 		"p:run": "ncu -u"
 	},
