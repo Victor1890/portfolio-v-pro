@@ -1,3 +1,7 @@
+## [0.2.13](https://github.com/Victor1890/portfolio-v-pro/compare/v0.2.12...v0.2.13) (2023-12-29)
+
+
+
 ## [0.2.12](https://github.com/Victor1890/portfolio-v-pro/compare/v0.2.7...v0.2.12) (2023-12-27)
 
 ### Features
