@@ -14,12 +14,12 @@ const {
 	implementations: { emailSdk },
 } = config
 
+const FailToastId = 'failed'
+
 export default function Form() {
 	const { isDarkMode } = useDarkMode()
 	const sendButtonRef = useRef<HTMLButtonElement>(null!)
 	const formRef = useRef<HTMLFormElement>(null!)
-
-	const FailToastId: string = 'failed'
 
 	function sendEmail(e: React.SyntheticEvent) {
 		e.preventDefault()
@@ -66,7 +66,7 @@ export default function Form() {
 			})
 			.catch((err) => {
 				toast.update(toastId, {
-					render: '😢 ' + err.text,
+					render: `😢 ${err.text}`,
 					type: 'error',
 					isLoading: false,
 					autoClose: 3000,

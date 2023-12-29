@@ -5,13 +5,12 @@ import { CgClose } from 'react-icons/cg'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDarkMode } from '@context/darkModeContext'
 
-export default function QRCodeContainer({
-	showQR,
-	setShowQR,
-}: {
+interface QRCodeContainerProps {
 	showQR: boolean
 	setShowQR: (value: boolean) => void
-}) {
+}
+
+export default function QRCodeContainer({ showQR, setShowQR }: QRCodeContainerProps) {
 	const { currentURL } = useWindowLocation()
 	const { isDarkMode } = useDarkMode()
 

@@ -8,7 +8,7 @@ import Link from 'next/link'
 import { FiDownload } from 'react-icons/fi'
 import SkillSection from '@components/pages/home/SkillSection'
 import BlogsSection from '@components/pages/home/BlogsSection'
-import Contact from '@components/Contact'
+import Contact from '@components/pages/home/Contact'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import { homeProfileImage } from '@utils/utils'
 

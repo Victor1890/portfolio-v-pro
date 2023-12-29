@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import TopNavbar from '../components/TopNavbar'
-import ScrollToTopButton from '../components/ScrollToTopButton'
+import TopNavbar from '../TopNavbar'
+import ScrollToTopButton from '../ScrollToTopButton'
 import Footer from '@components/app/footer'
-import QRCodeContainer from '@components/QRCodeContainer'
+import QRCodeContainer from '@components/layout/QRCodeContainer'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
 	const [showQR, setShowQR] = useState(false)

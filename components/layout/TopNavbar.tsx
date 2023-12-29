@@ -3,10 +3,10 @@ import React, { useEffect, useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion'
-import { FadeContainer, hamFastFadeContainer, mobileNavItemSideways, popUp } from '../content/FramerMotionVariants'
-import { useDarkMode } from '../context/darkModeContext'
-import { navigationRoutes } from '../utils/utils'
-import Logo from './SVG/Logo'
+import { FadeContainer, hamFastFadeContainer, mobileNavItemSideways, popUp } from '../../content/FramerMotionVariants'
+import { useDarkMode } from '../../context/darkModeContext'
+import { navigationRoutes } from '../../utils/utils'
+import Logo from '../SVG/Logo'
 import { DarkModeSwitch } from 'react-toggle-dark-mode'
 
 /* TopNavbar Component */
@@ -100,9 +100,8 @@ function NavItem({ href, text }: { href: string; text: string }) {
 	const isActive = router.asPath === (href === '/home' ? '/' : href)
 	return (
 		<Link
-			className={`${
-				isActive ? 'font-bold text-gray-800 dark:text-gray-100' : ' text-gray-600 dark:text-gray-300'
-			} hidden rounded-md px-2 py-[3px] text-[17px] transition-all hover:bg-black/10 sm:inline-block  md:px-3 dark:hover:bg-neutral-700/50`}
+			className={`${isActive ? 'font-bold text-gray-800 dark:text-gray-100' : ' text-gray-600 dark:text-gray-300'
+				} hidden rounded-md px-2 py-[3px] text-[17px] transition-all hover:bg-black/10 sm:inline-block  md:px-3 dark:hover:bg-neutral-700/50`}
 			href={href === '/home' ? '/' : href}
 		>
 			<motion.p className='capitalize' variants={popUp}>

@@ -7,7 +7,7 @@ import { GrFacebookOption, GrTwitter } from 'react-icons/gr'
 import { BsThreeDots } from 'react-icons/bs'
 import { FaWhatsapp } from 'react-icons/fa'
 import { toast } from 'react-toastify'
-import useShare from '../hooks/useShare'
+import useShare from '../../hooks/useShare'
 
 type Props = {
 	className: string
