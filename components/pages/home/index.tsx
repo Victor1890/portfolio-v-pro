@@ -1,6 +1,6 @@
 import { FadeContainer, opacityVariant, popUp } from 'constants/FramerMotionVariants'
 import pageMeta from '@content/meta'
-import MetaData from '@components/app/meta/MetaData'
+import MetaData from '@components/app/seo/MetaData'
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'

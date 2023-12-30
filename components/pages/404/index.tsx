@@ -1,4 +1,4 @@
-import MetaData from '@components/app/meta/MetaData'
+import MetaData from '@components/app/seo/MetaData'
 import Link from 'next/link'
 import { Fragment } from 'react'
 

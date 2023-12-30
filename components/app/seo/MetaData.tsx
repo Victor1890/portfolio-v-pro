@@ -75,13 +75,18 @@ export default function MetaData({ title, description, previewImage, keywords, s
 						type: 'image/jpeg',
 					},
 				],
-				// TODO: Change this
 				siteName: config.appUrl,
 			}}
-			twitter={{
-				handle: '@Victor_R1890',
-				site: '@Victor_R1890',
-				cardType: 'summary_large_image',
+			nofollow={false}
+			noindex={false}
+			robotsProps={{
+				noarchive: true,
+				notranslate: true,
+				nosnippet: false,
+				noimageindex: false,
+				maxSnippet: -1,
+				maxImagePreview: 'large',
+				maxVideoPreview: -1,
 			}}
 		/>
 	)

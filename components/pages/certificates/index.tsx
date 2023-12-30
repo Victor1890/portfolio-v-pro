@@ -1,7 +1,7 @@
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/app/page-top'
 import CreateAnIssue from '@components/app/create-issue'
-import MetaData from '@components/app/meta/MetaData'
+import MetaData from '@components/app/seo/MetaData'
 import { popUpFromBottomForText } from 'constants/FramerMotionVariants'
 import certificatesData from '@content/certificatesData'
 import pageMeta from '@content/meta'

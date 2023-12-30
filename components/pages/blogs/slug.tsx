@@ -1,7 +1,7 @@
 import { ITableOfContentMDX } from '@interfaces/common/common.interface'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import PageNotFoundPage from '../404'
-import MetaData from '@components/app/meta/MetaData'
+import MetaData from '@components/app/seo/MetaData'
 import BlogLayout from '@components/layout/blog'
 import { MDXRemote } from 'next-mdx-remote'
 import MDXComponents from '@components/MDXComponents'

@@ -1,6 +1,6 @@
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/app/page-top'
-import MetaData from '@components/app/meta/MetaData'
+import MetaData from '@components/app/seo/MetaData'
 import { FadeContainer, popUp, popUpFromBottomForText, searchBarSlideAnimation } from 'constants/FramerMotionVariants'
 import pageMeta from '@content/meta'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
