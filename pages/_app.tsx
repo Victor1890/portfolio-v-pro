@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import { DarkModeProvider } from '@context/darkModeContext'
-import { GoogleAnalytics } from 'nextjs-google-analytics'
 import { AppProps } from 'next/app'
 
 NProgress.configure({
@@ -37,7 +36,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<DarkModeProvider>
 			<Layout>
-				{process.env.NODE_ENV === 'production' && <GoogleAnalytics strategy='lazyOnload' />}
 				<Component {...pageProps} />
 			</Layout>
 		</DarkModeProvider>

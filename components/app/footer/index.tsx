@@ -1,9 +1,8 @@
-import { FadeContainer, opacityVariant } from 'constants/FramerMotionVariants'
 import socialMedia from '@content/socialMedia'
 import fetcher from '@lib/fetcher'
 import { navigationRoutes } from '@utils/utils'
+import { FadeContainer, opacityVariant } from 'constants/FramerMotionVariants'
 import { motion } from 'framer-motion'
-import { BsDot } from 'react-icons/bs'
 import { HiOutlineQrcode } from 'react-icons/hi'
 import useSWR from 'swr'
 import FooterLink from './footer-link'
@@ -17,7 +16,6 @@ interface IFooterProps {
 
 const Footer = ({ setShowQR, showQR }: IFooterProps) => {
 	const { data: currentSong } = useSWR('/api/now-playing', fetcher)
-	const { data: visitors } = useSWR('/api/ga', fetcher)
 
 	return (
 		<footer className='mb-14 w-screen font-inter text-gray-600 print:hidden dark:text-gray-400/50'>
@@ -49,16 +47,7 @@ const Footer = ({ setShowQR, showQR }: IFooterProps) => {
 						})}
 					</div>
 				</section>
-				<motion.div variants={opacityVariant} className='mt-5 flex w-full items-center justify-between gap-4 '>
-					<div className='relative flex items-center rounded-full bg-white px-4 py-1 text-xs shadow sm:text-sm dark:bg-darkSecondary'>
-						<BsDot className='-ml-2 h-7 w-7 animate-ping text-green-500' />
-						<div className='flex items-center gap-1'>
-							{visitors?.totalVisitors ?? (
-								<div className='h-3 w-10 animate-pulse rounded-full bg-gray-300 dark:bg-darkPrimary'></div>
-							)}
-							visitors in last {visitors?.days} days
-						</div>
-					</div>
+				<motion.div variants={opacityVariant} className='mt-5 flex w-full items-center justify-end gap-4 '>
 					<div
 						onClick={() => setShowQR(!showQR)}
 						className='cursor-pointer rounded-full bg-gray-700 p-3 text-white transition-all hover:scale-105 active:scale-90'
