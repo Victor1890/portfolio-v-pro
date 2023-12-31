@@ -34,11 +34,9 @@ export type PageMeta = {
 	stats: PageData
 	utilities: PageData
 	blogs: PageData
-	bookmark: PageData
 	certificates: PageData
 	projects: PageData
 	about: PageData
-	snippets: PageData
 }
 
 export type FrontMatter = {

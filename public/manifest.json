@@ -4,9 +4,9 @@
 	"display": "standalone",
 	"scope": "/",
 	"start_url": "/",
-	"name": "Jatin Sharma",
-	"short_name": "Jatin Sharma",
-	"description": "I am currently perusing my Bachelor Degree in Computer Science. I can code in Python, C, C++, etc. I also work on React & Next.js. This is my portfolio which you can install as Progressive Web app.",
+	"name": "Victor Jesús Rosario Vásquez",
+	"short_name": "Victor1890",
+	"description": "Experienced FullStack Developer specializing in cutting-edge mobile and web development technologies for businesses and startups. Over 4 years of hands-on experience in the IT industry.",
 	"icons": [
 		{
 			"src": "icons/maskable_icon_x192.png",
