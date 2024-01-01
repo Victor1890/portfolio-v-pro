@@ -31,6 +31,7 @@ const Footer = ({ setShowQR, showQR }: IFooterProps) => {
 				<section className='grid grid-cols-3 gap-10'>
 					<div className='flex flex-col gap-4 capitalize'>
 						{navigationRoutes.slice(0, 5).map((text, index) => {
+							if (text === 'home') return <FooterLink key={index} route='/' text='Home' />
 							return <FooterLink key={index} route={text} text={text} />
 						})}
 					</div>

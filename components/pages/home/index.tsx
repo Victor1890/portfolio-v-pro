@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic'
 import { FadeContainer, opacityVariant, popUp } from 'constants/FramerMotionVariants'
 import pageMeta from '@content/meta'
 import MetaData from '@components/app/seo/MetaData'
@@ -6,9 +7,9 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiDownload } from 'react-icons/fi'
-import SkillSection from '@components/pages/home/SkillSection'
-import BlogsSection from '@components/pages/home/BlogsSection'
-import Contact from '@components/pages/home/Contact'
+const SkillSection = dynamic(() => import('@components/pages/home/SkillSection'), { ssr: false })
+const BlogsSection = dynamic(() => import('@components/pages/home/BlogsSection'), { ssr: false })
+const Contact = dynamic(() => import('@components/pages/home/Contact'), { ssr: false })
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
 import { homeProfileImage } from '@utils/utils'
 
@@ -50,14 +51,22 @@ const HomePage = ({ blogs = [] }: IHomePageProps) => (
 
 					<div className='flex w-full select-none flex-col gap-3 p-5 text-center '>
 						<div className='flex flex-col gap-1'>
-							<motion.h1 variants={opacityVariant} className='font-sarina text-5xl font-bold lg:text-6xl'>
+							<motion.h1 variants={opacityVariant} className='font-sarina text-5xl lg:text-6xl'>
 								Victor Rosario
 							</motion.h1>
 							<motion.p
 								variants={opacityVariant}
 								className='text-xs font-medium text-[#383838] md:text-sm lg:text-lg dark:text-gray-200'
 							>
-								FullStack Developer, Competitive Programmer
+								Software Developer at{' '}
+								<Link
+									href='https://www.linkedin.com/company/compiterd/'
+									target='_blank'
+									className='hover:underline'
+									rel='noopener noreferrer'
+								>
+									@CNC
+								</Link>
 							</motion.p>
 						</div>
 
