@@ -38,5 +38,4 @@ const bundleAnalyzer = withBundleAnalyzer({
 	},
 })
 
-
 module.exports = withPWA(bundleAnalyzer)
