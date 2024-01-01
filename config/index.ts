@@ -3,9 +3,9 @@ const config = {
 	appUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
 	implementations: {
 		emailSdk: {
-			serviceId: process.env.NEXT_PUBLIC_YOUR_SERVICE_ID as string,
-			templateId: process.env.NEXT_PUBLIC_YOUR_TEMPLATE_ID as string,
-			userId: process.env.NEXT_PUBLIC_YOUR_USER_ID as string,
+			serviceId: process.env.EMAILJS_YOUR_SERVICE_ID as string,
+			templateId: process.env.EMAILJS_YOUR_TEMPLATE_ID as string,
+			userId: process.env.EMAILJS_YOUR_USER_ID as string,
 		},
 	},
 	devTo: {

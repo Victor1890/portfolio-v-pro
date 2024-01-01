@@ -23,3 +23,12 @@ __test__
 
 # Ignore auto-generated files
 *.d.ts
+*.yaml
+*.lock
+yarn.lock
+*.md
+
+# Ignore build output
+build/
+dist/
+```
