@@ -1,27 +1,15 @@
-import { Fragment } from 'react'
-import SyntaxHighlighter, { SyntaxHighlighterProps } from 'react-syntax-highlighter'
-// import {
-// darcula,
-// nnfxDark,
-// monokai
-// irBlack,
-// vs2015,
-// stackoverflowDark,
-// oneDark
-// } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { CSSProperties, useEffect, useState } from 'react'
+import { Prism as SyntaxHighlighter, SyntaxHighlighterProps } from 'react-syntax-highlighter'
 
-interface ICodeProps extends SyntaxHighlighterProps {}
+export default function Code({ children }: SyntaxHighlighterProps) {
+	const [styles, setStyles] = useState<{ [key: string]: CSSProperties } | undefined>(undefined)
+	useEffect(() => {
+		import('react-syntax-highlighter/dist/esm/styles/prism/one-dark').then((mod) => setStyles(mod.default))
+	}, [])
 
-export default function Code({ className, ...props }: ICodeProps) {
 	return (
-		<Fragment>
-			<SyntaxHighlighter
-				// language={'javascript'}
-				language={'typescript'}
-				PreTag='div'
-				// style={stackoverflowDark}
-				{...props}
-			/>
-		</Fragment>
+		<SyntaxHighlighter language={'typescript'} style={styles}>
+			{children}
+		</SyntaxHighlighter>
 	)
 }

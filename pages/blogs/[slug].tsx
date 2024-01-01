@@ -36,8 +36,6 @@ export async function getStaticProps({ params }: StaticProps) {
 	const content = await serialize(mdxContent)
 	const tableOfContents = getMDXTableOfContents(mdxContent)
 
-	console.log('readingTime: ', readingTime)
-
 	return {
 		props: {
 			error: false,
