@@ -4,7 +4,6 @@
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Content**: [MDX](https://github.com/mdx-js/mdx)
 
-- **Database**: [Supabase](https://supabase.com/)
 - **Animations**: [Framer Motion](https://framer.com/motion)
 - **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
 - **Plugins**: [rehype](https://github.com/rehypejs/rehype)
