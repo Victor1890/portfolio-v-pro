@@ -180,7 +180,7 @@ export default function Form() {
 					variants={mobileNavItemSideways}
 					className='w-full overflow-hidden rounded-lg shadow-lg sm:max-w-sm'
 				>
-					<Ripples className='flex w-full justify-center' color='rgba(225, 225,225,0.2)'>
+					<Ripples placeholder={'Send'} className='flex w-full justify-center' color='rgba(225, 225,225,0.2)'>
 						<button
 							ref={sendButtonRef}
 							type='submit'

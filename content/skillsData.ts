@@ -9,7 +9,8 @@ import {
 	SiHtml5,
 	SiJavascript,
 	SiMarkdown,
-	SiMaterialui,
+	// SiMaterialui,
+	SiMui,
 	SiMongodb,
 	SiMysql,
 	SiNextdotjs,
@@ -66,7 +67,8 @@ const skills: SkillType[] = [
 	},
 	{
 		name: 'Material UI (MUI)',
-		Icon: SiMaterialui,
+		// Icon: SiMaterialui,
+		Icon: SiMui,
 	},
 	{
 		name: 'Docker and Composer',

@@ -70,7 +70,7 @@ export default function QRCodeContainer({ showQR, setShowQR }: QRCodeContainerPr
 								fgColor={isDarkMode ? 'white' : '#25282a'}
 							/>
 
-							<Ripples className='mt-2' color={isDarkMode ? 'rgba(0,0,0, 0.2)' : 'rgba(225, 225, 225, 0.2)'}>
+							<Ripples placeholder={'download qr'} className='mt-2' color={isDarkMode ? 'rgba(0,0,0, 0.2)' : 'rgba(225, 225, 225, 0.2)'}>
 								<button
 									className='w-full rounded bg-darkPrimary px-3 py-2 text-sm font-medium text-white dark:bg-gray-100 dark:text-darkPrimary'
 									onClick={downloadQRCode}

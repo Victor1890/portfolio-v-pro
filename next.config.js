@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable no-undef */
 
-/**
- * @type {import('next').NextConfig}
- */
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+	enabled: process.env.ANALYZE === 'true',
+})
 
 const withPWA = require('next-pwa')({
 	dest: 'public',
@@ -13,8 +13,9 @@ const withPWA = require('next-pwa')({
 	publicExcludes: ['!resume.pdf'],
 })
 
-module.exports = withPWA({
+const bundleAnalyzer = withBundleAnalyzer({
 	reactStrictMode: true,
+	swcMinify: false,
 	images: {
 		domains: [
 			'ucarecdn.com',
@@ -36,3 +37,6 @@ module.exports = withPWA({
 		ignoreBuildErrors: false,
 	},
 })
+
+
+module.exports = withPWA(bundleAnalyzer)
