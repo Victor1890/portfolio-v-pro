@@ -45,7 +45,7 @@
 		"react-qr-code": "^2.0.7",
 		"react-ripples": "^2.2.1",
 		"react-share": "^4.4.0",
-		"react-syntax-highlighter": "15.5.0",
+		"react-syntax-highlighter": "^15.5.0",
 		"react-toastify": "^9.0.1",
 		"react-toggle-dark-mode": "^1.1.1",
 		"reading-time": "^1.5.0",
