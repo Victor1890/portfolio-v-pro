@@ -1,15 +1,22 @@
-import { CSSProperties, useEffect, useState } from 'react'
-import { Prism as SyntaxHighlighter, SyntaxHighlighterProps } from 'react-syntax-highlighter'
+// import Prism from 'prismjs'
+import { Fragment, ReactNode } from 'react'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import oneDarkStyle from 'react-syntax-highlighter/dist/cjs/styles/prism/one-dark'
 
-export default function Code({ children, language = 'typescript' }: SyntaxHighlighterProps) {
-	const [styles, setStyles] = useState<{ [key: string]: CSSProperties } | undefined>(undefined)
-	useEffect(() => {
-		import('react-syntax-highlighter/dist/esm/styles/prism/one-dark').then((mod) => setStyles(mod.default))
-	}, [])
+interface ICodeProps {
+	children: ReactNode | string | string[]
+}
 
+export default function Code({ children }: ICodeProps) {
 	return (
-		<SyntaxHighlighter language={language} style={styles}>
-			{children}
-		</SyntaxHighlighter>
+		<Fragment>
+			{typeof children === 'string' || Array.isArray(children) ? (
+				<SyntaxHighlighter language='typescript' style={oneDarkStyle}>
+					{children}
+				</SyntaxHighlighter>
+			) : (
+				children
+			)}
+		</Fragment>
 	)
 }
