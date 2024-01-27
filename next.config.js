@@ -16,6 +16,9 @@ const withPWA = require('next-pwa')({
 const bundleAnalyzer = withBundleAnalyzer({
 	reactStrictMode: true,
 	swcMinify: false,
+	transpilePackages: [
+		'react-syntax-highlighter'
+	],
 	images: {
 		domains: [
 			'ucarecdn.com',
