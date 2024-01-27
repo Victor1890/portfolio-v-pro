@@ -4,24 +4,20 @@ import AnimatedText from '@components/FramerMotion/AnimatedText'
 import PageTop from '@components/app/page-top'
 import MetaData from '@components/app/seo/MetaData'
 import GitHubActivityGraph from '@components/github/GitHubActivityGraph'
-import { FadeContainer, opacityVariant } from 'constants/FramerMotionVariants'
+import SpotifyArtist from '@components/spotify/Artist'
+import SpotifyLoadingArtists from '@components/spotify/LoadingArtist'
+import SpotifyLoadingSongs from '@components/spotify/LoadingSong'
+import SpotifyTrack from '@components/spotify/Track'
 import pageMeta from '@content/meta'
-import { useDarkMode } from '@context/darkModeContext'
 import { SpotifyArtistType, SpotifyTrackType } from '@interfaces/spotify/spotify.interface'
 import { IStats } from '@interfaces/stats/stats.interface'
 import fetcher from '@lib/fetcher'
+import { FadeContainer, opacityVariant } from 'constants/FramerMotionVariants'
 import { useMemo } from 'react'
-import GitHubCalendar from 'react-github-calendar'
 import useSWR from 'swr'
 import StatsCard from './StatsCard'
-import SpotifyTrack from '@components/spotify/Track'
-import SpotifyLoadingSongs from '@components/spotify/LoadingSong'
-import SpotifyArtist from '@components/spotify/Artist'
-import SpotifyLoadingArtists from '@components/spotify/LoadingArtist'
 
 const StatPage = () => {
-	const { isDarkMode } = useDarkMode()
-
 	const { data: topTracks, isLoading: isTopTrackLoading } = useSWR('/api/stats/tracks', fetcher)
 	const { data: artists, isLoading: isArtistLoading } = useSWR('/api/stats/artists', fetcher)
 	const { data: devto, isLoading: isDevToLoading } = useSWR('/api/stats/devto', fetcher)
@@ -100,25 +96,6 @@ const StatPage = () => {
 					))}
 				</AnimatedDiv>
 
-				<div className='mb-10 font-barlow'>
-					<AnimatedHeading
-						variants={opacityVariant}
-						className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
-					>
-						GitHub Contribution
-					</AnimatedHeading>
-					<AnimatedText variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
-						The following is my GitHub contribution graph which shows my coding activity and productivity on the
-						platform.
-					</AnimatedText>
-					<GitHubCalendar
-						style={{
-							maxWidth: '100% !important',
-						}}
-						username='victor1890'
-						colorScheme={isDarkMode ? 'dark' : 'light'}
-					/>
-				</div>
 				<GitHubActivityGraph />
 
 				{/* Spotify top songs */}

@@ -10,13 +10,34 @@ import ContributionsToolTip from './ContributionsToolTip'
 import ContributionCountByDayOfWeekToolTip from './ContributionCountByDayOfWeekToolTip'
 import LoadingBarChart from './LoadingBarChart'
 import LoadingAreaChart from './LoadingAreaChart'
+import GitHubCalendar from 'react-github-calendar'
+import config from '@config'
+
+const { username } = config.github
 
 export default function GitHubActivityGraph() {
 	const { isDarkMode } = useDarkMode()
-	const { data: githubActivity } = useSWR('/api/stats/github-contribution', fetcher)
+	const { data: githubActivity, isLoading } = useSWR('/api/stats/github-contribution', fetcher)
 
 	return (
 		<>
+			<div className='mb-10 max-w-full font-barlow'>
+				<AnimatedHeading
+					variants={opacityVariant}
+					className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
+				>
+					GitHub Contribution
+				</AnimatedHeading>
+				<AnimatedText variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
+					The following is my GitHub contribution graph which shows my coding activity and productivity on the platform.
+				</AnimatedText>
+				<GitHubCalendar
+					style={{ width: '100%' }}
+					username={username}
+					loading={isLoading}
+					colorScheme={isDarkMode ? 'dark' : 'light'}
+				/>
+			</div>
 			<div className='mb-10 max-w-full font-barlow'>
 				<AnimatedHeading
 					variants={opacityVariant}

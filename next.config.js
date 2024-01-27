@@ -31,6 +31,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 			'image.tmdb.org', // tmdb images,
 			'media.licdn.com',
 			'raw.githubusercontent.com',
+			'media.dev.to',
 		],
 	},
 	typescript: {
