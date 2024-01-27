@@ -28,9 +28,9 @@ export default function ScrollToTopButton() {
 				<button
 					onClick={scrollToTop}
 					aria-label='Scroll To Top'
-					className='fixed bottom-20 right-8 z-40 print:hidden  md:bottom-[50px] md:right-[20px]'
+					className='fixed bottom-20 right-8 z-40 md:bottom-[50px]  md:right-[20px] print:hidden'
 				>
-					<IoIosArrowUp className='rounded-lg bg-black text-[45px] text-white shadow-lg md:mr-10 dark:bg-gray-200 dark:text-darkPrimary' />
+					<IoIosArrowUp className='rounded-lg bg-black text-[45px] text-white shadow-lg dark:bg-gray-200 dark:text-darkPrimary md:mr-10' />
 				</button>
 			)}
 		</>

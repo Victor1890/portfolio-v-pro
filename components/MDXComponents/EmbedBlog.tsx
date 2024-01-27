@@ -5,7 +5,7 @@ export default function EmbedBlog({ img, text, url }: { img: string; text: strin
 	return (
 		<Link
 			href={url}
-			className='my-5 flex select-none items-center gap-3 border-2 border-black px-2 py-2 shadow-[5px_5px_black] sm:py-0 dark:rounded-md dark:border-white dark:shadow-none'
+			className='my-5 flex select-none items-center gap-3 border-2 border-black px-2 py-2 shadow-[5px_5px_black] dark:rounded-md dark:border-white dark:shadow-none sm:py-0'
 			target='_blank'
 			rel='noopener noreferrer'
 		>

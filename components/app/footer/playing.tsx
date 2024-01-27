@@ -13,7 +13,7 @@ const Playing = ({ song }: IPlayingProps) => (
 		<Link
 			href={song.songUrl}
 			target='_blank'
-			className='flex items-center justify-between rounded-sm bg-gray-200 p-3 sm:p-4 dark:bg-darkSecondary'
+			className='flex items-center justify-between rounded-sm bg-gray-200 p-3 dark:bg-darkSecondary sm:p-4'
 		>
 			<div className='flex items-center gap-2 '>
 				<div className='h-10 w-10'>
@@ -28,10 +28,10 @@ const Playing = ({ song }: IPlayingProps) => (
 					/>
 				</div>
 				<div className='flex flex-col sm:flex-row sm:items-center sm:gap-3'>
-					<h3 className='animate- font-semibold text-black md:text-lg dark:text-white'>{song.title}</h3>
-					<span className='hidden md:inline-flex dark:text-gray-300'>—</span>
+					<h3 className='animate- font-semibold text-black dark:text-white md:text-lg'>{song.title}</h3>
+					<span className='hidden dark:text-gray-300 md:inline-flex'>—</span>
 
-					<p className='text-xs text-gray-600 sm:text-sm dark:text-gray-400'>{song.artist}</p>
+					<p className='text-xs text-gray-600 dark:text-gray-400 sm:text-sm'>{song.artist}</p>
 				</div>
 			</div>
 			<div className='flex items-center gap-2'>

@@ -15,7 +15,7 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticleDevT
 			initial={animate && 'hidden'}
 			whileInView={animate ? 'visible' : ''}
 			viewport={{ once: true }}
-			className={`w-ull mx-auto flex flex-col items-center gap-2 rounded-2xl bg-white p-2 shadow-md sm:w-[95%] sm:flex-row md:gap-7 md:shadow-lg dark:bg-darkSecondary`}
+			className={`w-ull mx-auto flex flex-col items-center gap-2 rounded-2xl bg-white p-2 shadow-md dark:bg-darkSecondary sm:w-[95%] sm:flex-row md:gap-7 md:shadow-lg`}
 		>
 			<div className='w-full'>
 				<Image
@@ -33,11 +33,11 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticleDevT
 			<div className='mt-2 flex h-full w-full flex-col px-2 pb-2 sm:mt-0 sm:p-1 md:pr-5 2xl:py-5'>
 				<Link
 					href={`/blogs/${blog.slug}`}
-					className='line-clamp-2 font-bold text-neutral-900 hover:underline md:text-xl dark:text-neutral-200'
+					className='line-clamp-2 font-bold text-neutral-900 hover:underline dark:text-neutral-200 md:text-xl'
 				>
 					{blog.title}
 				</Link>
-				<p className='mb-5 mt-3 line-clamp-3 text-sm  text-gray-600 sm:line-clamp-2 sm:text-xs md:line-clamp-4 md:text-sm dark:text-[#b5b7ba]'>
+				<p className='mb-5 mt-3 line-clamp-3 text-sm  text-gray-600 dark:text-[#b5b7ba] sm:line-clamp-2 sm:text-xs md:line-clamp-4 md:text-sm'>
 					{blog.description}
 				</p>
 
@@ -69,7 +69,7 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticleDevT
 							<span className='text-xs'>{getFormattedDate(new Date(blog.published_at))}</span>
 						</div>
 					</div>
-					<p className='flex items-center justify-between text-xs font-medium text-gray-500 md:text-sm dark:text-dark-3'>
+					<p className='flex items-center justify-between text-xs font-medium text-gray-500 dark:text-dark-3 md:text-sm'>
 						{/* <span>{blog.readingTime.text}</span> */}
 					</p>
 				</div>

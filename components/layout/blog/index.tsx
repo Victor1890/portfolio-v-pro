@@ -54,7 +54,7 @@ export default function BlogLayout({
 				<h1
 					className={`text-3xl ${
 						post.tableOfContents.length > 0 ? '' : 'text-center'
-					} font-bold tracking-tight text-black md:text-5xl dark:text-white`}
+					} font-bold tracking-tight text-black dark:text-white md:text-5xl`}
 				>
 					{post.title}
 				</h1>

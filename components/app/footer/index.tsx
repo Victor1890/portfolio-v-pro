@@ -18,13 +18,13 @@ const Footer = ({ setShowQR, showQR }: IFooterProps) => {
 	const { data: currentSong } = useSWR('/api/now-playing', fetcher)
 
 	return (
-		<footer className='mb-14 w-screen font-inter text-gray-600 print:hidden dark:text-gray-400/50'>
+		<footer className='mb-14 w-screen font-inter text-gray-600 dark:text-gray-400/50 print:hidden'>
 			<motion.div
 				initial='hidden'
 				whileInView='visible'
 				variants={FadeContainer}
 				viewport={{ once: true }}
-				className='mx-auto flex max-w-4xl flex-col gap-5 border-t-2 border-gray-200 p-5 text-sm sm:text-base 2xl:max-w-5xl 3xl:max-w-7xl dark:border-gray-400/10'
+				className='mx-auto flex max-w-4xl flex-col gap-5 border-t-2 border-gray-200 p-5 text-sm dark:border-gray-400/10 sm:text-base 2xl:max-w-5xl 3xl:max-w-7xl'
 			>
 				<div>{currentSong?.isPlaying ? <Playing song={currentSong} /> : <NotPlaying />}</div>
 

@@ -31,7 +31,7 @@ const CertificatePage = () => {
 					{certificatesData.map((cer) => {
 						return (
 							<AnimatedDiv
-								className='flex flex-col gap-2 rounded-lg bg-white p-3 shadow md:flex-row md:items-center md:justify-between md:gap-4 dark:bg-darkSecondary/50'
+								className='flex flex-col gap-2 rounded-lg bg-white p-3 shadow dark:bg-darkSecondary/50 md:flex-row md:items-center md:justify-between md:gap-4'
 								variants={popUpFromBottomForText}
 								key={cer.id}
 							>
@@ -54,7 +54,7 @@ const CertificatePage = () => {
 										<Link
 											href={cer.url || '#'}
 											target={cer.url ? '_blank' : '_self'}
-											className='text-sm font-semibold text-neutral-900 hover:underline sm:text-base md:text-lg dark:text-neutral-200'
+											className='text-sm font-semibold text-neutral-900 hover:underline dark:text-neutral-200 sm:text-base md:text-lg'
 										>
 											{cer.title}
 										</Link>

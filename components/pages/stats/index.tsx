@@ -102,7 +102,7 @@ const StatPage = () => {
 				<div className='font-barlow'>
 					<AnimatedHeading
 						variants={opacityVariant}
-						className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
+						className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 					>
 						My Top streams songs
 					</AnimatedHeading>
@@ -143,7 +143,7 @@ const StatPage = () => {
 				<div className='font-barlow'>
 					<AnimatedHeading
 						variants={opacityVariant}
-						className='text-3xl font-bold capitalize text-neutral-900 sm:text-4xl dark:text-neutral-200'
+						className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 					>
 						My Top Artists
 					</AnimatedHeading>

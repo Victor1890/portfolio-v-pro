@@ -35,7 +35,7 @@ export default function SpotifyArtist({ name, url, coverImage, popularity, id }:
 					></Image>
 				</div>
 				<div>
-					<h2 className='origin-left transform font-barlow text-base font-semibold text-gray-900 sm:text-lg md:text-xl md:font-bold xl:text-2xl dark:text-white'>
+					<h2 className='origin-left transform font-barlow text-base font-semibold text-gray-900 dark:text-white sm:text-lg md:text-xl md:font-bold xl:text-2xl'>
 						{name}
 					</h2>
 					<p className='line-clamp-1 origin-left transform text-xs text-gray-500 sm:text-sm md:text-base md:font-medium'>

@@ -25,7 +25,7 @@ const HomePage = ({ blogs = [] }: IHomePageProps) => (
 			previewImage={pageMeta.home.image}
 			keywords={pageMeta.home.keywords}
 		/>
-		<div className='relative mx-auto max-w-4xl 2xl:max-w-5xl 3xl:max-w-7xl dark:bg-darkPrimary dark:text-gray-100'>
+		<div className='relative mx-auto max-w-4xl dark:bg-darkPrimary dark:text-gray-100 2xl:max-w-5xl 3xl:max-w-7xl'>
 			<motion.section
 				initial='hidden'
 				whileInView='visible'
@@ -56,7 +56,7 @@ const HomePage = ({ blogs = [] }: IHomePageProps) => (
 							</motion.h1>
 							<motion.p
 								variants={opacityVariant}
-								className='text-xs font-medium text-[#383838] md:text-sm lg:text-lg dark:text-gray-200'
+								className='text-xs font-medium text-[#383838] dark:text-gray-200 md:text-sm lg:text-lg'
 							>
 								Software Developer at{' '}
 								<Link
@@ -72,7 +72,7 @@ const HomePage = ({ blogs = [] }: IHomePageProps) => (
 
 						<motion.p
 							variants={opacityVariant}
-							className=' text-center text-sm font-medium text-[#474747] md:text-base dark:text-gray-300'
+							className=' text-center text-sm font-medium text-[#474747] dark:text-gray-300 md:text-base'
 						>
 							{/* I am currently pursuing my Bachelor Degree in Computer Science. */}I can code in JavaScript,
 							TypeScript, C#, Python, etc.

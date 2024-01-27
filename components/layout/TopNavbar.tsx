@@ -53,7 +53,7 @@ export default function TopNavbar() {
 
 	return (
 		<div
-			className='fixed top-0 z-50 flex w-full items-center justify-between px-4 py-[10px] print:hidden sm:px-6 dark:text-white'
+			className='fixed top-0 z-50 flex w-full items-center justify-between px-4 py-[10px] dark:text-white sm:px-6 print:hidden'
 			ref={navRef}
 		>
 			{/* Mobile Navigation Hamburger and MobileMenu */}
@@ -102,7 +102,7 @@ function NavItem({ href, text }: { href: string; text: string }) {
 		<Link
 			className={`${
 				isActive ? 'font-bold text-gray-800 dark:text-gray-100' : ' text-gray-600 dark:text-gray-300'
-			} hidden rounded-md px-2 py-[3px] text-[17px] transition-all hover:bg-black/10 sm:inline-block  md:px-3 dark:hover:bg-neutral-700/50`}
+			} hidden rounded-md px-2 py-[3px] text-[17px] transition-all hover:bg-black/10 dark:hover:bg-neutral-700/50  sm:inline-block md:px-3`}
 			href={href === '/home' ? '/' : href}
 		>
 			<motion.p className='capitalize' variants={popUp}>
@@ -149,7 +149,7 @@ function HamBurger({ open, handleClick }: { open: boolean; handleClick: () => vo
 const MobileMenu = ({ links, handleClick }: { links: string[]; handleClick: () => void }) => {
 	return (
 		<motion.div
-			className='absolute left-0 top-0 z-10 h-screen w-screen bg-white font-normal sm:hidden dark:bg-darkPrimary'
+			className='absolute left-0 top-0 z-10 h-screen w-screen bg-white font-normal dark:bg-darkPrimary sm:hidden'
 			variants={hamFastFadeContainer}
 			initial='hidden'
 			animate='visible'
