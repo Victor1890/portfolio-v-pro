@@ -14,6 +14,7 @@ const withPWA = require('next-pwa')({
 })
 
 const bundleAnalyzer = withBundleAnalyzer({
+	output: 'standalone',
 	reactStrictMode: true,
 	swcMinify: false,
 	transpilePackages: ['react-syntax-highlighter'],

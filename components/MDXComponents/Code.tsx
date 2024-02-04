@@ -1,7 +1,4 @@
-// import Prism from 'prismjs'
 import { Fragment, ReactNode } from 'react'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import oneDarkStyle from 'react-syntax-highlighter/dist/cjs/styles/prism/one-dark'
 
 interface ICodeProps {
 	children: ReactNode | string | string[]
@@ -10,12 +7,12 @@ interface ICodeProps {
 export default function Code({ children }: ICodeProps) {
 	return (
 		<Fragment>
-			{typeof children === 'string' || Array.isArray(children) ? (
-				<SyntaxHighlighter language='typescript' style={oneDarkStyle}>
+			{typeof children === "string" ? (
+				<code className="!bg-gray-500 p-0.5 rounded before:text-gray-500 after:text-gray-500 text-white">
 					{children}
-				</SyntaxHighlighter>
+				</code>
 			) : (
-				children
+				<code>{children}</code>
 			)}
 		</Fragment>
 	)
