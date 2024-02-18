@@ -6,7 +6,6 @@ import devToJson from '@content/data/dev.to-posts.json'
 const { appUrl: siteURL } = config
 
 export default async function getRSS() {
-
 	// Create a new RSS object
 	const feed = new RSS({
 		title: 'Victor Rosario',
