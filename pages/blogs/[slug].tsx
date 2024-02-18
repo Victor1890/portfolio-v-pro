@@ -1,6 +1,6 @@
 import BlogPostPage from '@components/pages/blogs/slug'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-import devToProvider from '@provider/dev.to/devto.provider'
+import devToJson from 'content/data/dev.to-posts.json'
 import { getMDXTableOfContents } from '@utils/mdx.util'
 import { ITableOfContentMDX } from 'interfaces/common/common.interface'
 import { GetStaticPropsContext } from 'next'
@@ -25,7 +25,8 @@ export default PostPage
 
 export async function getStaticProps({ params }: StaticProps) {
 	const { slug } = params
-	const post = await devToProvider.getArticleBySlug(slug)
+
+	const post = devToJson.find((post) => post.slug === slug)
 
 	if (!post) {
 		return { props: { error: true, post: null } }
@@ -45,9 +46,7 @@ export async function getStaticProps({ params }: StaticProps) {
 }
 
 export async function getStaticPaths() {
-	const posts = await devToProvider.getPageOfPosts()
-	const paths = posts.map(({ slug }) => ({ params: { slug } }))
-
+	const paths = devToJson.map(({ slug }) => ({ params: { slug } }))
 	return {
 		paths,
 		fallback: false,

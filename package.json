@@ -7,7 +7,6 @@
 		"dev": "next dev",
 		"tsc": "tsc",
 		"build": "next build",
-		"now-build": "next build",
 		"postbuild": "next-sitemap",
 		"start": "next start",
 		"analyze": "cross-env ANALYZE=true next build",
@@ -19,7 +18,8 @@
 		"prepare": "husky install",
 		"version": "conventional-changelog -p angular -i CHANGELOG.md -s",
 		"p:check": "ncu",
-		"p:i": "ncu --interactive"
+		"p:i": "ncu --interactive",
+		"script:devto:post": "tsx scripts/get-dev.to-post.script.ts"
 	},
 	"dependencies": {
 		"@emailjs/browser": "3.6.2",
@@ -84,6 +84,8 @@
 		"prettier": "3.1.1",
 		"prettier-plugin-tailwindcss": "0.5.9",
 		"tailwindcss": "3.4.1",
+		"tsx": "^4.7.1",
+		"dotenv": "^16.4.4",
 		"typescript": "5.3.3"
 	}
 }
