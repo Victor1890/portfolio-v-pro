@@ -1,23 +1,16 @@
 import RSS from 'rss'
 import { writeFileSync } from 'fs'
 import config from '@config'
-import devToProvider from '@provider/dev.to/devto.provider'
+import devToJson from '@content/data/dev.to-posts.json'
 
 const { appUrl: siteURL } = config
 
 export default async function getRSS() {
-	const allBlogs = await devToProvider.getPageOfPosts().catch((e) => {
-		console.error('devToProvider.getPageOfPosts error: ', e)
-		return null
-	})
-
-	if (!allBlogs) return
-
 	// Create a new RSS object
 	const feed = new RSS({
 		title: 'Victor Rosario',
 		description: `I've been writing online since 2021, mostly about web development
-            and tech careers. In total, I've written ${allBlogs.length} articles
+            and tech careers. In total, I've written ${devToJson.length} articles
             till now.`,
 		site_url: siteURL,
 		feed_url: `${siteURL}/feed.xml`,
@@ -27,7 +20,7 @@ export default async function getRSS() {
 	})
 
 	// Add all blog posts to the RSS feed
-	allBlogs.forEach((post) => {
+	devToJson.forEach((post) => {
 		const { slug, title, published_at, description } = post
 
 		feed.item({

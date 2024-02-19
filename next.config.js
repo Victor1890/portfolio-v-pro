@@ -1,16 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable no-undef */
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
-})
-
-const withPWA = require('next-pwa')({
-	dest: 'public',
-	register: true,
-	skipWaiting: true,
-	disable: process.env.NODE_ENV === 'development',
-	publicExcludes: ['!resume.pdf'],
 })
 
 const bundleAnalyzer = withBundleAnalyzer({
@@ -41,4 +30,4 @@ const bundleAnalyzer = withBundleAnalyzer({
 	},
 })
 
-module.exports = withPWA(bundleAnalyzer)
+module.exports = bundleAnalyzer

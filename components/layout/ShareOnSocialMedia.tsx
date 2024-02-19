@@ -59,22 +59,22 @@ export default function ShareOnSocialMedia({ className, title, url, summary, cov
 	return (
 		<>
 			<div className={`${className} my-5 transform sm:scale-150`}>
-				<FacebookShareButton placeholder={'Shared'} quote={title} url={url}>
+				<FacebookShareButton title={title} url={url}>
 					<div className='rounded-full bg-gray-700 p-2 text-white'>
 						<GrFacebookOption className='h-4 w-4' />
 					</div>
 				</FacebookShareButton>
-				<TwitterShareButton placeholder={'Shared'} title={title} url={url} related={['@Victor_R1890']}>
+				<TwitterShareButton title={title} url={url} related={['@Victor_R1890']}>
 					<div className='rounded-full bg-gray-700 p-2 text-white'>
 						<GrTwitter className='h-4 w-4' />
 					</div>
 				</TwitterShareButton>
-				<LinkedinShareButton placeholder={'Shared'} title={title} summary={summary} url={url} source={url}>
+				<LinkedinShareButton title={title} summary={summary} url={url} source={url}>
 					<div className='rounded-full bg-gray-700 p-2 text-white'>
 						<FiLinkedin className='h-4 w-4 ' />
 					</div>
 				</LinkedinShareButton>
-				<WhatsappShareButton placeholder={'Shared'} title={title} url={url}>
+				<WhatsappShareButton title={title} url={url}>
 					<div className='rounded-full bg-gray-700 p-1.5 text-white'>
 						<FaWhatsapp className='h-5 w-5 ' />
 					</div>
