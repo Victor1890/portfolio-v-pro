@@ -12,7 +12,7 @@ type StaticProps = GetStaticPropsContext & {
 	}
 }
 
-const PostPage = ({ post, error, }: { post: IArticle, error: boolean }) => <BlogPostPage error={error} post={post} />
+const PostPage = ({ post, error }: { post: IArticle; error: boolean }) => <BlogPostPage error={error} post={post} />
 
 export default PostPage
 
@@ -35,7 +35,7 @@ export async function getStaticProps({ params }: StaticProps) {
 		slug: post.slug,
 		description: post.description,
 		cover_image: post.cover_image,
-		tags: (post as any).tags || "",
+		tags: (post as any).tags || '',
 		content,
 		tableOfContents,
 		readingTime,
@@ -47,7 +47,7 @@ export async function getStaticProps({ params }: StaticProps) {
 	return {
 		props: {
 			error: false,
-			post: data
+			post: data,
 		},
 	}
 }

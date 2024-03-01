@@ -1,5 +1,5 @@
-import { ITableOfContentMDX } from "@interfaces/common/common.interface";
-import { ReadTimeResults } from "reading-time";
+import { ITableOfContentMDX } from '@interfaces/common/common.interface'
+import { ReadTimeResults } from 'reading-time'
 
 export interface IArticle {
 	title: string
@@ -7,8 +7,8 @@ export interface IArticle {
 	description: string
 	cover_image: string
 	tags: string
-	content: any;
-	tableOfContents: ITableOfContentMDX[] | undefined;
+	content: any
+	tableOfContents: ITableOfContentMDX[] | undefined
 	readingTime: ReadTimeResults
 	organization?: Organization
 	user: User
