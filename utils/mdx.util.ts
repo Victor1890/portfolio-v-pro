@@ -1,3 +1,9 @@
+import { serialize } from "next-mdx-remote/serialize"
+import rehypeAutolinkHeadings from "rehype-autolink-headings"
+import rehypeSlug from "rehype-slug"
+import rehypePrettyCode from 'rehype-pretty-code'
+import { PRETTY_CODE_OPTIONS } from "constants/mdx"
+
 export const getMDXTableOfContents = (markdown: string) => {
 	const regXHeader = /#{2,6}.+/g
 	const headingArray = markdown.match(regXHeader) ? markdown.match(regXHeader) : []
@@ -11,4 +17,18 @@ export const getMDXTableOfContents = (markdown: string) => {
 				.trim(),
 		}
 	})
+}
+
+
+export async function getMarkdownSource(content: string) {
+	const source = await serialize(content, {
+		mdxOptions: {
+			rehypePlugins: [
+				rehypeSlug,
+				[rehypeAutolinkHeadings, { behaviour: "wrap" }],
+				[rehypePrettyCode as any, PRETTY_CODE_OPTIONS],
+			],
+		},
+	});
+	return source;
 }
