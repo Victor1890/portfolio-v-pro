@@ -1,9 +1,8 @@
 import BlogPostPage from '@components/pages/blogs/slug'
 import { IArticle } from '@provider/dev.to/devto.interface'
-import { getMDXTableOfContents } from '@utils/mdx.util'
+import { getMDXTableOfContents, getMarkdownSource } from '@utils/mdx.util'
 import devToJson from 'content/data/dev.to-posts.json'
 import { GetStaticPropsContext } from 'next'
-import { serialize } from 'next-mdx-remote/serialize'
 import readTime from 'reading-time'
 
 type StaticProps = GetStaticPropsContext & {
@@ -27,8 +26,9 @@ export async function getStaticProps({ params }: StaticProps) {
 
 	const mdxContent = post.body_markdown as string
 	const readingTime = readTime(mdxContent)
-	const content = await serialize(mdxContent)
 	const tableOfContents = getMDXTableOfContents(mdxContent)
+
+	const content = await getMarkdownSource(mdxContent)
 
 	const data: IArticle = {
 		title: post.title,
