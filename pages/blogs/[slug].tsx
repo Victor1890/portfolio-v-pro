@@ -1,7 +1,8 @@
 import BlogPostPage from '@components/pages/blogs/slug'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import { getMDXTableOfContents, getMarkdownSource } from '@utils/mdx.util'
-import devToJson from 'content/data/dev.to-posts.json'
+// import devToJson from 'content/data/dev.to-posts.json'
+import devToProvider from '@provider/dev.to/devto.provider'
 import { GetStaticPropsContext } from 'next'
 import readTime from 'reading-time'
 
@@ -18,7 +19,10 @@ export default PostPage
 export async function getStaticProps({ params }: StaticProps) {
 	const { slug } = params
 
-	const post = devToJson.find((post) => post.slug === slug)
+	// const data = await devToProvider.getPageOfPosts().catch(() => null)
+	// if(!data) return { props: { error: true, post: null } }
+
+	const post = await devToProvider.getArticleBySlug(slug).catch(() => null)
 
 	if (!post) {
 		return { props: { error: true, post: null } }
@@ -30,7 +34,7 @@ export async function getStaticProps({ params }: StaticProps) {
 
 	const content = await getMarkdownSource(mdxContent)
 
-	const data: IArticle = {
+	const payload: IArticle = {
 		title: post.title,
 		slug: post.slug,
 		description: post.description,
@@ -47,13 +51,18 @@ export async function getStaticProps({ params }: StaticProps) {
 	return {
 		props: {
 			error: false,
-			post: data,
+			post: payload,
 		},
 	}
 }
 
 export async function getStaticPaths() {
-	const paths = devToJson.map(({ slug }) => ({ params: { slug } }))
+	// const paths = devToJson.map(({ slug }) => ({ params: { slug } }))
+	const data = await devToProvider.getPageOfPosts().catch(() => null)
+	if (!data) return { paths: [], fallback: true }
+
+	const paths = data.map(({ slug }) => ({ params: { slug } }))
+
 	return {
 		paths,
 		fallback: false,

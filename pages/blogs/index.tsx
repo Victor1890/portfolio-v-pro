@@ -1,16 +1,17 @@
 import BlogPage from '@components/pages/blogs'
 import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-// import devToProvider from '@provider/dev.to/devto.provider'
-import devToJson from 'content/data/dev.to-posts.json'
+import devToProvider from '@provider/dev.to/devto.provider'
+// import devToJson from 'content/data/dev.to-posts.json'
 
 const Blogs = ({ blogs }: { blogs: IArticleDevTo[] }) => <BlogPage blogs={blogs} />
 
 export default Blogs
 
 export async function getStaticProps() {
-	// const blogs = await devToProvider.getPageOfPosts().catch(() => null)
+	const data = await devToProvider.getPageOfPosts().catch(() => null)
+	if(!data) return { props: { blogs: [] } };
 
-	const blogs = Array.from(devToJson).map((blog) => ({
+	const blogs = data.map((blog) => ({
 		title: blog.title,
 		slug: blog.slug,
 		description: blog.description,
@@ -19,7 +20,5 @@ export async function getStaticProps() {
 		user: blog.user,
 	}))
 
-	return {
-		props: { blogs: blogs || [] },
-	}
+	return { props: { blogs } }
 }
