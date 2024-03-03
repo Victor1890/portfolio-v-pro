@@ -6,7 +6,7 @@ export interface IArticle {
 	slug: string
 	description: string
 	cover_image: string
-	tags: string
+	tags?: string[]
 	content: any
 	tableOfContents: ITableOfContentMDX[] | undefined
 	readingTime: ReadTimeResults

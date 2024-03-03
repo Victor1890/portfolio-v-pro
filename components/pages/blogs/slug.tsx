@@ -3,7 +3,7 @@ import MetaData from '@components/app/seo/MetaData'
 import BlogLayout from '@components/layout/blog'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import { MDXRemote } from 'next-mdx-remote'
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 import PageNotFoundPage from '../404'
 
 interface BlogPostPageProps {
@@ -12,6 +12,13 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage = ({ post, error }: BlogPostPageProps) => {
+	const keywords = useMemo(() => {
+		if (!post.tags) return ''
+
+		const isTagArray = Array.isArray(post.tags)
+		return isTagArray ? post.tags.join(',') : ''
+	}, [post.tags])
+
 	if (!post || error) return <PageNotFoundPage />
 
 	return (
@@ -21,7 +28,7 @@ const BlogPostPage = ({ post, error }: BlogPostPageProps) => {
 				suffix='Victor Rosario'
 				description={post.description}
 				previewImage={post.cover_image}
-				keywords={post.tags ?? ''}
+				keywords={keywords}
 			/>
 
 			<BlogLayout post={post}>
@@ -32,7 +39,7 @@ const BlogPostPage = ({ post, error }: BlogPostPageProps) => {
 						excerpt: post.description,
 						title: post.title,
 						date: post.published_at,
-						keywords: post.tags ?? '',
+						keywords,
 						image: post.cover_image,
 					}}
 					components={MDXComponents}

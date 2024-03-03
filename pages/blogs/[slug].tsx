@@ -39,7 +39,7 @@ export async function getStaticProps({ params }: StaticProps) {
 		slug: post.slug,
 		description: post.description,
 		cover_image: post.cover_image,
-		tags: (post as any).tags || '',
+		tags: post.tag_list || [],
 		content,
 		tableOfContents,
 		readingTime,

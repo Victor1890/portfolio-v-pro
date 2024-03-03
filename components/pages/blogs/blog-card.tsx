@@ -1,12 +1,12 @@
-import { BlogCardAnimation } from 'constants/FramerMotionVariants'
-import { IArticleDevTo } from '@provider/dev.to/devto.interface'
+import { IArticle } from '@provider/dev.to/devto.interface'
 import { getFormattedDate } from '@utils/date.util'
+import { BlogCardAnimation } from 'constants/FramerMotionVariants'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRef } from 'react'
 
-export default function BlogCard({ blog, animate = false }: { blog: IArticleDevTo; animate?: boolean }) {
+export default function BlogCard({ blog, animate = false }: { blog: IArticle; animate?: boolean }) {
 	const blogRef = useRef(null)
 	return (
 		<motion.article
@@ -69,9 +69,6 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticleDevT
 							<span className='text-xs'>{getFormattedDate(new Date(blog.published_at))}</span>
 						</div>
 					</div>
-					<p className='flex items-center justify-between text-xs font-medium text-gray-500 dark:text-dark-3 md:text-sm'>
-						{/* <span>{blog.readingTime.text}</span> */}
-					</p>
 				</div>
 			</div>
 		</motion.article>
