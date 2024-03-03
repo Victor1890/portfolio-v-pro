@@ -1,3 +1,21 @@
+## [0.2.16](https://github.com/Victor1890/portfolio-v-pro/compare/v0.2.11...v0.2.16) (2024-03-03)
+
+
+### Bug Fixes
+
+* :adhesive_bandage: fix several issues ([8896f6b](https://github.com/Victor1890/portfolio-v-pro/commit/8896f6b7daaa9dfd885a61b7c1779fc0a781c714))
+* :bug: add transpilePackages for react-syntax-highlighter ([560c663](https://github.com/Victor1890/portfolio-v-pro/commit/560c663ec19a60c39c89013b705d58633438849e))
+* :bug: refactor code and update vercel.json ([6bd392e](https://github.com/Victor1890/portfolio-v-pro/commit/6bd392e1a5905892c56112d3aa07a31c73d03834))
+* :bug: update next.config.js and package.json ([e60a9ac](https://github.com/Victor1890/portfolio-v-pro/commit/e60a9acfe7bc639a004128334e4aea26ffd48bfc))
+
+
+### Features
+
+* :heavy_plus_sign: add next-sitemap and update robots.txt ([8c8bf1f](https://github.com/Victor1890/portfolio-v-pro/commit/8c8bf1fe33c1695da12822f38c12757cdae62f83))
+* :sparkles: add GitHub contribution graph and update dependencies ([986a2fb](https://github.com/Victor1890/portfolio-v-pro/commit/986a2fbe15b0026af1a7f25017dcfd7e4232866d))
+
+
+
 ## [0.2.12](https://github.com/Victor1890/portfolio-v-pro/compare/v0.2.7...v0.2.12) (2023-12-27)
 
 ### Features

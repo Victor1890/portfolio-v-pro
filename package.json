@@ -1,6 +1,6 @@
 {
 	"name": "portfolio-next",
-	"version": "0.2.11",
+	"version": "0.2.16",
 	"private": true,
 	"license": "MIT",
 	"scripts": {
@@ -11,9 +11,9 @@
 		"start": "next start",
 		"analyze": "cross-env ANALYZE=true next build",
 		"tsc-watch": "tsc --watch",
-		"lint": "eslint --ignore-path .gitignore .",
-		"format": "prettier --check --ignore-path .gitignore .",
-		"format:fix": "prettier --write --ignore-path .gitignore .",
+		"lint": "eslint --ignore-path .eslintignore .",
+		"format": "prettier --check --ignore-path .prettierignore .",
+		"format:fix": "prettier --write --ignore-path .prettierignore .",
 		"find:unused": "next-unused",
 		"prepare": "husky install",
 		"version": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -54,7 +54,8 @@
 		"rehype-slug": "6.0.0",
 		"rss": "1.2.2",
 		"shiki": "1.1.5",
-		"swr": "2.2.5"
+		"swr": "2.2.5",
+		"unist-util-visit": "^5.0.0"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "18.6.1",

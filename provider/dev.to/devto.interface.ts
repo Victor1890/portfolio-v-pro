@@ -1,3 +1,21 @@
+import { ITableOfContentMDX } from '@interfaces/common/common.interface'
+import { ReadTimeResults } from 'reading-time'
+
+export interface IArticle {
+	title: string
+	slug: string
+	description: string
+	cover_image: string
+	tags: string
+	content: any
+	tableOfContents: ITableOfContentMDX[] | undefined
+	readingTime: ReadTimeResults
+	organization?: Organization
+	user: User
+	published_at: string
+	reading_time_minutes: number
+}
+
 export interface IArticleDevTo {
 	type_of: string
 	id: number

@@ -1,15 +1,13 @@
-import { ITableOfContentMDX } from '@interfaces/common/common.interface'
-import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-import PageNotFoundPage from '../404'
+import MDXComponents from '@components/MDXComponents'
 import MetaData from '@components/app/seo/MetaData'
 import BlogLayout from '@components/layout/blog'
+import { IArticle } from '@provider/dev.to/devto.interface'
 import { MDXRemote } from 'next-mdx-remote'
-import MDXComponents from '@components/MDXComponents'
 import { Fragment } from 'react'
-import { ReadTimeResults } from 'reading-time'
+import PageNotFoundPage from '../404'
 
 interface BlogPostPageProps {
-	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[]; readingTime: ReadTimeResults }
+	post: IArticle
 	error: boolean
 }
 

@@ -10,6 +10,7 @@ package.json
 .prettierrc.json
 .eslintrc.json
 .lintstagedrc
+.gitignore
 
 # Ignore node_modules
 node_modules/
@@ -26,9 +27,9 @@ __test__
 *.yaml
 *.lock
 yarn.lock
+pnpm-lock.yaml
 *.md
 
 # Ignore build output
 build/
 dist/
-```

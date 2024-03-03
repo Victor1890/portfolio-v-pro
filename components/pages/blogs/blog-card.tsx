@@ -45,10 +45,10 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticleDevT
 					<div className='z-10 flex items-center gap-3 font-barlow'>
 						<div className='w-[30px]'>
 							<Image
-								alt={blog.organization ? blog.organization.name : blog.user.name}
+								alt={blog?.organization ? blog?.organization.name : blog.user.name}
 								height={933}
 								width={933}
-								src={blog.organization ? blog.organization.profile_image : blog.user.profile_image}
+								src={blog?.organization ? blog?.organization.profile_image : blog.user.profile_image}
 								className='!m-0 h-full rounded-full'
 							/>
 						</div>
@@ -57,11 +57,11 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticleDevT
 								<Link href='/about' className='text-sm font-medium hover:underline'>
 									{blog.user.name}
 								</Link>
-								{blog.organization && (
+								{blog?.organization && (
 									<span>
 										for{' '}
-										<Link href={'#' || blog.organization.name} className='font-medium hover:underline'>
-											{blog.organization.name}
+										<Link href={'#' || blog?.organization.name} className='font-medium hover:underline'>
+											{blog?.organization.name}
 										</Link>
 									</span>
 								)}

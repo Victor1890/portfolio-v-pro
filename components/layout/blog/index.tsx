@@ -1,37 +1,33 @@
 import { useState } from 'react'
 
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
-import Newsletter from '@components/app/newsletter'
 import ScrollProgressBar from '@components/layout/ScrollProgressBar'
 import TableOfContents from '@components/layout/TableOfContents'
 import useWindowLocation from '@hooks/useWindowLocation'
-import { IArticleDevTo } from '@provider/dev.to/devto.interface'
+import { IArticle } from '@provider/dev.to/devto.interface'
 import { getFormattedDate } from '@utils/date.util'
 import { opacityVariant } from 'constants/FramerMotionVariants'
-import { ITableOfContentMDX } from 'interfaces/common/common.interface'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiPrinter } from 'react-icons/fi'
-import { ReadTimeResults } from 'reading-time'
 import ShareOnSocialMedia from '../ShareOnSocialMedia'
 
-export default function BlogLayout({
-	post,
-	children,
-}: {
-	post: IArticleDevTo & { content: any; tableOfContents: ITableOfContentMDX[]; readingTime: ReadTimeResults }
+interface IBlogLayoutProps {
+	post: IArticle
 	children: JSX.Element | string
-}) {
+}
+
+export default function BlogLayout({ post, children }: IBlogLayoutProps) {
 	const { currentURL } = useWindowLocation()
 	const [isTOCActive, setIsTOCActive] = useState(false)
 
 	return (
 		<section
 			className={`relative mt-[44px] !overflow-hidden md:mt-[60px] ${
-				!post.tableOfContents.length ? 'flex items-center justify-center' : ''
+				!post?.tableOfContents?.length ? 'flex items-center justify-center' : ''
 			}`}
 		>
-			{post.tableOfContents.length ? (
+			{post?.tableOfContents?.length ? (
 				<TableOfContents
 					isTOCActive={isTOCActive}
 					setIsTOCActive={setIsTOCActive}
@@ -42,18 +38,18 @@ export default function BlogLayout({
 			{/* Blog Content */}
 			<section
 				className={`prose relative p-5 font-barlow dark:prose-invert sm:pt-10 ${
-					post.tableOfContents.length > 0 ? 'md:ml-[35%] lg:ml-[30%]' : ''
+					(post?.tableOfContents?.length || 0) > 0 ? 'md:ml-[35%] lg:ml-[30%]' : ''
 				} print:!mx-auto`}
 				style={{
 					maxWidth: '800px',
 					opacity: `${isTOCActive} && "0.3"`,
-					margin: `${post.tableOfContents.length <= 0} && "auto"`,
+					margin: `${(post?.tableOfContents?.length || 0) <= 0} && "auto"`,
 				}}
 			>
 				<ScrollProgressBar />
 				<h1
 					className={`text-3xl ${
-						post.tableOfContents.length > 0 ? '' : 'text-center'
+						(post?.tableOfContents?.length || 0) > 0 ? '' : 'text-center'
 					} font-bold tracking-tight text-black dark:text-white md:text-5xl`}
 				>
 					{post.title}
@@ -66,8 +62,8 @@ export default function BlogLayout({
 								<Image
 									height={933}
 									width={933}
-									alt={post.organization ? post.organization.name : post.user.name}
-									src={post.organization ? post.organization.profile_image : post.user.profile_image}
+									alt={post?.organization ? post?.organization?.name : post.user.name}
+									src={post?.organization ? post?.organization?.profile_image : post.user.profile_image}
 									className='!m-0 rounded-full'
 								/>
 							</div>
@@ -76,11 +72,11 @@ export default function BlogLayout({
 									<Link href='/about' className='text-sm font-medium hover:underline'>
 										{post.user.name}
 									</Link>
-									{post.organization && (
+									{post?.organization && (
 										<span>
 											for{' '}
 											<Link href={post.user.website_url} className='font-medium hover:underline'>
-												{post.organization.name}
+												{post?.organization?.name}
 											</Link>
 										</span>
 									)}
@@ -106,7 +102,7 @@ export default function BlogLayout({
 				>
 					{children}
 				</AnimatedDiv>
-				<Newsletter />
+				{/* <Newsletter /> */}
 				<div className='my-10 flex w-full flex-col items-center gap-4 print:hidden'>
 					<h3 style={{ margin: '0' }} className='text-xl font-semibold dark:text-white'>
 						Share on Social Media:
