@@ -1,17 +1,25 @@
 export const PRETTY_CODE_OPTIONS = {
+	// theme: {
+	// 	dark: 'one-dark-pro',
+	// 	light: 'github-light',
+	// },
 	theme: 'one-dark-pro',
+	defaultLang: 'typescript',
 	onVisitLine(node: any) {
-		// Prevent lines from collapsing in `display: grid` mode, and
-		// allow empty lines to be copy/pasted
-		if (node.children.length === 0) {
+		if (node?.children?.length === 0) {
 			node.children = [{ type: 'text', value: ' ' }]
 		}
+
+		const isClassNameArray = Array.isArray(node?.properties?.className || '')
+		if (isClassNameArray) {
+			node.properties.className.push('line')
+		} else {
+			node.properties.className = ['line']
+		}
 	},
-	// Feel free to add classNames that suit your docs
 	onVisitHighlightedLine(node: any) {
-		node.properties.className.push('highlighted')
-	},
-	onVisitHighlightedWord(node: any) {
-		node.properties.className = ['word']
+		if (node?.properties?.className?.length) {
+			node.properties.className.push('highlighted')
+		}
 	},
 }
