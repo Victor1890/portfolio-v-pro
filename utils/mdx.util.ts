@@ -1,7 +1,9 @@
 import { serialize } from 'next-mdx-remote/serialize'
+import { visit } from 'unist-util-visit'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
+// import rehypeHighlight from 'rehype-highlight'
 import { PRETTY_CODE_OPTIONS } from 'constants/mdx'
 
 export const getMDXTableOfContents = (markdown: string) => {
@@ -23,6 +25,16 @@ export async function getMarkdownSource(content: string) {
 	const source = await serialize(content, {
 		mdxOptions: {
 			rehypePlugins: [
+				() => (tree) => {
+					visit(tree, (node) => {
+						if (node?.type === 'element' && node?.tagName === 'pre') {
+							const [codeEl] = node.children
+							if (codeEl?.tagName === 'code') {
+								node.raw = codeEl.children[0].value
+							}
+						}
+					})
+				},
 				rehypeSlug,
 				[rehypeAutolinkHeadings, { behaviour: 'wrap' }],
 				[rehypePrettyCode as any, PRETTY_CODE_OPTIONS],
