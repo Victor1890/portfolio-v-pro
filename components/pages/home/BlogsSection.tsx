@@ -1,9 +1,9 @@
-import Blog from '../blogs/blog-card'
 import HomeHeading from '@components/app/heading'
+import { IArticle } from '@provider/dev.to/devto.interface'
 import Link from 'next/link'
-import { IArticleDevTo } from '@provider/dev.to/devto.interface'
+import Blog from '../blogs/blog-card'
 
-export default function BlogsSection({ blogs }: { blogs: IArticleDevTo[] }) {
+export default function BlogsSection({ blogs }: { blogs: IArticle[] }) {
 	return (
 		<section className='mx-5 mb-5'>
 			<HomeHeading title='Recent Posts' />

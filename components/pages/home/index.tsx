@@ -1,20 +1,20 @@
-import dynamic from 'next/dynamic'
-import { FadeContainer, opacityVariant, popUp } from 'constants/FramerMotionVariants'
-import pageMeta from '@content/meta'
 import MetaData from '@components/app/seo/MetaData'
-import { Fragment } from 'react'
+import pageMeta from '@content/meta'
+import { IArticle } from '@provider/dev.to/devto.interface'
+import { homeProfileImage } from '@utils/utils'
+import { FadeContainer, opacityVariant, popUp } from 'constants/FramerMotionVariants'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
 import { FiDownload } from 'react-icons/fi'
 const SkillSection = dynamic(() => import('@components/pages/home/SkillSection'), { ssr: false })
 const BlogsSection = dynamic(() => import('@components/pages/home/BlogsSection'), { ssr: false })
 const Contact = dynamic(() => import('@components/pages/home/Contact'), { ssr: false })
-import { IArticleDevTo } from '@provider/dev.to/devto.interface'
-import { homeProfileImage } from '@utils/utils'
 
 interface IHomePageProps {
-	blogs: IArticleDevTo[]
+	blogs: IArticle[]
 }
 
 const HomePage = ({ blogs = [] }: IHomePageProps) => (

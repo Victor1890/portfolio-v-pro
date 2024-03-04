@@ -1,20 +1,20 @@
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/app/page-top'
+import Pagination from '@components/app/pagination'
 import MetaData from '@components/app/seo/MetaData'
-import { FadeContainer, popUp, popUpFromBottomForText, searchBarSlideAnimation } from 'constants/FramerMotionVariants'
 import pageMeta from '@content/meta'
-import { IArticleDevTo } from '@provider/dev.to/devto.interface'
+import { IArticle } from '@provider/dev.to/devto.interface'
+import { debounce } from '@utils/functions.util'
+import { FadeContainer, popUp, popUpFromBottomForText, searchBarSlideAnimation } from 'constants/FramerMotionVariants'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { Fragment, useEffect, useRef, useState } from 'react'
-import { CgSearch } from 'react-icons/cg'
 import { BiRss } from 'react-icons/bi'
-import Pagination from '@components/app/pagination'
-import { debounce } from '@utils/functions.util'
+import { CgSearch } from 'react-icons/cg'
 import BlogCard from './blog-card'
 
 interface IBlogPageProps {
-	blogs: IArticleDevTo[]
+	blogs: IArticle[]
 }
 
 const BlogPage = ({ blogs }: IBlogPageProps) => {

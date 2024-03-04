@@ -33,7 +33,7 @@ function Pagination({ handleChange, maxRowsPerPage = 10, page = 0, total = 10 }:
 				breakLabel={<span className='mr-4'>...</span>}
 				nextLabel={
 					showNextButton ? (
-						<span className='bg-lightGray flex h-10 w-10 items-center justify-center rounded-md bg-darkWhite'>
+						<span className='bg-red bg-lightGray mr-4 flex h-10 w-10 items-center justify-center rounded-md text-darkPrimary dark:text-white'>
 							<BsChevronRight />
 						</span>
 					) : null
