@@ -126,7 +126,7 @@ const StatPage = () => {
 						most streamed song of mine in last 4 weeks. Here's my top tracks on Spotify updated daily.
 					</AnimatedText>
 					<div className='my-10 flex flex-col gap-0 font-barlow'>
-						{(!isTopTrackLoading && isTopTrackArray) ? (
+						{!isTopTrackLoading && isTopTrackArray ? (
 							topTracks.map((track: SpotifyTrackType, index: number) => (
 								<SpotifyTrack
 									key={index}
@@ -168,7 +168,7 @@ const StatPage = () => {
 					</AnimatedText>
 
 					<div className='my-10 flex flex-col gap-0 font-barlow'>
-						{(isArtistLoading) ? (
+						{isArtistLoading ? (
 							!isArtistArray ? (
 								<div className='text-sm'>Not Enough Data to Show</div>
 							) : (
