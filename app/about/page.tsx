@@ -3,7 +3,7 @@
 // import MDXContent from '@lib/MDXContent'
 // import AboutPage from '@components/pages/about'
 // import { IStaticInfo } from 'interfaces/about/about.interface'
-import PageNotFoundPage from '@components/pages/404'
+// import PageNotFoundPage from '@components/pages/404'
 
 // export async function getAboutMeInfo() {
 // 	const data = await new MDXContent('static_pages').getPostFromSlug('about').catch((err) => {

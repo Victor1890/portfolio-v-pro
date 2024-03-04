@@ -14,7 +14,7 @@ interface BlogPageProps {
 	}
 }
 
-export async function getBlogBySlug(slug: string): Promise<{ error: boolean, post: IArticle | null }> {
+export async function getBlogBySlug(slug: string): Promise<{ error: boolean; post: IArticle | null }> {
 	const post = await devToProvider.getArticleBySlug(slug).catch(() => null)
 
 	if (!post) {
@@ -59,7 +59,6 @@ const BlogPage = ({ params }: BlogPageProps) => {
 
 		setPost(post)
 	}
-
 
 	useEffect(() => {
 		getPost()
