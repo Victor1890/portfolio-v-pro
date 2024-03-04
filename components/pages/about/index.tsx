@@ -1,3 +1,5 @@
+'use client'
+
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import StaticPage from '@components/app/static-page'
 import { FadeContainer, opacityVariant } from 'constants/FramerMotionVariants'
