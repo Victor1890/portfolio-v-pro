@@ -1,8 +1,11 @@
+'use client'
+
 import PageNotFoundPage from '@components/pages/404'
 import BlogPostPage from '@components/pages/blogs/slug'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import devToProvider from '@provider/dev.to/devto.provider'
 import { getMDXTableOfContents, getMarkdownSource } from '@utils/mdx.util'
+import { useEffect, useState } from 'react'
 import readTime from 'reading-time'
 
 interface BlogPageProps {
@@ -11,7 +14,7 @@ interface BlogPageProps {
 	}
 }
 
-export async function getBlogBySlug(slug: string) {
+export async function getBlogBySlug(slug: string): Promise<{ error: boolean, post: IArticle | null }> {
 	const post = await devToProvider.getArticleBySlug(slug).catch(() => null)
 
 	if (!post) {
@@ -44,9 +47,25 @@ export async function getBlogBySlug(slug: string) {
 	}
 }
 
-const BlogPage = async ({ params }: BlogPageProps) => {
-	const { error, post } = await getBlogBySlug(params.slug)
-	if (!post || error) return <PageNotFoundPage />
+const BlogPage = ({ params }: BlogPageProps) => {
+	const [post, setPost] = useState<IArticle | null>()
+
+	const getPost = async () => {
+		const { error, post } = await getBlogBySlug(params.slug)
+		if (!post || error) {
+			setPost(null)
+			return
+		}
+
+		setPost(post)
+	}
+
+
+	useEffect(() => {
+		getPost()
+	}, [])
+
+	if (!post) return <PageNotFoundPage />
 
 	return <BlogPostPage post={post} />
 }
