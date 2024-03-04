@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 type URL = string
 
 export default function useWindowLocation() {
 	const [currentURL, setCurrentURL] = useState<URL>('')
-	const router = useRouter()
+	const pathname = usePathname()
 
 	useEffect(() => {
 		setCurrentURL(window.location.href)
-	}, [router.asPath])
+	}, [pathname])
 
 	return { currentURL }
 }

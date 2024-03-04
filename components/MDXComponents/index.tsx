@@ -1,3 +1,5 @@
+'use client'
+
 import Code from './Code'
 import CodeSandbox from './CodeSandbox'
 import CodeTitle from './CodeTitle'

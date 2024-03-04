@@ -1,3 +1,5 @@
+'use client'
+
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import AnimatedHeading from '@components/FramerMotion/AnimatedHeading'
 import AnimatedText from '@components/FramerMotion/AnimatedText'
@@ -22,6 +24,9 @@ const StatPage = () => {
 	const { data: artists, isLoading: isArtistLoading } = useSWR('/api/stats/artists', fetcher)
 	const { data: devto, isLoading: isDevToLoading } = useSWR('/api/stats/devto', fetcher)
 	const { data: github, isLoading: isGithubLoading } = useSWR('/api/stats/github', fetcher)
+
+	const isTopTrackArray = useMemo(() => Array.isArray(topTracks), [topTracks])
+	const isArtistArray = useMemo(() => Array.isArray(artists), [artists])
 
 	const stats: IStats[] = useMemo(() => {
 		return [
@@ -121,8 +126,8 @@ const StatPage = () => {
 						most streamed song of mine in last 4 weeks. Here's my top tracks on Spotify updated daily.
 					</AnimatedText>
 					<div className='my-10 flex flex-col gap-0 font-barlow'>
-						{!isTopTrackLoading ? (
-							topTracks?.map((track: SpotifyTrackType, index: number) => (
+						{(!isTopTrackLoading && isTopTrackArray) ? (
+							topTracks.map((track: SpotifyTrackType, index: number) => (
 								<SpotifyTrack
 									key={index}
 									id={index}
@@ -163,8 +168,8 @@ const StatPage = () => {
 					</AnimatedText>
 
 					<div className='my-10 flex flex-col gap-0 font-barlow'>
-						{artists ? (
-							artists?.length === 0 ? (
+						{(isArtistLoading) ? (
+							!isArtistArray ? (
 								<div className='text-sm'>Not Enough Data to Show</div>
 							) : (
 								artists?.map((artist: SpotifyArtistType, index: number) => (

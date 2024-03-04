@@ -1,5 +1,7 @@
+'use client'
+
 import MetaData from '@components/app/seo/MetaData'
-import pageMeta from '@content/meta'
+// import pageMeta from '@content/meta'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import { homeProfileImage } from '@utils/utils'
 import { FadeContainer, opacityVariant, popUp } from 'constants/FramerMotionVariants'
@@ -19,12 +21,12 @@ interface IHomePageProps {
 
 const HomePage = ({ blogs = [] }: IHomePageProps) => (
 	<Fragment>
-		<MetaData
+		{/* <MetaData
 			title='Victor Rosario'
 			description={pageMeta.home.description}
 			previewImage={pageMeta.home.image}
 			keywords={pageMeta.home.keywords}
-		/>
+		/> */}
 		<div className='relative mx-auto max-w-4xl dark:bg-darkPrimary dark:text-gray-100 2xl:max-w-5xl 3xl:max-w-7xl'>
 			<motion.section
 				initial='hidden'

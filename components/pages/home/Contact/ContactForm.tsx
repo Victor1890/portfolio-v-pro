@@ -10,7 +10,6 @@ import { FormInput } from '@interfaces/contact/contact.interface'
 import config from '@config'
 
 const {
-	personName,
 	implementations: { emailSdk },
 } = config
 
@@ -33,7 +32,7 @@ export default function Form() {
 		}
 
 		const emailData = {
-			to_name: personName,
+			to_name: emailSdk.personName,
 			first_name: target.first_name.value.trim(),
 			last_name: target.last_name.value.trim(),
 			email: target.email.value.trim(),

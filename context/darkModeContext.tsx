@@ -1,6 +1,13 @@
-import React, { useState, useContext, useEffect, createContext } from 'react'
+import
+React,
+{
+	useState,
+	useContext,
+	useEffect,
+	createContext
+} from 'react'
 
-export interface DarkModeContextType {
+interface DarkModeContextType {
 	isDarkMode: boolean
 	changeDarkMode(value: boolean): void
 }

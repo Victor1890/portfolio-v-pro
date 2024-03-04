@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState, useMemo } from 'react'
 import { NextSeo } from 'next-seo'
 import useWindowLocation from '@hooks/useWindowLocation'

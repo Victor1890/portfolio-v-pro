@@ -1,3 +1,5 @@
+'use client'
+
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/app/page-top'
 import CreateAnIssue from '@components/app/create-issue'

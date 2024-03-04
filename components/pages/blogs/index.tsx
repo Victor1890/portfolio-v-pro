@@ -1,8 +1,8 @@
+'use client'
+
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import PageTop from '@components/app/page-top'
 import Pagination from '@components/app/pagination'
-import MetaData from '@components/app/seo/MetaData'
-import pageMeta from '@content/meta'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import { debounce } from '@utils/functions.util'
 import { FadeContainer, popUp, popUpFromBottomForText, searchBarSlideAnimation } from 'constants/FramerMotionVariants'
@@ -48,12 +48,12 @@ const BlogPage = ({ blogs }: IBlogPageProps) => {
 
 	return (
 		<Fragment>
-			<MetaData
+			{/* <MetaData
 				title={pageMeta.blogs.title}
 				description={pageMeta.blogs.description}
 				previewImage={pageMeta.blogs.image}
 				keywords={pageMeta.blogs.keywords}
-			/>
+			/> */}
 
 			<section className='pageTop flex flex-col gap-2'>
 				<PageTop pageTitle='Blogs'>

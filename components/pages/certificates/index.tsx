@@ -1,10 +1,10 @@
+'use client'
+
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
-import PageTop from '@components/app/page-top'
 import CreateAnIssue from '@components/app/create-issue'
-import MetaData from '@components/app/seo/MetaData'
-import { popUpFromBottomForText } from 'constants/FramerMotionVariants'
+import PageTop from '@components/app/page-top'
 import certificatesData from '@content/certificatesData'
-import pageMeta from '@content/meta'
+import { popUpFromBottomForText } from 'constants/FramerMotionVariants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
@@ -14,12 +14,12 @@ const CertificatePage = () => {
 
 	return (
 		<Fragment>
-			<MetaData
+			{/* <MetaData
 				title={pageMeta.certificates.title}
 				description={pageMeta.certificates.description}
 				previewImage={pageMeta.certificates.image}
 				keywords={pageMeta.certificates.keywords}
-			/>
+			/> */}
 
 			<section className='pageTop'>
 				<PageTop pageTitle='Certificates'>

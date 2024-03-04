@@ -7,8 +7,8 @@ export interface IArticle {
 	description: string
 	cover_image: string
 	tags?: string[]
-	content: any
-	tableOfContents: ITableOfContentMDX[] | undefined
+	content?: any
+	tableOfContents?: ITableOfContentMDX[] | undefined
 	readingTime: ReadTimeResults
 	organization?: Organization
 	user: User
