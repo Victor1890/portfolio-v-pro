@@ -3,7 +3,6 @@ import { visit } from 'unist-util-visit'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import rehypePrettyCode from 'rehype-pretty-code'
-// import rehypeHighlight from 'rehype-highlight'
 import { PRETTY_CODE_OPTIONS } from '@constants/mdx'
 
 export const getMDXTableOfContents = (markdown: string) => {

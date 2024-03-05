@@ -25,7 +25,6 @@
 		"@portabletext/to-html": "2.0.5",
 		"classnames": "2.5.1",
 		"framer-motion": "11.0.5",
-		"glob": "10.3.10",
 		"globby": "14.0.1",
 		"gray-matter": "4.0.3",
 		"groq": "3.29.1",
