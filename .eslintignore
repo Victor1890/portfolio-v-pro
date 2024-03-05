@@ -7,6 +7,7 @@ tailwind.config.js
 vercel.json
 postcss.config.js
 package.json
+tsconfig.json
 .prettierrc.json
 .eslintrc.json
 .lintstagedrc

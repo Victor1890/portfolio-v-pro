@@ -47,13 +47,13 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
 				}}
 			>
 				<ScrollProgressBar />
-				<h1
+				<h2
 					className={`text-3xl ${
 						(post?.tableOfContents?.length || 0) > 0 ? '' : 'text-center'
 					} font-bold tracking-tight text-black dark:text-white md:text-5xl`}
 				>
 					{post.title}
-				</h1>
+				</h2>
 
 				<div className='flex !w-full items-start text-gray-700 dark:text-gray-300'>
 					<div className='flex w-full flex-wrap items-center justify-between gap-2'>

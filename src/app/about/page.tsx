@@ -27,9 +27,7 @@ async function getAboutMeInfo(): Promise<IStaticInfo | null> {
 
 export default async function Page() {
 	const about = await getAboutMeInfo()
-	// console.log('about: ', about)
 	if (!about) return <PageNotFoundPage />
 
 	return <AboutPage about={about} />
-	// return <p>T</p>
 }
