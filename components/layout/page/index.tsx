@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import TopNavbar from '../TopNavbar'
 import ScrollToTopButton from '../ScrollToTopButton'
 import Footer from '@components/app/footer'
+import TopNavbar from '@components/app/nav-bar'
 import QRCodeContainer from '@components/layout/QRCodeContainer'
 
 export default function Layout({ children }: { children: React.ReactNode }) {

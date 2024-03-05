@@ -1,6 +1,6 @@
 'use client'
 
-import MetaData from '@components/app/seo/MetaData'
+// import MetaData from '@components/app/seo/MetaData'
 // import pageMeta from '@content/meta'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import { homeProfileImage } from '@utils/utils'

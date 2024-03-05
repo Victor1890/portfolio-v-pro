@@ -5,12 +5,10 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "next dev",
-		"tsc": "tsc",
 		"build": "next build",
 		"postbuild": "next-sitemap",
 		"start": "next start",
 		"analyze": "cross-env ANALYZE=true next build",
-		"tsc-watch": "tsc --watch",
 		"lint": "eslint --ignore-path .eslintignore .",
 		"format": "prettier --check --ignore-path .prettierignore .",
 		"format:fix": "prettier --write --ignore-path .prettierignore .",
