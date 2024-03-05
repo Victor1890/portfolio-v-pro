@@ -30,6 +30,6 @@ export default async function Page() {
 	// console.log('about: ', about)
 	if (!about) return <PageNotFoundPage />
 
-	return <AboutPage about={about} />;
+	return <AboutPage about={about} />
 	// return <p>T</p>
 }
