@@ -106,4 +106,7 @@ const pageMeta: PageMeta = {
 	},
 }
 
-export default pageMeta
+export const metadata = {
+	pageMeta,
+	description,
+};
