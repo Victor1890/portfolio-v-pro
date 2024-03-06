@@ -1,7 +1,7 @@
 import { PageMeta } from '@interfaces/common/common.interface'
 
 export const DESCRIPTION =
-	'Experienced FullStack Developer specializing in cutting-edge mobile and web development technologies for businesses and startups. Over 4 years of hands-on experience in the IT industry.';
+	'Experienced FullStack Developer specializing in cutting-edge mobile and web development technologies for businesses and startups. Over 4 years of hands-on experience in the IT industry.'
 
 const KEYWORDS = [
 	'victorrosario',
