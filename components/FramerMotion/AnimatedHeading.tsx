@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { AnimatedTAGProps } from '@interfaces/common/common.interface'
 
 export default function AnimatedHeading({ variants, className, children, infinity, variant = 'h2' }: AnimatedTAGProps) {
-
 	switch (variant) {
 		case 'h1':
 			return (
@@ -16,7 +15,7 @@ export default function AnimatedHeading({ variants, className, children, infinit
 					{children}
 				</motion.h1>
 			)
-			break;
+			break
 		case 'h2':
 			return (
 				<motion.h2
@@ -29,7 +28,7 @@ export default function AnimatedHeading({ variants, className, children, infinit
 					{children}
 				</motion.h2>
 			)
-			break;
+			break
 		case 'h3':
 			return (
 				<motion.h3
@@ -42,7 +41,7 @@ export default function AnimatedHeading({ variants, className, children, infinit
 					{children}
 				</motion.h3>
 			)
-			break;
+			break
 		case 'h4':
 			return (
 				<motion.h4
@@ -55,7 +54,7 @@ export default function AnimatedHeading({ variants, className, children, infinit
 					{children}
 				</motion.h4>
 			)
-			break;
+			break
 		case 'h5':
 			return (
 				<motion.h5
@@ -68,7 +67,7 @@ export default function AnimatedHeading({ variants, className, children, infinit
 					{children}
 				</motion.h5>
 			)
-			break;
+			break
 		case 'h6':
 			return (
 				<motion.h6
@@ -81,9 +80,9 @@ export default function AnimatedHeading({ variants, className, children, infinit
 					{children}
 				</motion.h6>
 			)
-			break;
+			break
 		default:
-			<motion.h1
+			;<motion.h1
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ once: !infinity }}
@@ -92,8 +91,6 @@ export default function AnimatedHeading({ variants, className, children, infinit
 			>
 				{children}
 			</motion.h1>
-			break;
+			break
 	}
-
-
 }
