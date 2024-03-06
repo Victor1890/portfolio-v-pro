@@ -1,8 +1,9 @@
 import { PageMeta } from '@interfaces/common/common.interface'
 
-const description =
-	'Experienced FullStack Developer specializing in cutting-edge mobile and web development technologies for businesses and startups. Over 4 years of hands-on experience in the IT industry.'
-const keywords = [
+export const DESCRIPTION =
+	'Experienced FullStack Developer specializing in cutting-edge mobile and web development technologies for businesses and startups. Over 4 years of hands-on experience in the IT industry.';
+
+const KEYWORDS = [
 	'victorrosario',
 	'victor rosario',
 	'victorjesusrosariovasquez',
@@ -61,52 +62,47 @@ const keywords = [
 	'victor1890 blog',
 ]
 
-const pageMeta: PageMeta = {
+export const metadata: PageMeta = {
 	home: {
 		title: '',
-		description,
+		description: DESCRIPTION,
 		image: 'https://i.imgur.com/nCVESbL.png',
-		keywords: keywords.join(', '),
+		keywords: KEYWORDS.join(', '),
 	},
 	stats: {
 		title: 'Statistics',
-		description,
+		description: DESCRIPTION,
 		image: 'https://imgur.com/9scFfW5.png',
-		keywords: ['stats', 'Statistics'].concat(keywords).join(', '),
+		keywords: ['stats', 'Statistics'].concat(KEYWORDS).join(', '),
 	},
 	utilities: {
 		title: 'Utilities',
-		description,
+		description: DESCRIPTION,
 		image: 'https://imgur.com/MpfymCd.png',
-		keywords: ['Utilities', 'what i use?', 'utils', 'setup', 'uses'].concat(keywords).join(', '),
+		keywords: ['Utilities', 'what i use?', 'utils', 'setup', 'uses'].concat(KEYWORDS).join(', '),
 	},
 	blogs: {
 		title: 'Blogs',
-		description,
+		description: DESCRIPTION,
 		image: 'https://imgur.com/nbNLLZk.png',
-		keywords: ['blogs', 'blog', 'webdev', 'react'].concat(keywords).join(', '),
+		keywords: ['blogs', 'blog', 'webdev', 'react'].concat(KEYWORDS).join(', '),
 	},
 	certificates: {
 		title: 'Certificates',
-		description,
+		description: DESCRIPTION,
 		image: 'https://imgur.com/J0q1OdT.png',
-		keywords: ['Certificates', 'verified'].concat(keywords).join(', '),
+		keywords: ['Certificates', 'verified'].concat(KEYWORDS).join(', '),
 	},
 	projects: {
 		title: 'Projects',
-		description,
+		description: DESCRIPTION,
 		image: 'https://imgur.com/XJqiuNK.png',
-		keywords: ['projects', 'work', 'side project'].concat(keywords).join(', '),
+		keywords: ['projects', 'work', 'side project'].concat(KEYWORDS).join(', '),
 	},
 	about: {
 		title: 'About',
-		description,
+		description: DESCRIPTION,
 		image: 'https://imgur.com/b0HRaPv.png',
-		keywords: ['about', 'about me', 'victor rosario'].concat(keywords).join(', '),
+		keywords: ['about', 'about me', 'victor rosario'].concat(KEYWORDS).join(', '),
 	},
 }
-
-export const metadata = {
-	pageMeta,
-	description,
-};

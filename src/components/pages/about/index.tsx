@@ -4,7 +4,7 @@ import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import StaticPage from '@components/app/static-page'
 import { FadeContainer, opacityVariant } from '@constants/FramerMotionVariants'
 import { linkedinData } from '@content/linkedinData'
-import pageMeta from '@content/meta'
+import { metadata } from '@content/metadata'
 import { IStaticInfo } from '@interfaces/about/about.interface'
 import { ILinkedInExperience } from '@interfaces/linkedin/linkedin.interface'
 import { months } from '@utils/date.util'
@@ -19,7 +19,7 @@ interface AboutPageProps {
 
 const AboutPage = ({ about }: AboutPageProps) => (
 	<Fragment>
-		<StaticPage metadata={pageMeta.about} page={about} />
+		<StaticPage metadata={metadata.about} page={about} />
 
 		<div className='pageTop mt-0 print:hidden'>
 			<motion.h3

@@ -1,6 +1,6 @@
 import RSS from 'rss'
 import config from '@config'
-import { metadata } from '@content/metadata'
+import { DESCRIPTION } from '@content/metadata'
 import devToProvider from '@provider/dev.to/devto.provider'
 
 const { appUrl: siteURL, personName } = config
@@ -9,7 +9,7 @@ export async function GET() {
 
     const feed = new RSS({
         title: personName,
-        description: metadata.description,
+        description: DESCRIPTION,
         site_url: siteURL,
         feed_url: `${siteURL}/feed.xml`,
         language: 'en',
