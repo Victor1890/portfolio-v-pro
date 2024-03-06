@@ -19,7 +19,7 @@ const AboutPage = ({ about }: AboutPageProps) => (
 		<StaticPage metadata={pageMeta.about} page={about} />
 
 		<div className='pageTop mt-0 print:hidden'>
-			<motion.h3
+			<motion.h2
 				initial='hidden'
 				whileInView='visible'
 				viewport={{ once: true }}
@@ -27,7 +27,7 @@ const AboutPage = ({ about }: AboutPageProps) => (
 				className='my-2 text-left text-xl font-bold md:text-3xl'
 			>
 				Recent Experience
-			</motion.h3>
+			</motion.h2>
 
 			<AnimatedDiv variants={FadeContainer} className='flex flex-col gap-2 overflow-x-scroll pb-5 pt-10 md:gap-4'>
 				{linkedinData.experiences.map((experience) => {

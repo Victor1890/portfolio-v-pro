@@ -55,4 +55,5 @@ export type AnimatedTAGProps = {
 	className?: string
 	children: React.ReactNode
 	infinity?: boolean
+	variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
