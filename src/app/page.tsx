@@ -6,8 +6,6 @@ async function getLastesBlogs(): Promise<IArticle[]> {
 	const data = await devToProvider.getPageOfPosts(1, 3).catch(() => null)
 
 	if (!data) return []
-	// await getRSS()
-	// await generateSitemap()
 
 	const blogs: IArticle[] = data.map((blog) => ({
 		title: blog.title,
