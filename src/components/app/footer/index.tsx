@@ -1,3 +1,5 @@
+'use client'
+
 import socialMedia from '@content/socialMedia'
 import fetcher from '@lib/fetcher'
 import { navigationRoutes } from '@utils/utils'

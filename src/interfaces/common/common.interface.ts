@@ -52,6 +52,14 @@ export type FrontMatter = {
 
 export type AnimatedTAGProps = {
 	variants: Variants
+	as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
+	className?: string
+	children: React.ReactNode
+	infinity?: boolean
+}
+
+export type AnimatedDIVProps = {
+	variants: Variants
 	className?: string
 	children: React.ReactNode
 	infinity?: boolean

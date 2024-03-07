@@ -2,7 +2,6 @@
 
 import { FadeContainer, opacityVariant, popUp } from '@constants/FramerMotionVariants'
 import { IArticle } from '@provider/dev.to/devto.interface'
-import { homeProfileImage } from '@utils/utils'
 import { motion } from 'framer-motion'
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -31,11 +30,12 @@ const HomePage = ({ blogs = [] }: IHomePageProps) => (
 					className='xs:h-52 xs:w-52 relative flex h-44 w-44 items-center justify-center rounded-full p-3 before:absolute before:inset-0 before:animate-photo-spin before:rounded-full before:border-b-4 before:border-t-4 before:border-black before:dark:border-white'
 				>
 					<Image
-						src={homeProfileImage}
+						src={'/profile/profile.webp'}
+						title='Victor Rosario Profile Image'
 						className='rounded-full shadow saturate-0 filter'
 						width={933}
 						height={933}
-						alt='cover Profile Image'
+						alt='Victor Rosario Profile Image'
 						quality={75}
 						priority
 					/>
@@ -52,6 +52,7 @@ const HomePage = ({ blogs = [] }: IHomePageProps) => (
 						>
 							Software Developer at{' '}
 							<Link
+								title='CNC'
 								href='https://www.linkedin.com/company/compiterd/'
 								target='_blank'
 								className='hover:underline'

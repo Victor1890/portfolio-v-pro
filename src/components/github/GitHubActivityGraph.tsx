@@ -1,17 +1,16 @@
 import { Area, AreaChart, Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
+import config from '@config'
 import { opacityVariant } from '@constants/FramerMotionVariants'
 import { useDarkMode } from '@context/darkModeContext'
 import fetcher from '@lib/fetcher'
-import useSWR from 'swr'
-import AnimatedHeading from '../FramerMotion/AnimatedHeading'
-import AnimatedText from '../FramerMotion/AnimatedText'
-import ContributionsToolTip from './ContributionsToolTip'
-import ContributionCountByDayOfWeekToolTip from './ContributionCountByDayOfWeekToolTip'
-import LoadingBarChart from './LoadingBarChart'
-import LoadingAreaChart from './LoadingAreaChart'
 import GitHubCalendar from 'react-github-calendar'
-import config from '@config'
+import useSWR from 'swr'
+import AnimatedText from '../FramerMotion/AnimatedText'
+import ContributionCountByDayOfWeekToolTip from './ContributionCountByDayOfWeekToolTip'
+import ContributionsToolTip from './ContributionsToolTip'
+import LoadingAreaChart from './LoadingAreaChart'
+import LoadingBarChart from './LoadingBarChart'
 
 const { username } = config.github
 
@@ -22,13 +21,14 @@ export default function GitHubActivityGraph() {
 	return (
 		<>
 			<div className='mb-10 max-w-full font-barlow'>
-				<AnimatedHeading
+				<AnimatedText
+					as='h2'
 					variants={opacityVariant}
 					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 				>
 					GitHub Contribution
-				</AnimatedHeading>
-				<AnimatedText variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
+				</AnimatedText>
+				<AnimatedText as='p' variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
 					The following is my GitHub contribution graph which shows my coding activity and productivity on the platform.
 				</AnimatedText>
 				<GitHubCalendar
@@ -39,13 +39,14 @@ export default function GitHubActivityGraph() {
 				/>
 			</div>
 			<div className='mb-10 max-w-full font-barlow'>
-				<AnimatedHeading
+				<AnimatedText
+					as='h2'
 					variants={opacityVariant}
 					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 				>
 					GitHub Activity Graph
-				</AnimatedHeading>
-				<AnimatedText variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
+				</AnimatedText>
+				<AnimatedText as='p' variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
 					A dynamically generated activity graph to show my GitHub activities of last 31 days.
 				</AnimatedText>
 				<ResponsiveContainer width='100%' height={300}>
@@ -84,13 +85,14 @@ export default function GitHubActivityGraph() {
 				</ResponsiveContainer>
 			</div>
 			<div className='mb-10 max-w-full font-barlow'>
-				<AnimatedHeading
+				<AnimatedText
+					as='h2'
 					variants={opacityVariant}
 					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 				>
 					My Productivity by Day of the Week
-				</AnimatedHeading>
-				<AnimatedText variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
+				</AnimatedText>
+				<AnimatedText as='p' variants={opacityVariant} className='my-4 text-gray-700 dark:text-gray-300'>
 					A visual representation of my productivity based on the number of contributions made on each day of the week.
 				</AnimatedText>
 				<ResponsiveContainer width='100%' height={300}>

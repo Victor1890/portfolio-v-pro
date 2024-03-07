@@ -6,7 +6,7 @@ import Blog from '../blogs/blog-card'
 export default function BlogsSection({ blogs }: { blogs: IArticle[] }) {
 	return (
 		<section className='mx-5 mb-5'>
-			<HomeHeading title='Recent Posts' />
+			<HomeHeading as='h2' title='Recent Posts' />
 
 			<div className='mx-auto grid grid-cols-1 gap-4'>
 				{blogs.map((blog, index) => {
@@ -14,6 +14,7 @@ export default function BlogsSection({ blogs }: { blogs: IArticle[] }) {
 				})}
 
 				<Link
+					title='Read all posts'
 					href='/blogs'
 					className='group flex w-fit items-center justify-center gap-1 border-transparent font-inter font-medium transition active:scale-95 active:border-black md:ml-7'
 				>

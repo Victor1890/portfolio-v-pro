@@ -32,6 +32,7 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticle; an
 
 			<div className='mt-2 flex h-full w-full flex-col px-2 pb-2 sm:mt-0 sm:p-1 md:pr-5 2xl:py-5'>
 				<Link
+					title={`Read more about ${blog.title}`}
 					href={`/blogs/${blog.slug}`}
 					className='line-clamp-2 font-bold text-neutral-900 hover:underline dark:text-neutral-200 md:text-xl'
 				>
@@ -46,6 +47,7 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticle; an
 						<div className='w-[30px]'>
 							<Image
 								alt={blog?.organization ? blog?.organization.name : blog.user.name}
+								title={blog?.organization ? blog?.organization.name : blog.user.name}
 								height={933}
 								width={933}
 								src={blog?.organization ? blog?.organization.profile_image : blog.user.profile_image}
@@ -54,13 +56,13 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticle; an
 						</div>
 						<div className='flex flex-col'>
 							<div className='flex items-center gap-1 text-sm'>
-								<Link href='/about' className='text-sm font-medium hover:underline'>
+								<Link title={`More info | ${blog.user.name}`} href='/about' className='text-sm font-medium hover:underline'>
 									{blog.user.name}
 								</Link>
 								{blog?.organization && (
 									<span>
 										for{' '}
-										<Link href={'#' || blog?.organization.name} className='font-medium hover:underline'>
+										<Link title={`More info | ${blog?.organization.name}`} href={'#' || blog?.organization.name} className='font-medium hover:underline'>
 											{blog?.organization.name}
 										</Link>
 									</span>

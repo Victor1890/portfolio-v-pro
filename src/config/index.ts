@@ -1,5 +1,5 @@
 const config = {
-	personName: 'Victor Rosario',
+	personName: 'Victor Jesús Rosario Vásquez',
 	appUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
 	implementations: {
 		emailSdk: {

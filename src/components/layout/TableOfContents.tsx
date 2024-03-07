@@ -3,7 +3,7 @@ import { lockScroll, removeScrollLock } from '@utils/functions.util'
 import { useEffect, useState } from 'react'
 
 import AnimatedDiv from '../FramerMotion/AnimatedDiv'
-import AnimatedHeading from '../FramerMotion/AnimatedHeading'
+import AnimatedText from '../FramerMotion/AnimatedText'
 import { CgSearch } from 'react-icons/cg'
 import Link from 'next/link'
 import { ITableOfContentMDX as TableOfContentType } from '@interfaces/common/common.interface'
@@ -43,11 +43,9 @@ export default function TableOfContents({
 			{tableOfContents.length > 0 && (
 				<>
 					<div
-						className={`fixed h-full print:hidden ${
-							isTOCActive ? 'left-0 top-[44px] opacity-100 md:top-[60px]' : '-left-full opacity-0'
-						} ${
-							scrollPercentage > 95 ? 'xl:-left-full' : 'xl:left-0'
-						} fixed z-50 flex h-screen  w-full flex-col gap-1 overflow-y-scroll bg-darkWhite p-10 !pb-[100px] font-barlow text-neutral-800 transition-all duration-500 dark:bg-darkPrimary dark:text-gray-200 md:left-0 md:max-w-[35%] md:p-14 md:opacity-100 lg:max-w-[30%] `}
+						className={`fixed h-full print:hidden ${isTOCActive ? 'left-0 top-[44px] opacity-100 md:top-[60px]' : '-left-full opacity-0'
+							} ${scrollPercentage > 95 ? 'xl:-left-full' : 'xl:left-0'
+							} fixed z-50 flex h-screen  w-full flex-col gap-1 overflow-y-scroll bg-darkWhite p-10 !pb-[100px] font-barlow text-neutral-800 transition-all duration-500 dark:bg-darkPrimary dark:text-gray-200 md:left-0 md:max-w-[35%] md:p-14 md:opacity-100 lg:max-w-[30%] `}
 					>
 						{/* TOC Search Bar */}
 						<div className='group relative mx-auto -ml-[5px] w-full rounded-md  text-slate-700 dark:text-gray-300'>
@@ -61,12 +59,13 @@ export default function TableOfContents({
 								placeholder='Search Content...'
 							/>
 						</div>
-						<AnimatedHeading
+						<AnimatedText
+							as='h3'
 							variants={opacityVariant}
 							className='-ml-[5px] mt-2 text-xl font-bold md:-ml-[6px] md:text-2xl'
 						>
 							Table of Contents
-						</AnimatedHeading>
+						</AnimatedText>
 
 						<AnimatedDiv
 							variants={FadeContainer}

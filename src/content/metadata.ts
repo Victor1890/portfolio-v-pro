@@ -64,9 +64,9 @@ const KEYWORDS = [
 
 export const metadata: PageMeta = {
 	home: {
-		title: '',
+		title: 'Victor Jesús Rosario Vásquez | Portfolio',
 		description: DESCRIPTION,
-		image: 'https://i.imgur.com/nCVESbL.png',
+		image: 'profile/profile.webp',
 		keywords: KEYWORDS.join(', '),
 	},
 	stats: {
