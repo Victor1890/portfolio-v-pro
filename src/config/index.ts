@@ -1,7 +1,15 @@
+let appUrl = process.env.NEXT_PUBLIC_VERCEL_URL as string
+
+// Check if the URL starts with http:// or https://
+if (!appUrl.startsWith('http://') && !appUrl.startsWith('https://')) {
+	// Add https:// to the beginning of the URL
+	appUrl = 'https://' + appUrl
+}
+
 const config = {
 	personName: 'Victor Jesús Rosario Vásquez',
 	// appUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
-	appUrl: process.env.NEXT_PUBLIC_VERCEL_URL as string,
+	appUrl,
 	implementations: {
 		emailSdk: {
 			personName: 'Victor Rosario (Victor1890)',
