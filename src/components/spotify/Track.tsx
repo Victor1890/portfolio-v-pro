@@ -13,6 +13,7 @@ export default function SpotifyTrack({ url, title, artist, coverImage, id }: Tra
 	return (
 		<Link
 			href={url}
+			title={`Open ${title} by ${artist} on Spotify`}
 			rel='noreferrer'
 			target='_blank'
 			className='xs:pl-16 relative flex items-center gap-5 overflow-hidden border-b border-l  border-r border-gray-300 bg-gray-100 p-4 font-barlow first:border-t hover:bg-white dark:border-neutral-600 dark:bg-darkPrimary hover:dark:bg-darkSecondary md:!pl-20 '
