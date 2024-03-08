@@ -56,13 +56,21 @@ export default function BlogCard({ blog, animate = false }: { blog: IArticle; an
 						</div>
 						<div className='flex flex-col'>
 							<div className='flex items-center gap-1 text-sm'>
-								<Link title={`More info | ${blog.user.name}`} href='/about' className='text-sm font-medium hover:underline'>
+								<Link
+									title={`More info | ${blog.user.name}`}
+									href='/about'
+									className='text-sm font-medium hover:underline'
+								>
 									{blog.user.name}
 								</Link>
 								{blog?.organization && (
 									<span>
 										for{' '}
-										<Link title={`More info | ${blog?.organization.name}`} href={'#' || blog?.organization.name} className='font-medium hover:underline'>
+										<Link
+											title={`More info | ${blog?.organization.name}`}
+											href={'#' || blog?.organization.name}
+											className='font-medium hover:underline'
+										>
 											{blog?.organization.name}
 										</Link>
 									</span>

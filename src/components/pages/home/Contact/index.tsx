@@ -23,7 +23,11 @@ export default function Contact() {
 			<section className='mx-auto flex w-full flex-col px-5 dark:bg-darkPrimary dark:text-white lg:flex-row lg:pb-10'>
 				{/* Left Contact form section */}
 				<div className='mx-auto mt-10 w-full'>
-					<AnimatedText as='h3' variants={popUpFromBottomForText} className='my-2 w-full text-center text-2xl font-bold'>
+					<AnimatedText
+						as='h3'
+						variants={popUpFromBottomForText}
+						className='my-2 w-full text-center text-2xl font-bold'
+					>
 						Connect with me
 					</AnimatedText>
 

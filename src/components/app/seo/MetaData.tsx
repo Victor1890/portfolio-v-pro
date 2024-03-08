@@ -19,7 +19,7 @@ const getFaviconPath = (isDarkMode: boolean = true): string => {
 
 export default function MetaData({ title, description, previewImage, keywords, suffix }: Props) {
 	const { currentURL } = useWindowLocation()
-	const [faviconHref, setFaviconHref] = useState('/favicon-dark.ico')
+	const [faviconHref, setFaviconHref] = useState('/favicon-light.ico')
 
 	const tags = useMemo(() => {
 		if (!keywords) return []

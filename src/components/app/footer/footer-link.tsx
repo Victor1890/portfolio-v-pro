@@ -9,7 +9,6 @@ interface IFooterLinkProps {
 }
 
 const FooterLink = ({ route, text }: IFooterLinkProps) => {
-
 	const link = useMemo(() => {
 		const hasSlash = route.includes('/')
 		return hasSlash ? route : `/${route}`

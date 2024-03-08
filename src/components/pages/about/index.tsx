@@ -10,7 +10,6 @@ import { IStaticInfo } from '@interfaces/about/about.interface'
 import { ILinkedInExperience } from '@interfaces/linkedin/linkedin.interface'
 import { months } from '@utils/date.util'
 import classNames from 'classnames'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Fragment } from 'react'
 
@@ -23,7 +22,6 @@ const AboutPage = ({ about }: AboutPageProps) => (
 		<StaticPage metadata={metadata.about} page={about} />
 
 		<div className='pageTop mt-0 print:hidden'>
-
 			<AnimatedText as='h2' variants={opacityVariant}>
 				Recent Experience
 			</AnimatedText>
@@ -42,7 +40,6 @@ const AboutPage = ({ about }: AboutPageProps) => (
 									height={400}
 									className='object-cover'
 									alt={experience.company}
-
 								/>
 							</div>
 

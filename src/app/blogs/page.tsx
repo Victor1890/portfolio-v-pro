@@ -1,6 +1,49 @@
 import BlogPage from '@components/pages/blogs'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import devToProvider from '@provider/dev.to/devto.provider'
+import config from '@config'
+import { metadata as meta } from '@content/metadata'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+	metadataBase: new URL(`${config.appUrl}`),
+	title: meta.blogs.title,
+	description: meta.blogs.description,
+	keywords: meta.blogs.keywords,
+	authors: {
+		name: config.personName,
+	},
+	creator: config.personName,
+	generator: 'Next.js',
+	alternates: {
+		canonical: config.appUrl,
+	},
+	robots: 'index, follow',
+	openGraph: {
+		type: 'website',
+		locale: 'en_US',
+		url: `${config.appUrl}/blogs`,
+		title: meta.blogs.title,
+		description: meta.blogs.description,
+		siteName: `Portfolio | ${config.personName}`,
+		images: [
+			{
+				url: `${config.appUrl}/open-graph/og.png`,
+				alt: meta.blogs.title,
+			},
+		],
+	},
+	icons: {
+		icon: '/favicon-light.ico',
+		shortcut: '/favicon-light.ico',
+		apple: '/apple-touch-icon.ico',
+	},
+}
+
+const Blogs = async () => {
+	const blogs = await getAllArticle()
+	return <BlogPage blogs={blogs} />
+}
 
 async function getAllArticle(): Promise<IArticle[]> {
 	const data = await devToProvider.getPageOfPosts().catch(() => null)
@@ -25,12 +68,6 @@ async function getAllArticle(): Promise<IArticle[]> {
 	}))
 
 	return blogs
-}
-
-const Blogs = async () => {
-	const blogs = await getAllArticle()
-
-	return <BlogPage blogs={blogs} />
 }
 
 export default Blogs

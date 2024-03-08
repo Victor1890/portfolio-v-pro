@@ -6,11 +6,12 @@ import devToProvider from '@provider/dev.to/devto.provider'
 import { metadata as meta } from '@content/metadata'
 
 export const metadata: Metadata = {
+	metadataBase: new URL(`${config.appUrl}`),
 	title: meta.home.title,
 	description: meta.home.description,
 	keywords: meta.home.keywords,
 	authors: {
-		name: config.personName
+		name: config.personName,
 	},
 	creator: config.personName,
 	generator: 'Next.js',
@@ -33,10 +34,10 @@ export const metadata: Metadata = {
 		],
 	},
 	icons: {
-		icon: "/favicon-dark.ico",
-		shortcut: "/favicon-dark.ico",
-		apple: "/apple-touch-icon.ico"
-	}
+		icon: '/favicon-light.ico',
+		shortcut: '/favicon-light.ico',
+		apple: '/apple-touch-icon.ico',
+	},
 }
 
 const Home = async () => {

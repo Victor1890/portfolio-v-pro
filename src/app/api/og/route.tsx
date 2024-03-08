@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import Image from 'next/image'
 import config from '@config'
 
 const { appUrl, personName } = config
@@ -8,11 +9,9 @@ export const runtime = 'edge'
 const interBold = fetch(new URL('./../../../assets/fonts/Inter-Bold.ttf', import.meta.url)).then((res) =>
 	res.arrayBuffer()
 )
-
 const logo = fetch(new URL('./../../../assets/open-graph/logo-72x72.png', import.meta.url)).then((res) =>
 	res.arrayBuffer()
 )
-
 const icons = fetch(new URL('./../../../assets/open-graph/icons.png', import.meta.url)).then((res) => res.arrayBuffer())
 
 export async function GET(req: Request) {
@@ -69,7 +68,7 @@ export async function GET(req: Request) {
 						fontSize: '32px',
 					}}
 				>
-					<img width='64' height='64' src={imageData as any} />
+					<Image tw='object-cover' width='64' height='64' src={imageData as any} alt={heading} />
 					<h1 tw='pl-4'>{personName}</h1>
 				</div>
 
@@ -97,7 +96,8 @@ export async function GET(req: Request) {
 						{hostname}
 					</div>
 					<div tw='flex items-center text-xl' style={{ fontFamily: 'Inter', fontWeight: 'normal' }}>
-						<img height='86' src={image2Data as any} />
+						<Image tw='object-cover' width='86' height='86' src={image2Data as any} alt={heading} />
+						{/* <img height='86' src={image2Data as any} /> */}
 					</div>
 				</div>
 			</div>

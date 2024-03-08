@@ -7,11 +7,12 @@ import { metadata as meta } from '@content/metadata'
 import config from '@config'
 
 export const metadata: Metadata = {
+	metadataBase: new URL(`${config.appUrl}`),
 	title: meta.about.title,
 	description: meta.about.description,
 	keywords: meta.about.keywords,
 	authors: {
-		name: config.personName
+		name: config.personName,
 	},
 	creator: config.personName,
 	generator: 'Next.js',
@@ -34,10 +35,10 @@ export const metadata: Metadata = {
 		],
 	},
 	icons: {
-		icon: "/favicon-dark.ico",
-		shortcut: "/favicon-dark.ico",
-		apple: "/apple-touch-icon.ico"
-	}
+		icon: '/favicon-light.ico',
+		shortcut: '/favicon-light.ico',
+		apple: '/apple-touch-icon.ico',
+	},
 }
 
 export default async function Page() {

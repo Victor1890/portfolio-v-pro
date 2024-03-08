@@ -77,10 +77,7 @@ const StatPage = () => {
 			</PageTop>
 
 			{/* Blogs and github stats */}
-			<AnimatedDiv
-				className='xs:grid-cols-2 my-10 grid gap-5 sm:!grid-cols-3 xl:!grid-cols-4'
-				variants={FadeContainer}
-			>
+			<AnimatedDiv className='xs:grid-cols-2 my-10 grid gap-5 sm:!grid-cols-3 xl:!grid-cols-4' variants={FadeContainer}>
 				{stats.map((stat, index) => (
 					<StatsCard key={index} title={stat.title} value={stat.value} />
 				))}
