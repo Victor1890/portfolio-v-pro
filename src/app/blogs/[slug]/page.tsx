@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 		.join(', ')
 
 	return {
-		title: blog.title,
+		title: `${blog.title} | ${config.personName}`,
 		authors: {
 			name: blog.user.name,
 			url: blogLink,
