@@ -3,10 +3,10 @@ import { useState } from 'react'
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
 import ScrollProgressBar from '@components/layout/ScrollProgressBar'
 import TableOfContents from '@components/layout/TableOfContents'
+import { opacityVariant } from '@constants/FramerMotionVariants'
 import useWindowLocation from '@hooks/useWindowLocation'
 import { IArticle } from '@provider/dev.to/devto.interface'
 import { getFormattedDate } from '@utils/date.util'
-import { opacityVariant } from '@constants/FramerMotionVariants'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiPrinter } from 'react-icons/fi'
@@ -47,13 +47,13 @@ export default function BlogLayout({ post, children }: IBlogLayoutProps) {
 				}}
 			>
 				<ScrollProgressBar />
-				<h2
+				<h1
 					className={`text-3xl ${
 						(post?.tableOfContents?.length || 0) > 0 ? '' : 'text-center'
 					} font-bold tracking-tight text-black dark:text-white md:text-5xl`}
 				>
 					{post.title}
-				</h2>
+				</h1>
 
 				<div className='flex !w-full items-start text-gray-700 dark:text-gray-300'>
 					<div className='flex w-full flex-wrap items-center justify-between gap-2'>

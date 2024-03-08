@@ -1,6 +1,7 @@
 const config = {
 	personName: 'Victor Jesús Rosario Vásquez',
-	appUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
+	// appUrl: process.env.NEXT_PUBLIC_SITE_URL as string,
+	appUrl: process.env.NEXT_PUBLIC_VERCEL_URL as string,
 	implementations: {
 		emailSdk: {
 			personName: 'Victor Rosario (Victor1890)',
@@ -27,5 +28,7 @@ const config = {
 		refreshToken: process.env.SPOTIFY_REFRESH_TOKEN as string,
 	},
 }
+
+console.log('config: ', config)
 
 export default config

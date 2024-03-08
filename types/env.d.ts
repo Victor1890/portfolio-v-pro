@@ -2,6 +2,8 @@ namespace NodeJS {
     interface ProcessEnv {
         NEXT_PUBLIC_SITE_URL?: string;
 
+        NEXT_PUBLIC_VERCEL_URL?: string;
+
         EMAILJS_YOUR_SERVICE_ID?: string;
         EMAILJS_YOUR_TEMPLATE_ID?: string;
         EMAILJS_YOUR_USER_ID?: string;
