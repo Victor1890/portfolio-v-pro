@@ -1,6 +1,7 @@
 'use client'
 
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
+import AnimatedText from '@components/FramerMotion/AnimatedText'
 import StaticPage from '@components/app/static-page'
 import { FadeContainer, opacityVariant } from '@constants/FramerMotionVariants'
 import { linkedinData } from '@content/linkedinData'
@@ -22,15 +23,10 @@ const AboutPage = ({ about }: AboutPageProps) => (
 		<StaticPage metadata={metadata.about} page={about} />
 
 		<div className='pageTop mt-0 print:hidden'>
-			<motion.h3
-				initial='hidden'
-				whileInView='visible'
-				viewport={{ once: true }}
-				variants={opacityVariant}
-				className='my-2 text-left text-xl font-bold md:text-3xl'
-			>
+
+			<AnimatedText as='h2' variants={opacityVariant}>
 				Recent Experience
-			</motion.h3>
+			</AnimatedText>
 
 			<AnimatedDiv variants={FadeContainer} className='flex flex-col gap-2 overflow-x-scroll pb-5 pt-10 md:gap-4'>
 				{linkedinData.experiences.map((experience: ILinkedInExperience) => {
@@ -46,6 +42,7 @@ const AboutPage = ({ about }: AboutPageProps) => (
 									height={400}
 									className='object-cover'
 									alt={experience.company}
+
 								/>
 							</div>
 

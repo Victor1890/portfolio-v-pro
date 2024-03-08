@@ -24,7 +24,7 @@ export default function SpotifyTrack({ url, title, artist, coverImage, id }: Tra
 
 				<div className='relative h-12 w-12 origin-center transform'>
 					{coverImage ? (
-						<Image src={coverImage} width={50} height={50} alt={title} quality={50}></Image>
+						<Image src={coverImage} width={50} height={50} alt={title} quality={50} />
 					) : (
 						<div className='h-full w-full animate-pulse bg-white'></div>
 					)}

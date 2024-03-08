@@ -1,7 +1,6 @@
 'use client'
 
 import AnimatedDiv from '@components/FramerMotion/AnimatedDiv'
-// import AnimatedHeading from '@components/FramerMotion/AnimatedHeading'
 import AnimatedText from '@components/FramerMotion/AnimatedText'
 import PageTop from '@components/app/page-top'
 import GitHubActivityGraph from '@components/github/GitHubActivityGraph'
@@ -64,16 +63,12 @@ const StatPage = () => {
 				title: 'GitHub Stars',
 				value: github?.githubStars,
 			},
-			{
-				title: 'GitHub Forked',
-				value: github?.forks,
-			},
+			// {
+			// 	title: 'GitHub Forked',
+			// 	value: github?.forks,
+			// },
 		]
 	}, [devto, github])
-
-	// if (isTopTrackLoading || isArtistLoading || isDevToLoading || isGithubLoading) {
-	// 	return <h1>loading</h1>
-	// }
 
 	return (
 		<section className='pageTop font-inter'>
@@ -96,7 +91,7 @@ const StatPage = () => {
 			{/* Spotify top songs */}
 			<div className='font-barlow'>
 				<AnimatedText
-					as='p'
+					as='h2'
 					variants={opacityVariant}
 					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 				>
@@ -138,7 +133,7 @@ const StatPage = () => {
 
 			<div className='font-barlow'>
 				<AnimatedText
-					as='p'
+					as='h2'
 					variants={opacityVariant}
 					className='text-3xl font-bold capitalize text-neutral-900 dark:text-neutral-200 sm:text-4xl'
 				>
