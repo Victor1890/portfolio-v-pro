@@ -51,7 +51,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 			siteName: `Portfolio | ${config.personName}`,
 			images: [
 				{
-					url: blog.cover_image,
+					url: `${config.appUrl}/api/og?heading=${blog.title}&type=Article&mode=dark`,
 					alt: blog.title,
 				},
 			],

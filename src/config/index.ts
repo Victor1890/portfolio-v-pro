@@ -37,6 +37,4 @@ const config = {
 	},
 }
 
-console.log('config: ', config)
-
 export default config
