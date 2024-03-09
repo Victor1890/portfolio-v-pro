@@ -6,6 +6,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
+		"postbuild": "next-sitemap",
 		"start": "next start",
 		"analyze": "cross-env ANALYZE=true next build",
 		"lint": "eslint --ignore-path .eslintignore .",
@@ -15,8 +16,7 @@
 		"prepare": "husky install",
 		"version": "conventional-changelog -p angular -i CHANGELOG.md -s",
 		"p:check": "ncu",
-		"p:i": "ncu --interactive",
-		"script:devto:post": "tsx scripts/get-dev.to-post.script.ts"
+		"p:i": "ncu --interactive"
 	},
 	"dependencies": {
 		"@emailjs/browser": "4.1.0",
@@ -29,6 +29,7 @@
 		"groq": "3.29.1",
 		"next": "14.1.0",
 		"next-mdx-remote": "4.4.1",
+		"next-sitemap": "^4.2.3",
 		"nprogress": "0.2.0",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
