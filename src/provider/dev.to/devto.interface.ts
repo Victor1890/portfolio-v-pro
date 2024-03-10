@@ -48,7 +48,7 @@ export interface IArticleDevTo {
 	organization?: Organization
 }
 
-interface User {
+export interface User {
 	name: string
 	username: string
 	twitter_username: string

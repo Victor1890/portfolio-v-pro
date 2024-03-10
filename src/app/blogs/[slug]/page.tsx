@@ -42,27 +42,27 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
 		},
 		applicationName: 'Victor Jesús Rosario Vásquez | Portfolio | Blog',
 		robots: 'index, follow',
-		openGraph: {
-			type: 'article',
-			locale: 'en_US',
-			url: blogLink,
-			title: blog.title,
-			description: blog.description,
-			siteName: `Portfolio | ${config.personName}`,
-			images: [
-				{
-					url: `${config.appUrl}/api/og?heading=${blog.title}&type=Article&mode=dark`,
-					alt: blog.title,
-				},
-			],
-		},
-		twitter: {
-			card: 'summary_large_image',
-			site: blogLink,
-			creator: blog.user.name,
-			description: blog.description,
-			title: blog.title,
-		},
+		// openGraph: {
+		// 	type: 'article',
+		// 	locale: 'en_US',
+		// 	url: blogLink,
+		// 	title: blog.title,
+		// 	description: blog.description,
+		// 	siteName: `Portfolio | ${config.personName}`,
+		// 	images: [
+		// 		{
+		// 			url: `${config.appUrl}/api/og?heading=${blog.title}&type=Article&mode=dark`,
+		// 			alt: blog.title,
+		// 		},
+		// 	],
+		// },
+		// twitter: {
+		// 	card: 'summary_large_image',
+		// 	site: blogLink,
+		// 	creator: blog.user.name,
+		// 	description: blog.description,
+		// 	title: blog.title,
+		// },
 		icons: {
 			icon: '/favicon-light.ico',
 			shortcut: '/favicon-light.ico',
