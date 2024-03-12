@@ -27,6 +27,7 @@
 		"skipLibCheck": true /* Skip type checking all .d.ts files. */,
 		"lib": ["dom", "dom.iterable", "esnext"],
 		"allowJs": true,
+		"sourceMap": true,
 		"noEmit": true,
 		"incremental": true,
 		"moduleResolution": "node",

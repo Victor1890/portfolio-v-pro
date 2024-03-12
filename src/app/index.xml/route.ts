@@ -10,7 +10,7 @@ export async function GET() {
 		title: personName,
 		description: DESCRIPTION,
 		site_url: siteURL,
-		feed_url: `${siteURL}/feed.xml`,
+		feed_url: `${siteURL}/index.xml`,
 		language: 'en',
 		pubDate: new Date(),
 		copyright: `All rights reserved ${new Date().getFullYear()}, ${personName}`,
