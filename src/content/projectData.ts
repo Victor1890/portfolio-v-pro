@@ -5,6 +5,15 @@ const projectData: IProjectType[] = [
 	{
 		id: generateUUID(),
 		coverImage: 'https://raw.githubusercontent.com/Victor1890/chat-frontend-react/master/design/chat.png',
+		description: 'A simple way to backup, synchronize and encrypt repositories for multiple users and organizations',
+		githubURL: 'https://github.com/Victor1890/github-backup',
+		name: 'Github Backup',
+		previewURL: 'https://hub.docker.com/repository/docker/victor1890/github-backup/general',
+		tools: ['Node.js', 'Docker', 'Docker Compose', 'Github API'],
+	},
+	{
+		id: generateUUID(),
+		coverImage: 'https://raw.githubusercontent.com/Victor1890/chat-frontend-react/master/design/chat.png',
 		description:
 			'Welcome to Victor Chat React, a lightweight and intuitive chat application built using React and Socket.io. This project provides a solid foundation for a basic real-time chat system, allowing users to communicate seamlessly in a responsive and modern user interface.',
 		githubURL: 'https://github.com/Victor1890/chat-frontend-react',
