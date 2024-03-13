@@ -5,7 +5,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const bundleAnalyzer = withBundleAnalyzer({
 	output: 'standalone',
 	reactStrictMode: true,
-	swcMinify: false,
+	swcMinify: true,
 	transpilePackages: ['react-syntax-highlighter'],
 	images: {
 		domains: [

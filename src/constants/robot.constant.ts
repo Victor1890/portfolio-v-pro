@@ -1,0 +1,17 @@
+export const USER_AGENT = [
+	'*',
+	'Googlebot-Image',
+	'Googlebot',
+	'Bingbot',
+	'Slurp',
+	'DuckDuckBot',
+	'Baiduspider',
+	'YandexBot',
+	'Sogou',
+	'facebot',
+	'ia_archiver',
+	'Twitterbot',
+	'WhatsApp',
+	'Slackbot',
+	'TelegramBot',
+]
