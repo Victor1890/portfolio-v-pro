@@ -4,7 +4,7 @@ import { generateUUID } from '@utils/string.util'
 const projectData: IProjectType[] = [
 	{
 		id: generateUUID(),
-		coverImage: 'https://raw.githubusercontent.com/Victor1890/chat-frontend-react/master/design/chat.png',
+		coverImage: '/projects/github-backup.webp',
 		description: 'A simple way to backup, synchronize and encrypt repositories for multiple users and organizations',
 		githubURL: 'https://github.com/Victor1890/github-backup',
 		name: 'Github Backup',
